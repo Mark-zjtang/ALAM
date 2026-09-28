@@ -1,7 +1,7 @@
 # ALAM: Algebraically Consistent Latent Action Model for Vision-Language-Action Models
 
-[![arXiv](https://img.shields.io/badge/arXiv-2605.10819-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2605.10819)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Hugging_Face-ffd21e)](https://huggingface.co/Mark-ZJTang)
+[![arXiv](https://img.shields.io/badge/arXiv-2605.10819-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2605.10819)[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)[![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
+
 
 ![ALAM latent-action learning and algebraic consistency](figures/alam_framework.png)
 
