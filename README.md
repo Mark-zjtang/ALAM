@@ -1,7 +1,9 @@
 # ALAM: Algebraically Consistent Latent Action Model for Vision-Language-Action Models
 
-[![arXiv](https://img.shields.io/badge/arXiv-2605.10819-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2605.10819)[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)[![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
-
+[![arXiv](https://img.shields.io/badge/arXiv-2605.10819-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2605.10819)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Hugging_Face-ffd21e)](https://huggingface.co/Mark-ZJTang)
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
 ![ALAM latent-action learning and algebraic consistency](figures/alam_framework.png)
 
@@ -29,12 +31,12 @@ A **local path** is a directory on your machine, not a web link. Relative paths 
 
 Install only the environments you need:
 
-| Stage | Install command | Environments created |
-| --- | --- | --- |
-| ALAM pretraining | `bash workflows/alam_pretraining/install.sh` | `.venvs/alam` |
-| ALAM + π0 post-training | `bash workflows/pi0_post_training/install.sh` | `.venvs/pi0` |
-| MetaWorld evaluation | `bash workflows/metaworld_evaluation/install.sh` | `.venvs/pi0`, `.venvs/metaworld` |
-| LIBERO evaluation | `bash workflows/libero_evaluation/install.sh` | `.venvs/pi0`, `.venvs/libero` |
+| Stage | Install command | Environments created | Python |
+| --- | --- | --- | --- |
+| ALAM pretraining | `bash workflows/alam_pretraining/install.sh` | `.venvs/alam` | 3.10 |
+| ALAM + π0 post-training | `bash workflows/pi0_post_training/install.sh` | `.venvs/pi0` | 3.11 |
+| MetaWorld evaluation | `bash workflows/metaworld_evaluation/install.sh` | `.venvs/pi0`, `.venvs/metaworld` | 3.11 |
+| LIBERO evaluation | `bash workflows/libero_evaluation/install.sh` | `.venvs/pi0`, `.venvs/libero` | 3.11 / 3.8 |
 
 ## 📦 Datasets and model weights
 
