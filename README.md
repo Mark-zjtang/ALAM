@@ -1,4 +1,4 @@
-# ALAM: Algebraically Consistent Latent Action Model for Vision-Language-Action Models
+# ALAM: Algebraically Consistent Latent Action Model for Vision-Language-Action Models 
 
 [![arXiv](https://img.shields.io/badge/arXiv-2605.10819-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2605.10819)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Hugging_Face-ffd21e)](https://huggingface.co/Mark-ZJTang)
@@ -17,7 +17,7 @@ ALAM learns structured latent actions from video and uses them to improve vision
 
 ## 📰 News
 
-- 🎉 **September 25, 2026:** ALAM was accepted at NeurIPS 2026!
+- 🎉🎉🎉 **September 25, 2026:** ALAM was accepted at NeurIPS 2026!
 
 ## 🛠️ Environment setup
 
@@ -46,8 +46,8 @@ Training datasets are not bundled. Download the converted MetaWorld and LIBERO d
 | --- | --- |
 | CALVIN ABC→D | [CALVIN](https://github.com/mees/calvin/blob/main/dataset/README.md) |
 | Open X-Embodiment | [Open X-Embodiment](https://github.com/google-deepmind/open_x_embodiment) |
-| MetaWorld | [🤗 Mark-ZJTang/metaworld_mt50](https://huggingface.co/datasets/Mark-ZJTang/metaworld_mt50) |
-| LIBERO | [🤗 Mark-ZJTang/libero_real](https://huggingface.co/datasets/Mark-ZJTang/libero_real) |
+| MetaWorld | [🤗 metaworld_mt50](https://huggingface.co/datasets/Mark-ZJTang/metaworld_mt50) |
+| LIBERO | [🤗 libero](https://huggingface.co/datasets/Mark-ZJTang/libero_real) |
 
 | Released weights | Hugging Face |
 | --- | --- |
@@ -86,13 +86,10 @@ ALAM-authored code is available under [MIT or Apache-2.0](LICENSE), at your opti
 ## 📚 Citation
 
 ```bibtex
-@misc{tang2026alamalgebraicallyconsistentlatent,
+@article{tang2026alam,
   title={ALAM: Algebraically Consistent Latent Action Model for Vision-Language-Action Models},
-  author={Zuojin Tang and Haoyun Liu and Xinyuan Chang and Changjie Wu and Dongjie Huo and Yandan Yang and Bin Liu and Zhejia Cai and Feng Xiong and Mu Xu and jiachen Luo and De Ma and Zhiheng Ma and Gang Pan},
-  year={2026},
-  eprint={2605.10819},
-  archivePrefix={arXiv},
-  primaryClass={cs.RO},
-  url={https://arxiv.org/abs/2605.10819}
+  author={Tang, Zuojin and Liu, Haoyun and Chang, Xinyuan and Wu, Changjie and Huo, Dongjie and Yang, Yandan and Liu, Bin and Cai, Zhejia and Xiong, Feng and Xu, Mu and others},
+  journal={arXiv preprint arXiv:2605.10819},
+  year={2026}
 }
 ```
