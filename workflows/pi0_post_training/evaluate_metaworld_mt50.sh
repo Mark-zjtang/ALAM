@@ -19,11 +19,17 @@ CLIENT_ONLY=0
 DRY_RUN=0
 HOST=127.0.0.1
 SERVER_START_TIMEOUT="${ALAM_SERVER_START_TIMEOUT:-1800}"
+MODEL_ARGS=()
+OUTPUT_DIR=""
 usage() {
-  echo "Usage: $0 [--gpu N] [--port N] [--episodes N] [--camera-x X] [--camera-y Y] [--camera-z Z] [--host HOST] [--client-only] [--dry-run]"
+  echo "Usage: $0 [--policy-checkpoint PATH] [--alam-checkpoint PATH] [--output-dir PATH] [--gpu N] [--port N] [--episodes N] [--camera-x X] [--camera-y Y] [--camera-z Z] [--host HOST] [--client-only] [--dry-run]"
 }
 while [[ $# -gt 0 ]]; do
   case "$1" in
+    --policy-checkpoint|--alam-checkpoint|--output-dir)
+      [[ -n ${2:-} && $2 != --* ]] || { echo "$1 requires a path" >&2; exit 2; }
+      if [[ $1 == --output-dir ]]; then OUTPUT_DIR="$2"; else MODEL_ARGS+=("$1" "$2"); fi
+      shift 2 ;;
     --gpu) GPU="$2"; shift 2 ;;
     --port) PORT="$2"; shift 2 ;;
     --episodes) EPISODES="$2"; shift 2 ;;
@@ -37,6 +43,10 @@ while [[ $# -gt 0 ]]; do
     *) echo "Unknown argument: $1" >&2; usage >&2; exit 2 ;;
   esac
 done
+if (( CLIENT_ONLY && ${#MODEL_ARGS[@]} )); then
+  echo 'Checkpoint options require a local policy server; omit --client-only.' >&2
+  exit 2
+fi
 if [[ ! "$SERVER_START_TIMEOUT" =~ ^[1-9][0-9]*$ ]]; then
   echo "ALAM_SERVER_START_TIMEOUT must be a positive integer, found: $SERVER_START_TIMEOUT" >&2
   exit 2
@@ -54,7 +64,8 @@ done
 
 OUTPUT_ROOT="${ALAM_OUTPUT_ROOT:-$REPO_ROOT/outputs}"
 [[ "$OUTPUT_ROOT" == /* ]] || OUTPUT_ROOT="$REPO_ROOT/$OUTPUT_ROOT"
-RUN_ROOT="$OUTPUT_ROOT/evaluation/metaworld_mt50"
+RUN_ROOT="${OUTPUT_DIR:-$OUTPUT_ROOT/evaluation/metaworld_mt50}"
+[[ "$RUN_ROOT" == /* ]] || RUN_ROOT="$REPO_ROOT/$RUN_ROOT"
 CAMERA_TAG="${CAMERA_X//./p}"
 CAMERA_TAG="${CAMERA_TAG//-/m}"
 if [[ "$CAMERA_X" == "0.71" ]]; then
@@ -67,6 +78,7 @@ fi
 LOCAL_NO_PROXY="${NO_PROXY:-},0.0.0.0,127.0.0.1,localhost"
 LOCAL_NO_PROXY_LOWER="${no_proxy:-},0.0.0.0,127.0.0.1,localhost"
 SERVER_CMD=(env "CUDA_VISIBLE_DEVICES=$GPU" "PYTHONUNBUFFERED=1" "$PI0_PYTHON" "$REPO_ROOT/workflows/pi0_post_training/serve_policy.py" metaworld --port "$PORT" --single-client)
+SERVER_CMD+=("${MODEL_ARGS[@]}")
 CLIENT_CMD=(env "CUDA_VISIBLE_DEVICES=$GPU" "MUJOCO_GL=egl" "PYOPENGL_PLATFORM=egl" "MUJOCO_EGL_DEVICE_ID=0" "NO_PROXY=$LOCAL_NO_PROXY" "no_proxy=$LOCAL_NO_PROXY_LOWER" "$METAWORLD_PYTHON" "$REPO_ROOT/workflows/pi0_post_training/run_evaluation_client.py" "$REPO_ROOT/evaluation/examples/metaworld/eval_metaworld_policy_client_0409.py" --host "$HOST" --port "$PORT" --device cpu --max_episodes "$EPISODES" --chunk_size 5 --action_horzion 5 --cam_pos_x "$CAMERA_X" --cam_pos_y "$CAMERA_Y" --cam_pos_z "$CAMERA_Z" --seed 10 --eval_max_steps 200 --model_name "alam_plus_pi_metaworld_mt50_H5_replan5_camx_${CAMERA_TAG}" --output_dir "$RUN_ROOT")
 
 print_cmd() {

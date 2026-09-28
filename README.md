@@ -79,6 +79,8 @@ See the [pretraining](workflows/alam_pretraining/README.md) and [post-training](
 - [MetaWorld MT50: command, protocol, and paper results](workflows/metaworld_evaluation/README.md)
 - [LIBERO: four suite commands, protocol, and paper results](workflows/libero_evaluation/README.md)
 
+Use `--policy-checkpoint PATH` to evaluate your own ALAM + π0 weights; each guide includes a custom-checkpoint example.
+
 For model downloads and the maintainer's GitHub code-push command, see [Downloads and code publishing](workflows/publishing/README.md).
 
 ALAM-authored code is available under [MIT or Apache-2.0](LICENSE), at your option. Bundled third-party material retains its own license.

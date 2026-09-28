@@ -12,7 +12,7 @@ import tempfile
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT))
 
-from workflows.common.prepare_lam_checkpoint import PORTABLE_TARGET, PRESERVED_TARGET, prepare
+from workflows.common.prepare_lam_checkpoint import PORTABLE_TARGET, PRESERVED_TARGET, PRETRAIN_TARGET, prepare
 
 
 def main() -> None:
@@ -41,7 +41,23 @@ def main() -> None:
         if temporary_files:
             raise AssertionError(f"Checkpoint preparation left temporary files: {temporary_files}")
 
-    print("Concurrent ALAM checkpoint preparation: PASS (32 calls, one runtime target)")
+        # User-trained tokenizers can have the same basename as release weights.
+        for index, target in enumerate((PRETRAIN_TARGET, PORTABLE_TARGET)):
+            custom = root / f"experiment-{index}" / source.name
+            custom.mkdir(parents=True)
+            (custom / "config.yaml").write_text(f"_target_: {target}\n", encoding="utf-8")
+            (custom / "pytorch_model.bin").write_bytes(b"custom-checkpoint-fixture")
+            prepared = prepare(custom)
+            if prepared == destination:
+                raise AssertionError("Same-named checkpoints shared their runtime directory")
+            if (prepared / "config.yaml").read_text() != f"_target_: {PORTABLE_TARGET}\n":
+                raise AssertionError("User-trained tokenizer target was not adapted")
+            if (prepared / "pytorch_model.bin").resolve() != custom / "pytorch_model.bin":
+                raise AssertionError("Prepared tokenizer selected the wrong weights")
+            if weight_link.resolve() != weights.resolve():
+                raise AssertionError("Preparing a custom tokenizer changed the release weight link")
+
+    print("ALAM checkpoint preparation: PASS (concurrent calls, custom targets, isolated weights)")
 
 
 if __name__ == "__main__":

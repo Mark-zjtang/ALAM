@@ -34,6 +34,7 @@ run_cpu() {
   require_executable "$ENV_ROOT/metaworld/bin/python"
   require_executable "$ENV_ROOT/libero/bin/python"
   bash workflows/tests/test_entrypoints.sh
+  python3 workflows/tests/test_evaluation_paths.py
   python3 workflows/tests/test_checkpoint_preparation.py
   python3 workflows/tests/test_wait_for_port.py
   python3 workflows/tests/test_evaluation_client_adapter.py

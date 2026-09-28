@@ -12,6 +12,19 @@ bash workflows/libero_evaluation/evaluate_libero.sh long --gpu 0
 
 Each suite runs 10 tasks × 50 trials with the shared LIBERO policy. Use `--trials 1` for a short check, or `--dry-run` to inspect settings. Run the four commands separately; a sequential wrapper is also available as `bash workflows/libero_evaluation/evaluate_all_suites.sh --gpu 0`.
 
+To evaluate your own ALAM + π0 checkpoint on one suite:
+
+```bash
+bash workflows/libero_evaluation/evaluate_libero.sh spatial --gpu 0 \
+  --policy-checkpoint /path/to/libero_run/30000 \
+  --alam-checkpoint /path/to/alam_checkpoint \
+  --output-dir outputs/evaluation/my_libero_run/spatial
+```
+
+Replace `spatial` with `object`, `goal`, or `long`. To run all four suites serially, use `bash workflows/libero_evaluation/evaluate_all_suites.sh` with the same options and no suite argument; it creates one subdirectory per suite under `--output-dir`.
+
+The policy directory must contain `params/` and `assets/libero_real/norm_stats.json`. The ALAM directory must contain `config.yaml` and `pytorch_model.bin`, matching the tokenizer used for policy training. Omit `--alam-checkpoint` to use the configured default tokenizer. CLI paths override `.env`; relative paths start at the repository root. Checkpoints must be compatible with this repository's LIBERO ALAM + π0 configuration. Checkpoint options cannot be combined with `--client-only`.
+
 **Paper result (Table 2, success rate %):**
 
 | Spatial | Object | Goal | Long | Average |

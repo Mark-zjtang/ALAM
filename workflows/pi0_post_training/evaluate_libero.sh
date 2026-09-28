@@ -12,8 +12,11 @@ PI0_PYTHON="${PI0_PYTHON:-$ENV_ROOT/pi0/bin/python}"
 LIBERO_PYTHON="${LIBERO_PYTHON:-$ENV_ROOT/libero/bin/python}"
 
 SUITE="${1:-}"
+usage() {
+  echo "Usage: $0 {spatial|object|goal|long} [--policy-checkpoint PATH] [--alam-checkpoint PATH] [--output-dir PATH] [--gpu N] [--port N] [--trials N] [--host HOST] [--client-only] [--dry-run]"
+}
 if [[ -z "$SUITE" || "$SUITE" == "-h" || "$SUITE" == "--help" ]]; then
-  echo "Usage: $0 {spatial|object|goal|long} [--gpu N] [--port N] [--trials N] [--client-only] [--dry-run]" >&2
+  usage
   [[ -n "$SUITE" ]] && exit 0
   exit 2
 fi
@@ -27,8 +30,14 @@ CLIENT_ONLY=0
 DRY_RUN=0
 HOST=127.0.0.1
 SERVER_START_TIMEOUT="${ALAM_SERVER_START_TIMEOUT:-1800}"
+MODEL_ARGS=()
+OUTPUT_DIR=""
 while [[ $# -gt 0 ]]; do
   case "$1" in
+    --policy-checkpoint|--alam-checkpoint|--output-dir)
+      [[ -n ${2:-} && $2 != --* ]] || { echo "$1 requires a path" >&2; exit 2; }
+      if [[ $1 == --output-dir ]]; then OUTPUT_DIR="$2"; else MODEL_ARGS+=("$1" "$2"); fi
+      shift 2 ;;
     --gpu) GPU="$2"; shift 2 ;;
     --port) PORT="$2"; shift 2 ;;
     --trials) TRIALS="$2"; shift 2 ;;
@@ -36,12 +45,16 @@ while [[ $# -gt 0 ]]; do
     --client-only) CLIENT_ONLY=1; shift ;;
     --dry-run) DRY_RUN=1; shift ;;
     -h|--help)
-      echo "Usage: $0 {spatial|object|goal|long} [--gpu N] [--port N] [--trials N] [--host HOST] [--client-only] [--dry-run]"
+      usage
       exit 0
       ;;
     *) echo "Unknown argument: $1" >&2; exit 2 ;;
   esac
 done
+if (( CLIENT_ONLY && ${#MODEL_ARGS[@]} )); then
+  echo 'Checkpoint options require a local policy server; omit --client-only.' >&2
+  exit 2
+fi
 if [[ ! "$SERVER_START_TIMEOUT" =~ ^[1-9][0-9]*$ ]]; then
   echo "ALAM_SERVER_START_TIMEOUT must be a positive integer, found: $SERVER_START_TIMEOUT" >&2
   exit 2
@@ -57,8 +70,10 @@ esac
 
 OUTPUT_ROOT="${ALAM_OUTPUT_ROOT:-$REPO_ROOT/outputs}"
 [[ "$OUTPUT_ROOT" == /* ]] || OUTPUT_ROOT="$REPO_ROOT/$OUTPUT_ROOT"
-RUN_ROOT="$OUTPUT_ROOT/evaluation/libero/$SUITE"
+RUN_ROOT="${OUTPUT_DIR:-$OUTPUT_ROOT/evaluation/libero/$SUITE}"
+[[ "$RUN_ROOT" == /* ]] || RUN_ROOT="$REPO_ROOT/$RUN_ROOT"
 SERVER_CMD=(env "CUDA_VISIBLE_DEVICES=$GPU" "PYTHONUNBUFFERED=1" "$PI0_PYTHON" "$REPO_ROOT/workflows/pi0_post_training/serve_policy.py" libero --suite "$SUITE" --port "$PORT" --single-client)
+SERVER_CMD+=("${MODEL_ARGS[@]}")
 # The released LIBERO/robosuite stack addresses EGL by the visible-device id.
 # Keep rendering on its separately configurable, known-good device while the
 # policy server remains on --gpu. On this validated host, EGL_GPU=0 is required.

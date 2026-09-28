@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import os
 from pathlib import Path
 import sys
@@ -21,21 +22,29 @@ PRESERVED_TARGET = (
     "ctl_latent_action_tokenizer_v3.LatentActionTokenizer"
 )
 PORTABLE_TARGET = "openpi.models.portable_lam_tokenizer.LatentActionTokenizer"
+PRETRAIN_TARGET = (
+    "Algebraic_latent_action_model.latent_action_model.models."
+    "ctl_latent_action_tokenizer_v3_portable.LatentActionTokenizer"
+)
+SUPPORTED_TARGETS = (PRESERVED_TARGET, PRETRAIN_TARGET, PORTABLE_TARGET)
 
 
 def prepare(source: Path) -> Path:
-    source = require_dir(source, "ALAM checkpoint directory")
+    source = require_dir(source.resolve(), "ALAM checkpoint directory")
     source_config = require_file(source / "config.yaml", "ALAM config")
     source_weights = require_file(source / "pytorch_model.bin", "ALAM weights")
 
     runtime_root = env_path("ALAM_RUNTIME_ROOT", ".runtime") / "alam_checkpoints"
-    destination = runtime_root / source.name
+    # Different experiments often save the same step/epoch directory name.
+    source_id = hashlib.sha256(os.fsencode(source)).hexdigest()[:16]
+    destination = runtime_root / f"{source.name}-{source_id}"
     destination.mkdir(parents=True, exist_ok=True)
 
     config_text = source_config.read_text(encoding="utf-8")
-    if PRESERVED_TARGET not in config_text:
+    source_target = next((target for target in SUPPORTED_TARGETS if target in config_text), None)
+    if source_target is None:
         raise ValueError(f"Unexpected ALAM target in {source_config}")
-    portable_config = config_text.replace(PRESERVED_TARGET, PORTABLE_TARGET, 1)
+    portable_config = config_text.replace(source_target, PORTABLE_TARGET, 1)
     config_path = destination / "config.yaml"
     temporary_config: Path | None = None
     try:
