@@ -62,6 +62,10 @@ For a new robot environment or dataset, convert demonstrations to LeRobot format
 
 ## 🎯 Evaluation
 
+### 📐 Latent-action diagnostics
+
+See the [latent-action evaluation guide](workflows/alam_pretraining/LATENT_ACTION_EVALUATION.md) for checkpoint-validation commands, algebraic error definitions, and the original multi-step reconstruction protocol.
+
 ### 🤗 Post-trained weights
 
 Download a policy and its matching ALAM tokenizer to evaluate. Training datasets are linked for fine-tuning; they are not needed for evaluation.
