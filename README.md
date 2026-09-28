@@ -64,7 +64,7 @@ For a new robot environment or dataset, convert demonstrations to LeRobot format
 
 ### 📐 Latent-action diagnostics
 
-See the [latent-action evaluation guide](workflows/alam_pretraining/LATENT_ACTION_EVALUATION.md) for checkpoint-validation commands, algebraic error definitions, and the original multi-step reconstruction protocol.
+See the [latent-action evaluation guide](workflows/alam_pretraining/LATENT_ACTION_EVALUATION.md) for validation commands, additivity and reversibility errors, and reconstruction metrics.
 
 ### 🤗 Post-trained weights
 
