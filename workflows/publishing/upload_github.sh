@@ -32,8 +32,30 @@ command -v git-lfs >/dev/null || {
 }
 git lfs version >/dev/null
 
+# Keep transport workarounds local to this publisher. Git protocol v1 also
+# avoids a truncated v2 ref advertisement on unreliable HTTP/2 connections.
+git_remote() {
+  git -c http.version=HTTP/1.1 -c protocol.version=1 "$@"
+}
+
+remote_main_sha() {
+  local attempt refs
+  for attempt in 1 2 3; do
+    if refs=$(git_remote ls-remote --heads origin main); then
+      printf '%s\n' "$refs" | awk 'NR == 1 { print $1 }'
+      return 0
+    fi
+    if (( attempt < 3 )); then
+      printf 'Remote lookup failed; retrying (%s/3)...\n' "$attempt" >&2
+      sleep "$attempt"
+    fi
+  done
+  echo 'Could not verify remote main.' >&2
+  return 1
+}
+
 local_sha=$(git rev-parse HEAD)
-remote_sha=$(git ls-remote --heads origin main | awk '{print $1}')
+remote_sha=$(remote_main_sha)
 if [[ -n $remote_sha && $remote_sha != "$local_sha" ]]; then
   echo 'Remote main differs from this release; inspect it before publishing. No force push is used.' >&2
   exit 2
@@ -57,9 +79,9 @@ fi
 unset GIT_ASKPASS SSH_ASKPASS VSCODE_GIT_ASKPASS_NODE VSCODE_GIT_ASKPASS_MAIN VSCODE_GIT_IPC_HANDLE
 export GIT_TERMINAL_PROMPT=1
 echo 'Pushing ALAM code and Git LFS assets. If prompted, use your GitHub username and access token.'
-git push -u origin main
+git_remote push -u origin main
 
-published_sha=$(git ls-remote --heads origin main | awk '{print $1}')
+published_sha=$(remote_main_sha)
 [[ $published_sha == "$local_sha" ]] || {
   echo 'Push returned, but remote main does not match the local release.' >&2
   exit 1
