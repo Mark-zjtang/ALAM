@@ -71,7 +71,7 @@ DOWNSTREAM_EVIDENCE_SOURCES = {
     ),
 }
 
-CREATED_HF_REPOSITORIES = {
+HF_REPOSITORIES = {
     "alam_pretrain": "Mark-ZJTang/alam_pretrain",
     "alam_plus_pi_libero": "Mark-ZJTang/alam_plus_pi_libero",
     "alam_plus_pi_metaworld_mt50": "Mark-ZJTang/alam_plus_pi_metaworld_mt50",
@@ -79,22 +79,6 @@ CREATED_HF_REPOSITORIES = {
     "oxe_mix10_datasets": "Mark-ZJTang/Oxe_mix10_datasets",
     "metaworld_mt50_lerobot": "Mark-ZJTang/metaworld_mt50",
     "libero_real_lerobot": "Mark-ZJTang/libero_real",
-}
-
-CREATE_ON_EXECUTE_HF_REPOSITORIES = {}
-
-
-EXPECTED_OXE = {
-    "fractal20220817_data/image": {"train": (87_212, 3_786_400)},
-    "bridge/image": {"train": (25_460, 864_292), "test": (3_475, 118_603)},
-    "taco_play/rgb_static": {"train": (3_242, 213_972), "test": (361, 23_826)},
-    "jaco_play/image": {"train": (976, 70_127), "test": (109, 7_838)},
-    "berkeley_cable_routing/image": {"train": (1_482, 38_240), "test": (165, 4_088)},
-    "roboturk/front_rgb": {"train": (1_790, 168_417), "test": (199, 19_084)},
-    "nyu_door_opening_surprising_effectiveness/image": {"train": (435, 18_196), "test": (49, 2_209)},
-    "viola/agentview_rgb": {"train": (135, 68_913), "test": (15, 7_411)},
-    "berkeley_autolab_ur5/image": {"train": (896, 87_783), "test": (104, 10_156)},
-    "toto/image": {"train": (902, 294_139), "test": (101, 31_560)},
 }
 
 MODEL_LAYOUT = {
@@ -224,27 +208,17 @@ def check_release_hygiene() -> None:
 
 def check_huggingface_mapping() -> None:
     by_id = load_hf_artifacts()
-    if len(by_id) != 7:
+    if len(by_id) != len(HF_REPOSITORIES):
         raise AssertionError("Duplicate Hugging Face artifact IDs")
-    for artifact_id, expected_repo in CREATED_HF_REPOSITORIES.items():
+    for artifact_id, expected_repo in HF_REPOSITORIES.items():
         artifact = by_id.get(artifact_id)
         if artifact is None or artifact.get("repo_id") != expected_repo:
             raise AssertionError(f"Hugging Face mapping mismatch for {artifact_id}")
-        if artifact.get("repo_status") != "created":
-            raise AssertionError(f"Created repository is not marked created: {artifact_id}")
-        require_file(repo_path(artifact["card"]), f"Hugging Face card for {artifact_id}")
-    for artifact_id, expected_repo in CREATE_ON_EXECUTE_HF_REPOSITORIES.items():
-        artifact = by_id.get(artifact_id)
-        if artifact is None or artifact.get("repo_id") != expected_repo:
-            raise AssertionError(f"Create-on-execute repository mapping mismatch: {artifact_id}")
-        if artifact.get("repo_status") != "create_on_execute":
-            raise AssertionError(f"Repository is not marked create_on_execute: {artifact_id}")
-        require_file(repo_path(artifact["card"]), f"Hugging Face card for {artifact_id}")
-    print(
-        "Hugging Face repository mapping: PASS "
-        f"({len(CREATED_HF_REPOSITORIES)} created, "
-        f"{len(CREATE_ON_EXECUTE_HF_REPOSITORIES)} create-on-execute)"
-    )
+        if artifact.get("repo_type") not in {"model", "dataset"}:
+            raise AssertionError(f"Invalid Hugging Face repository type for {artifact_id}")
+        if not artifact.get("download_path"):
+            raise AssertionError(f"Missing download path for {artifact_id}")
+    print(f"Hugging Face download mapping: PASS ({len(HF_REPOSITORIES)} repositories)")
 
 
 def check_root_source_identity() -> None:
@@ -377,69 +351,6 @@ def check_model_layout_if_available(*, required: bool) -> None:
     print("packaged model layout: SKIP (clean source clone; no model files downloaded)")
 
 
-def check_source_datasets() -> None:
-    artifacts = load_hf_artifacts()
-    calvin_root = Path(artifacts["calvin_task_abc_d"]["source_machine_paths"][0])
-    expected_calvin = {"training": 1_795_045, "validation": 99_022}
-    for split, expected_count in expected_calvin.items():
-        name = f"calvin_{split}"
-        path = calvin_root / split / "npz_metadata.json"
-        if not path.is_file():
-            raise FileNotFoundError(f"{name}: {path}")
-        count = len(json.loads(path.read_text(encoding="utf-8")))
-        if count != expected_count:
-            raise AssertionError(f"{name}: expected {expected_count}, found {count}")
-    expected_lerobot = {
-        "metaworld_mt50_lerobot": (2500, 204806, 49),
-        "libero_real_lerobot": (1693, 273465, 40),
-    }
-    for artifact_id, expected in expected_lerobot.items():
-        dataset = Path(artifacts[artifact_id]["source_machine_paths"][0])
-        path = dataset / "meta" / "info.json"
-        info = json.loads(path.read_text(encoding="utf-8"))
-        found = (info["total_episodes"], info["total_frames"], info["total_tasks"])
-        if found != expected:
-            raise AssertionError(f"{dataset.name}: expected {expected}, found {found}")
-    oxe_root = Path(artifacts["oxe_mix10_datasets"]["source_machine_paths"][0])
-    for relative, splits in EXPECTED_OXE.items():
-        metadata = json.loads((oxe_root / relative / "video_metadata.json").read_text(encoding="utf-8"))
-        for split, expected in splits.items():
-            found = (len(metadata[split]["videos"]), metadata[split]["total_frames"])
-            if found != expected:
-                raise AssertionError(f"OXE {relative}/{split}: expected {expected}, found {found}")
-    print("source dataset metadata: PASS (CALVIN, 10 OXE datasets, 2 LeRobot datasets)")
-
-
-def check_source_models() -> None:
-    artifacts = load_hf_artifacts()
-    source_models: list[tuple[Path, Path]] = []
-    for artifact_id in ("alam_pretrain", "alam_plus_pi_metaworld_mt50", "alam_plus_pi_libero"):
-        artifact = artifacts[artifact_id]
-        sources = artifact["source_machine_paths"]
-        uploads = artifact["upload_sources"]
-        if len(sources) != len(uploads):
-            raise AssertionError(f"Source/upload mapping length mismatch for {artifact_id}")
-        source_models.extend(
-            (repo_path(upload["path"]), Path(source))
-            for upload, source in zip(uploads, sources, strict=True)
-        )
-    checked = 0
-    for release_value, source_value in source_models:
-        release_dir = require_directory(release_value)
-        source_dir = require_directory(source_value)
-        for release_file in sorted(path for path in release_dir.rglob("*") if path.is_file()):
-            relative = release_file.relative_to(release_dir)
-            source_file = source_dir / relative
-            if not source_file.is_file():
-                raise FileNotFoundError(f"Missing source model file: {source_file}")
-            if not filecmp.cmp(release_file, source_file, shallow=False):
-                raise AssertionError(f"Model byte mismatch: {release_file} != {source_file}")
-            checked += 1
-    if checked != 46:
-        raise AssertionError(f"Expected 46 packaged model files, compared {checked}")
-    print(f"source model byte comparison: PASS ({checked}/46 files)")
-
-
 def require_directory(path: Path) -> Path:
     if not path.is_dir():
         raise FileNotFoundError(path)
@@ -450,8 +361,6 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--hash-weights", action="store_true", help="Read and SHA-256 all packaged weights")
     parser.add_argument("--source-code", action="store_true", help="Byte-compare copied code/evidence to internal originals")
-    parser.add_argument("--source-datasets", action="store_true", help="Validate this machine's original dataset roots")
-    parser.add_argument("--source-models", action="store_true", help="Byte-compare all packaged models to originals")
     return parser.parse_args()
 
 
@@ -467,7 +376,7 @@ def main() -> None:
     check_source_manifests()
     check_static_files()
     print("[audit] packaged model layout and evaluation evidence", flush=True)
-    check_model_layout_if_available(required=args.hash_weights or args.source_models)
+    check_model_layout_if_available(required=args.hash_weights)
     check_evaluation_evidence()
     if args.source_code:
         print("[audit] byte-compare public source with both read-only originals", flush=True)
@@ -476,12 +385,6 @@ def main() -> None:
     if args.hash_weights:
         print("[audit] SHA-256 all packaged model files (25.9 GB)", flush=True)
         check_weight_manifest()
-    if args.source_datasets:
-        print("[audit] validate source dataset metadata", flush=True)
-        check_source_datasets()
-    if args.source_models:
-        print("[audit] byte-compare packaged models with read-only checkpoints", flush=True)
-        check_source_models()
     print("workflow validation: PASS")
 
 

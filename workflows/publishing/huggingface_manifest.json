@@ -1,152 +1,53 @@
 {
-  "schema_version": 2,
-  "github_repository_contents": "source, documentation, launchers, manifests, and evaluation evidence; no large model or dataset payloads",
-  "huggingface_owner": "Mark-ZJTang",
+  "schema_version": 3,
   "artifacts": [
     {
       "id": "alam_pretrain",
       "repo_type": "model",
       "repo_id": "Mark-ZJTang/alam_pretrain",
-      "repo_status": "created",
-      "card": "workflows/publishing/huggingface_cards/alam_pretrain.md",
-      "source_machine_paths": [
-        "/mnt/workspace/tangzuojin.tzj/UniWorldModel-256x4-skipframe10_high_speed_fp32/logs/ctl_v3_lam_tokenizer_trained_on_calvin/ctl_v3_lam_calvin_0407_64gpu_batch_32_train_fp32_mix_11_larger_dataset/saved_epoch_19_step_58216",
-        "/mnt/workspace/tangzuojin.tzj/UniWorldModel-256x4-skipframe10_high_speed_fp32/logs/ctl_v3_lam_tokenizer_trained_on_calvin/ctl_v3_lam_calvin_0407_64gpu_batch_32_train_fp32_mix_11_larger_dataset_continue_from_epoch_24_step_73536/saved_epoch_16_step_49024"
-      ],
-      "upload_sources": [
-        {"path": "evaluation/checkpoints/alam/metaworld_epoch19_step58216", "path_in_repo": "metaworld_epoch19_step58216"},
-        {"path": "evaluation/checkpoints/alam/libero_epoch16_step49024", "path_in_repo": "libero_epoch16_step49024"}
-      ],
-      "download_path": "evaluation/checkpoints/alam",
-      "verification": {
-        "manifest": "evaluation/WEIGHTS_MANIFEST.sha256",
-        "files": 4,
-        "bytes": 1723478726,
-        "source_byte_comparison": "passed"
-      }
+      "download_path": "evaluation/checkpoints/alam"
     },
     {
       "id": "alam_plus_pi_metaworld_mt50",
       "repo_type": "model",
       "repo_id": "Mark-ZJTang/alam_plus_pi_metaworld_mt50",
-      "repo_status": "created",
-      "card": "workflows/publishing/huggingface_cards/alam_plus_pi_metaworld_mt50.md",
-      "source_machine_paths": [
-        "/mnt/workspace/tangzuojin.tzj/physics_va_flow_checkpoints/phy_metaworld_full_finetune/phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216/30000"
-      ],
-      "upload_sources": [
-        {"path": "evaluation/checkpoints/metaworld/phy_metaworld_full_finetune/phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216/30000", "path_in_repo": "."}
-      ],
       "download_path": "evaluation/checkpoints/metaworld/phy_metaworld_full_finetune/phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216/30000",
-      "alias_path": "evaluation/checkpoints/metaworld/alam_plus_pi_metaworld_mt50_step30000",
-      "verification": {
-        "manifest": "evaluation/WEIGHTS_MANIFEST.sha256",
-        "files": 19,
-        "bytes": 12075867227,
-        "source_byte_comparison": "passed"
-      }
+      "alias_path": "evaluation/checkpoints/metaworld/alam_plus_pi_metaworld_mt50_step30000"
     },
     {
       "id": "alam_plus_pi_libero",
       "repo_type": "model",
       "repo_id": "Mark-ZJTang/alam_plus_pi_libero",
-      "repo_status": "created",
-      "card": "workflows/publishing/huggingface_cards/alam_plus_pi_libero.md",
-      "source_machine_paths": [
-        "/mnt/workspace/tangzuojin.tzj/physics_va_flow_checkpoints/phy_libero_full_finetune/phylam_gpu8_ah21_l1_loss_steps30001_0418_phy2_mix_11_larger_dataset_32_train_fp32_mix_11_larger_dataset_continue_from_epoch_24_step_73536_add_saved_epoch_16_step_49024/30000"
-      ],
-      "upload_sources": [
-        {"path": "evaluation/checkpoints/libero/phy_libero_full_finetune/phylam_gpu8_ah21_l1_loss_steps30001_0418_phy2_mix_11_larger_dataset_32_train_fp32_mix_11_larger_dataset_continue_from_epoch_24_step_73536_add_saved_epoch_16_step_49024/30000", "path_in_repo": "."}
-      ],
       "download_path": "evaluation/checkpoints/libero/phy_libero_full_finetune/phylam_gpu8_ah21_l1_loss_steps30001_0418_phy2_mix_11_larger_dataset_32_train_fp32_mix_11_larger_dataset_continue_from_epoch_24_step_73536_add_saved_epoch_16_step_49024/30000",
-      "alias_path": "evaluation/checkpoints/libero/alam_plus_pi_libero_step30000",
-      "verification": {
-        "manifest": "evaluation/WEIGHTS_MANIFEST.sha256",
-        "files": 23,
-        "bytes": 12076381073,
-        "source_byte_comparison": "passed"
-      }
+      "alias_path": "evaluation/checkpoints/libero/alam_plus_pi_libero_step30000"
     },
     {
       "id": "calvin_task_abc_d",
       "repo_type": "dataset",
       "repo_id": "Mark-ZJTang/CALVIN_task_ABC_D",
-      "repo_status": "created",
-      "card": "workflows/publishing/huggingface_cards/CALVIN_task_ABC_D.md",
-      "source_machine_paths": ["/mnt/workspace/tangzuojin.tzj/task_ABC_D"],
-      "upload_sources": [{"path": "hf_staging/CALVIN_task_ABC_D", "path_in_repo": ".", "upload_method": "folder"}],
       "download_path": "data/alam/calvin",
       "download_staging_path": ".runtime/hf_downloads/CALVIN_task_ABC_D",
-      "archive_format": "tar_shards_v1",
-      "archive_source": {
-        "root": "/mnt/workspace/tangzuojin.tzj/task_ABC_D",
-        "splits": ["training", "validation"],
-        "shard_size_bytes": 10737418240
-      },
-      "statistics": {
-        "training_npz_entries": 1795045,
-        "validation_npz_entries": 99022,
-        "separate_test_split": false
-      },
-      "redistribution_review_required": true
+      "archive_format": "tar_shards_v1"
     },
     {
       "id": "oxe_mix10_datasets",
       "repo_type": "dataset",
       "repo_id": "Mark-ZJTang/Oxe_mix10_datasets",
-      "repo_status": "created",
-      "card": "workflows/publishing/huggingface_cards/Oxe_mix10_datasets.md",
-      "source_machine_paths": ["/mnt/workspace/tangzuojin.tzj/video_datasets"],
-      "upload_sources": [{"path": "hf_staging/Oxe_mix10_datasets", "path_in_repo": ".", "upload_method": "folder"}],
       "download_path": "data/alam/oxe_videos",
       "download_staging_path": ".runtime/hf_downloads/Oxe_mix10_datasets",
-      "archive_format": "tar_shards_v1",
-      "archive_source": {
-        "root": "/mnt/workspace/tangzuojin.tzj/video_datasets",
-        "dataset_display_paths": [
-          "fractal20220817_data/image",
-          "bridge/image",
-          "taco_play/rgb_static",
-          "jaco_play/image",
-          "berkeley_cable_routing/image",
-          "roboturk/front_rgb",
-          "nyu_door_opening_surprising_effectiveness/image",
-          "viola/agentview_rgb",
-          "berkeley_autolab_ur5/image",
-          "toto/image"
-        ],
-        "shard_size_bytes": 10737418240
-      },
-      "statistics": {
-        "active_dataset_directories": 10,
-        "loader_validation_rule": "last 5 percent of train when val is absent",
-        "metadata_test_split_used_by_active_loader": false
-      },
-      "redistribution_review_required": true
+      "archive_format": "tar_shards_v1"
     },
     {
       "id": "metaworld_mt50_lerobot",
       "repo_type": "dataset",
       "repo_id": "Mark-ZJTang/metaworld_mt50",
-      "repo_status": "created",
-      "card": "workflows/publishing/huggingface_cards/metaworld_mt50_lerobot.md",
-      "source_machine_paths": ["/mnt/workspace/tangzuojin.tzj/metaworld_mt50"],
-      "upload_sources": [{"path": "/mnt/workspace/tangzuojin.tzj/metaworld_mt50", "path_in_repo": "."}],
-      "download_path": "data/lerobot/metaworld_mt50",
-      "statistics": {"episodes": 2500, "frames": 204806, "task_ids": 49, "splits": ["train"]},
-      "redistribution_review_required": true
+      "download_path": "data/lerobot/metaworld_mt50"
     },
     {
       "id": "libero_real_lerobot",
       "repo_type": "dataset",
       "repo_id": "Mark-ZJTang/libero_real",
-      "repo_status": "created",
-      "card": "workflows/publishing/huggingface_cards/libero_real_lerobot.md",
-      "source_machine_paths": ["/mnt/workspace/tangzuojin.tzj/libero_real"],
-      "upload_sources": [{"path": "/mnt/workspace/tangzuojin.tzj/libero_real", "path_in_repo": "."}],
-      "download_path": "data/lerobot/libero_real",
-      "statistics": {"episodes": 1693, "frames": 273465, "task_ids": 40, "splits": ["train"]},
-      "redistribution_review_required": true
+      "download_path": "data/lerobot/libero_real"
     }
   ]
 }

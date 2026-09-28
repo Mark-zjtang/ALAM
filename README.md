@@ -15,29 +15,37 @@ ALAM learns structured latent actions from video and uses them to improve vision
 
 ## 📰 News
 
-- **September 25, 2026:** ALAM was accepted at NeurIPS 2026.
+- 🎉 **September 25, 2026:** ALAM was accepted at NeurIPS 2026!
 
 ## 🛠️ Environment setup
 
-From the repository root:
+Run commands from the repository root. Create `.env` once, then set the dataset paths needed for your stage:
 
 ```bash
-cp .env.example .env
-bash workflows/install/install_environments.sh --components all
+cp -n .env.example .env
 ```
 
-Edit `.env` for your local paths. To install only one stage, see the [pretraining](workflows/alam_pretraining/README.md), [post-training](workflows/pi0_post_training/README.md), [MetaWorld](workflows/metaworld_evaluation/README.md), or [LIBERO](workflows/libero_evaluation/README.md) guide.
+A **local path** is a directory on your machine, not a web link. Relative paths in `.env` start at this repository's root: `HF_LEROBOT_HOME=data/lerobot` means `<repository>/data/lerobot`. Keep credentials out of `.env`.
+
+Install only the environments you need:
+
+| Stage | Install command | Environments created |
+| --- | --- | --- |
+| ALAM pretraining | `bash workflows/alam_pretraining/install.sh` | `.venvs/alam` |
+| ALAM + π0 post-training | `bash workflows/pi0_post_training/install.sh` | `.venvs/pi0` |
+| MetaWorld evaluation | `bash workflows/metaworld_evaluation/install.sh` | `.venvs/pi0`, `.venvs/metaworld` |
+| LIBERO evaluation | `bash workflows/libero_evaluation/install.sh` | `.venvs/pi0`, `.venvs/libero` |
 
 ## 📦 Datasets and model weights
 
-Training datasets are not bundled. Download them from their original projects; training requires the converted layouts in `.env.example`.
+Training datasets are not bundled. Download the converted MetaWorld and LIBERO datasets from Hugging Face; obtain CALVIN and Open X-Embodiment from their projects. Set their local directories in `.env`.
 
-| Dataset | Original source |
+| Dataset | Download |
 | --- | --- |
 | CALVIN ABC→D | [CALVIN](https://github.com/mees/calvin/blob/main/dataset/README.md) |
 | Open X-Embodiment | [Open X-Embodiment](https://github.com/google-deepmind/open_x_embodiment) |
-| MetaWorld | [MetaWorld](https://github.com/Farama-Foundation/Metaworld) |
-| LIBERO | [LIBERO](https://libero-project.github.io/datasets) |
+| MetaWorld | [🤗 Mark-ZJTang/metaworld_mt50](https://huggingface.co/datasets/Mark-ZJTang/metaworld_mt50) |
+| LIBERO | [🤗 Mark-ZJTang/libero_real](https://huggingface.co/datasets/Mark-ZJTang/libero_real) |
 
 | Released weights | Hugging Face |
 | --- | --- |
@@ -49,12 +57,12 @@ Training datasets are not bundled. Download them from their original projects; t
 bash workflows/publishing/download_release.sh --models-only
 ```
 
-Weights are placed under `evaluation/checkpoints/`; exact paths and hashes are in the [model manifest](workflows/publishing/huggingface_manifest.json). Evaluation does not need the training datasets.
+Weights are placed under `evaluation/checkpoints/`; download paths are in the [manifest](workflows/publishing/huggingface_manifest.json) and hashes in the [weights manifest](evaluation/WEIGHTS_MANIFEST.sha256). Evaluation does not need the training datasets.
 
 ## 🏋️ Training
 
 ```bash
-# ALAM tokenizer pretraining
+# ALAM tokenizer pretraining (128 H20 GPUs for the paper-scale run)
 bash workflows/alam_pretraining/pretrain.sh
 
 # ALAM + π0 post-training (8 GPUs)
@@ -62,19 +70,14 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 bash workflows/pi0_post_training/finetune_m
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 bash workflows/pi0_post_training/finetune_libero.sh my_libero_run
 ```
 
-See the [pretraining](workflows/alam_pretraining/README.md) and [post-training](workflows/pi0_post_training/README.md) guides for required data paths and options.
+See the [pretraining](workflows/alam_pretraining/README.md) and [post-training](workflows/pi0_post_training/README.md) guides for data layout and multi-node settings.
 
 ## 🎯 Evaluation
 
-| Benchmark | Policy | Command |
-| --- | --- | --- |
-| MetaWorld MT50 | MetaWorld π0 | `bash workflows/metaworld_evaluation/evaluate_mt50.sh --gpu 0` |
-| LIBERO Spatial | LIBERO π0 | `bash workflows/libero_evaluation/evaluate_libero.sh spatial --gpu 0` |
-| LIBERO Object | LIBERO π0 | `bash workflows/libero_evaluation/evaluate_libero.sh object --gpu 0` |
-| LIBERO Goal | LIBERO π0 | `bash workflows/libero_evaluation/evaluate_libero.sh goal --gpu 0` |
-| LIBERO Long | LIBERO π0 | `bash workflows/libero_evaluation/evaluate_libero.sh long --gpu 0` |
+- [MetaWorld MT50: command, protocol, and paper results](workflows/metaworld_evaluation/README.md)
+- [LIBERO: four suite commands, protocol, and paper results](workflows/libero_evaluation/README.md)
 
-MetaWorld runs 50 tasks × 10 episodes; each LIBERO suite runs 10 tasks × 50 trials. The [MetaWorld](workflows/metaworld_evaluation/README.md) and [LIBERO](workflows/libero_evaluation/README.md) guides describe the portable commands. [Selected completed local results](workflows/best_observed_evaluation/README.md) are historical observations, not guaranteed scores for a new run.
+For model downloads and the maintainer's GitHub code-push command, see [Downloads and code publishing](workflows/publishing/README.md).
 
 ALAM-authored code is available under [MIT or Apache-2.0](LICENSE), at your option. Bundled third-party material retains its own license.
 

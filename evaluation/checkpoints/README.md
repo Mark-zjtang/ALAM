@@ -18,5 +18,5 @@ evaluation/checkpoints/
     └── params/...
 ```
 
-Run `python workflows/publishing/download_huggingface.py` after the three model
-repositories recorded in `workflows/publishing/huggingface_manifest.json` have been uploaded.
+From the repository root, run `bash workflows/publishing/download_release.sh --models-only`
+to download the three model repositories in `workflows/publishing/huggingface_manifest.json`.

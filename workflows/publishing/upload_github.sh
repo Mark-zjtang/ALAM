@@ -34,8 +34,9 @@ git lfs version >/dev/null
 
 # Keep transport workarounds local to this publisher. Git protocol v1 also
 # avoids a truncated v2 ref advertisement on unreliable HTTP/2 connections.
+# Disable credential helpers for this command so an entered token is not saved.
 git_remote() {
-  git -c http.version=HTTP/1.1 -c protocol.version=1 "$@"
+  git -c http.version=HTTP/1.1 -c protocol.version=1 -c credential.helper= "$@"
 }
 
 remote_main_sha() {
@@ -75,9 +76,10 @@ fi
   exit 2
 }
 
-# Bypass stale IDE askpass sockets; Git may use a working credential helper or
-# prompt in the terminal. At the password prompt, enter a GitHub access token.
+# Bypass stale IDE askpass sockets and prompt in the terminal. At the password
+# prompt, enter a GitHub access token; the command disables credential helpers.
 unset GIT_ASKPASS SSH_ASKPASS VSCODE_GIT_ASKPASS_NODE VSCODE_GIT_ASKPASS_MAIN VSCODE_GIT_IPC_HANDLE
+unset GIT_TRACE GIT_TRACE_CURL GIT_CURL_VERBOSE GIT_TRACE_PACKET GIT_TRACE2 GIT_TRACE2_EVENT GIT_TRACE2_PERF
 export GIT_TERMINAL_PROMPT=1
 echo 'Pushing ALAM code and Git LFS assets. If prompted, use your GitHub username and access token.'
 # These release assets are not managed with LFS file locking. Skip only the

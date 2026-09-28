@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Download published ALAM models or datasets into the documented layout."""
+"""Download ALAM models or datasets into the documented layout."""
 
 from __future__ import annotations
 
@@ -195,7 +195,7 @@ def extract_archive_dataset(staging: Path, target: Path, repo_id: str) -> None:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--org", help="Override the owner recorded in the publication manifest")
+    parser.add_argument("--org", help="Override the owner recorded in the download manifest")
     parser.add_argument("--artifact", action="append", default=[], help="Artifact ID; defaults to all three model repos")
     return parser.parse_args()
 

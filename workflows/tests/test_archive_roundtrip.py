@@ -16,7 +16,6 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT))
 
 from workflows.publishing.download_huggingface import ensure_download_directory, extract_archive_dataset
-from workflows.publishing.prepare_dataset_archives import build_shard
 
 
 def main() -> None:
@@ -99,38 +98,7 @@ def main() -> None:
         else:
             raise AssertionError("Downloader followed a symlink into an external root")
 
-        # Simulate interruption after the atomic tar rename but before the
-        # build-state JSON is saved.  The existing tar must be validated and
-        # reused rather than rebuilt or rejected.
-        recovery_staging = root / "recovery-staging"
-        recovery_state = recovery_staging / ".build"
-        recovery_staging.mkdir()
-        recovery_state.mkdir()
-        source = root / "source.bin"
-        source.write_bytes(b"recovery-fixture")
-        source_stat = source.stat()
-        entries = [(source, "training/source.bin", source_stat.st_size, source_stat.st_mtime_ns)]
-        first_state = build_shard(recovery_staging, recovery_state, 0, entries)
-        state_path = recovery_state / "data-00000.tar.json"
-        state_path.unlink()
-        recovered_state = build_shard(recovery_staging, recovery_state, 0, entries)
-        if recovered_state != first_state:
-            raise AssertionError("Recovered archive build state changed")
-        state_path.unlink()
-        source.write_bytes(b"tampered-fixture")
-        source_stat = source.stat()
-        tampered_entries = [
-            (source, "training/source.bin", source_stat.st_size, source_stat.st_mtime_ns)
-        ]
-        try:
-            build_shard(recovery_staging, recovery_state, 0, tampered_entries)
-        except RuntimeError as error:
-            if "payload differs from source" not in str(error):
-                raise
-        else:
-            raise AssertionError("Recovery trusted a tar whose payload differs from its source")
-
-    print("Dataset archive verification and atomic restore: PASS")
+    print("Dataset archive download verification and atomic restore: PASS")
 
 
 if __name__ == "__main__":
