@@ -66,7 +66,7 @@ if [[ ${1:-} == --dry-run ]]; then
   printf 'Ready to publish %s to https://github.com/Mark-zjtang/ALAM\n' "$local_sha"
   exit 0
 fi
-if [[ -n $remote_sha ]]; then
+if [[ $remote_sha == "$local_sha" ]]; then
   echo 'This release is already on GitHub.'
   exit 0
 fi
