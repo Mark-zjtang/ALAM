@@ -432,6 +432,8 @@ Checkpoint provenance caveat: Object, Goal, and Long evidence supports the packa
 ## Code and model publication
 
 Code: [Mark-zjtang/ALAM](https://github.com/Mark-zjtang/ALAM).
+To publish this code release from a terminal, run
+`bash workflows/publishing/upload_github.sh`; use `--dry-run` to check first.
 Model weights are published in three Hugging Face repositories:
 
 | Artifact | Hugging Face |
