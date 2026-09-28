@@ -16,7 +16,7 @@ ALAM learns structured latent actions from video and uses them to improve vision
 
 ## 📰 News
 
-- 🎉 **September 25, 2026:** We're thrilled to share that **ALAM has been accepted at NeurIPS 2026!** 🥳 See you at NeurIPS!
+- 🎉🎉🎉 **September 25, 2026. **Ours ALAM has been accepted at NeurIPS 2026** 🥳🥳🥳
 
 ## 🛠️ Environment setup
 
