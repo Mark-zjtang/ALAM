@@ -52,4 +52,4 @@ bash workflows/alam_pretraining/evaluate_validation.sh --gpu 0 --samples 10
 
 Use these workflows rather than invoking the preserved `train_lam.py` directly.
 
-See [Latent-action evaluation](LATENT_ACTION_EVALUATION.md) for custom-checkpoint commands, additivity and reversibility errors, and reconstruction metrics.
+See [Latent-action evaluation](LATENT_ACTION_EVALUATION.md) for a brief overview of additivity, reversibility, and reconstruction metrics.
