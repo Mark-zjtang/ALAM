@@ -11,13 +11,15 @@ settings. These launchers still depend on frozen historical sibling assets and
 are not a self-contained public reproduction package; see their README for the
 score, protocol, and publication boundary.
 
-Code is intended for GitHub. The three created model repositories, two created pretraining-dataset repositories, and two named downstream-dataset repositories that are created by their dedicated execute workflow are mapped in [`workflows/publishing/huggingface_manifest.json`](workflows/publishing/huggingface_manifest.json). Checkpoints and data are ignored by Git.
+Code repository: [Mark-zjtang/ALAM](https://github.com/Mark-zjtang/ALAM).
+This release publishes three model repositories on Hugging Face, but does not
+publish or mirror training datasets. Download datasets from the original
+projects listed below. Checkpoints and data are ignored by Git.
 
 ALAM-authored code is dual-licensed under MIT or Apache-2.0 at the user's
 option; see [LICENSE](LICENSE). Bundled third-party material retains its own
 license. Redistribution rights for model and dataset artifacts must be
-confirmed separately. Dataset uploads are fail-closed until
-`--acknowledge-rights` is explicitly supplied.
+confirmed separately. The model-only upload script never transfers datasets.
 
 ## What is included
 
@@ -53,7 +55,10 @@ Training and evaluation are separated as follows:
 
 `train_lam.py` is not a second public launcher: its `main(cfg)` contains the byte-preserved dataset/dataloader/trainer implementation and is called by `workflows/alam_pretraining/train.py`. Its historical direct-CLI block points to a removed legacy config and must not be invoked directly. Unused imports and comments are retained deliberately because editing them would violate source identity.
 
-The root `scripts/data_preprocessing/` files are likewise byte-preserved provenance snapshots, not public launchers; some retain historical machine defaults. Public users can restore the published OXE repository with `workflows/publishing/download_huggingface.py`. CALVIN restoration requires its archive to be published first. Configure paths through `.env` or the documented CLI flags.
+The root `scripts/data_preprocessing/` files are byte-preserved provenance
+snapshots, not public launchers; some retain historical machine defaults.
+Download datasets from their original projects and configure the local paths
+through `.env` or the documented CLI flags.
 
 ### One-command entry points
 
@@ -85,10 +90,8 @@ Install all isolated environments:
 bash workflows/install/install_environments.sh --components all
 ```
 
-The three model repositories and the OXE, MetaWorld, and LIBERO dataset
-repositories are available on Hugging Face. The CALVIN archive is not uploaded
-yet. Use `--models-only` for inference assets; a full data restore requires the
-CALVIN archive to be published first:
+Download the three model repositories. Training datasets are obtained from
+their original projects, not from this release:
 
 ```bash
 bash workflows/publishing/download_release.sh --models-only
@@ -108,7 +111,8 @@ preserved encoder contains an internal `.cuda()` call, so real encoder execution
 is deliberately tested by `test_all.sh gpu` on CUDA; the core model file is not
 edited to conceal that historical device assumption.
 
-The complete install, download, and E2E test is one command:
+The install, model download, and E2E test can be started with one command
+after the required datasets are prepared separately:
 
 ```bash
 bash workflows/install/setup_and_test.sh --test e2e --gpu 0
@@ -262,49 +266,27 @@ The MetaWorld policy package has 19 files / 12,075,867,227 bytes; the LIBERO pac
 
 The two π0 releases contain inference `params`, normalization `assets`, and `_CHECKPOINT_METADATA`; optimizer `train_state` is intentionally excluded. Their retained files were byte-compared to the original checkpoints.
 
-## Dataset mapping
+## Dataset sources (not mirrored)
 
-| Use | Original read-only root | Public local root | Hugging Face target |
-| --- | --- | --- | --- |
-| ALAM CALVIN NPZ | `/mnt/workspace/tangzuojin.tzj/task_ABC_D` | `data/alam/calvin` | `Mark-ZJTang/CALVIN_task_ABC_D` |
-| ALAM OXE videos | `/mnt/workspace/tangzuojin.tzj/video_datasets` | `data/alam/oxe_videos` | `Mark-ZJTang/Oxe_mix10_datasets` |
-| π0 MetaWorld train data | `/mnt/workspace/tangzuojin.tzj/metaworld_mt50` | `data/lerobot/metaworld_mt50` | `Mark-ZJTang/metaworld_mt50` |
-| π0 LIBERO train data | `/mnt/workspace/tangzuojin.tzj/libero_real` | `data/lerobot/libero_real` | `Mark-ZJTang/libero_real` |
+Training datasets are not bundled with this code and are not uploaded by the
+model-publishing script. Obtain them from the original projects and follow
+their license and download instructions:
 
-Important split semantics:
+| Input | Original project | Expected local layout |
+| --- | --- | --- |
+| CALVIN ABC→D | [CALVIN dataset](https://github.com/mees/calvin/blob/main/dataset/README.md) | `data/alam/calvin` after preprocessing |
+| Open X-Embodiment mixture | [Google DeepMind Open X-Embodiment](https://github.com/google-deepmind/open_x_embodiment) | `data/alam/oxe_videos` after conversion |
+| MetaWorld MT50 | [Farama MetaWorld](https://github.com/Farama-Foundation/Metaworld) | `data/lerobot/metaworld_mt50` for derived training trajectories |
+| LIBERO | [LIBERO datasets](https://libero-project.github.io/datasets) | `data/lerobot/libero_real` after conversion |
 
-- CALVIN has `training` (1,795,045 metadata entries) and `validation` (99,022), but no separate test split.
-- The ten active OXE metadata files often contain `train` and `test`; the preserved ALAM loader recognizes `val`, not `test`, and therefore uses the last 5% of `train` as validation when `val` is absent. The metadata `test` entries are not consumed by the active training path.
-- `metaworld_mt50` is LeRobot v2 with 2,500 episodes, 204,806 frames, 49 task IDs, train only. The simulator evaluator still evaluates all 50 MT50 tasks.
-- `libero_real` is LeRobot v2 with 1,693 episodes, 273,465 frames, 40 task IDs, train only.
-- Evaluation rollouts do not need either fine-tuning dataset. MetaWorld tasks ship with the package; LIBERO uses the bundled BDDL/init/assets.
+The links point to upstream sources, not byte-identical copies of the
+preprocessed training data. In particular, the MetaWorld project supplies the
+benchmark environments, not this release's derived LeRobot trajectories.
+To reproduce training, convert the upstream data into the layouts expected by
+the loaders. Policy evaluation does not require the training datasets.
 
-The OXE mixture is exactly these ten loader roots beneath `data/alam/oxe_videos`: `fractal20220817_data/image`, `bridge/image`, `taco_play/rgb_static`, `jaco_play/image`, `berkeley_cable_routing/image`, `roboturk/front_rgb`, `nyu_door_opening_surprising_effectiveness/image`, `viola/agentview_rgb`, `berkeley_autolab_ur5/image`, and `toto/image`. Do not upload the entire internal `video_datasets` root; the archive builder reads only these metadata-referenced files.
-
-The internal source-tree capacity scan measured 558,181,324,826 bytes for `task_ABC_D` and 46,866,518,831 bytes across the ten selected OXE dataset roots. These are source-directory apparent sizes, not final tar sizes; allow additional staging space. The uploader determines ordering from the actual staged bytes, which is expected to be CALVIN, OXE, LIBERO policy, MetaWorld policy, then the two-tokenizer ALAM repository.
-
-The two pretraining repositories store deterministic uncompressed tar shards of approximately 10 GiB rather than flattening roughly 1.9 million CALVIN files and more than 100,000 OXE videos into Hub directories. The downloader verifies every shard and atomically reconstructs the loader-compatible paths without changing samples, filenames, or split semantics:
-
-```bash
-.venvs/publish/bin/python workflows/publishing/download_huggingface.py \
-  --artifact calvin_task_abc_d \
-  --artifact oxe_mix10_datasets
-
-# Verify metadata counts and representative loader-visible files.
-.venvs/alam/bin/python workflows/alam_pretraining/test_datasets.py
-.venvs/pi0/bin/python workflows/pi0_post_training/tests/test_datasets.py
-```
-
-The downloader refuses to follow a model or dataset destination symlink. On
-this internal machine the relative data roots intentionally point at read-only
-source datasets for testing; a download command must fail rather than resolve
-those links and write into the originals. A clean GitHub checkout has no such
-ignored local links and downloads into ordinary repository-relative folders.
-
-The second command validates both LeRobot v2 roots, all episode/task metadata,
-frame totals, required feature keys, contiguous indices, and representative
-Parquet files. The GPU training smoke subsequently exercises the actual π0 data
-loader rather than relying only on metadata.
+The OXE mixture uses the ten dataset roots listed in
+[`scripts/data_preprocessing/oxe_dataset_configs.py`](scripts/data_preprocessing/oxe_dataset_configs.py).
 
 ## Training
 
@@ -447,108 +429,41 @@ the workaround does not turn a failed or incomplete rollout into a pass.
 
 Checkpoint provenance caveat: Object, Goal, and Long evidence supports the packaged GPU8/epoch16 shared checkpoint. The Spatial client log does not record the server's loaded path, and the historical server comments conflict; Spatial's exact checkpoint attribution remains unproven by the retained log. The release uses the paper's shared-checkpoint configuration and states this uncertainty rather than fabricating evidence.
 
-## GitHub and Hugging Face publication
+## Code and model publication
 
-The code repository is [Mark-zjtang/ALAM](https://github.com/Mark-zjtang/ALAM).
-It excludes datasets, checkpoints, environments, outputs, and caches. Model
-weights are hosted separately on Hugging Face; their paths and hashes are in
-[`workflows/publishing/huggingface_manifest.json`](workflows/publishing/huggingface_manifest.json)
-and [`evaluation/WEIGHTS_MANIFEST.sha256`](evaluation/WEIGHTS_MANIFEST.sha256).
+Code: [Mark-zjtang/ALAM](https://github.com/Mark-zjtang/ALAM).
+Model weights are published in three Hugging Face repositories:
 
-Review the Hugging Face plan without uploading:
+| Artifact | Hugging Face |
+| --- | --- |
+| MetaWorld and LIBERO ALAM tokenizers | [Mark-ZJTang/alam_pretrain](https://huggingface.co/Mark-ZJTang/alam_pretrain) |
+| MetaWorld π0 policy | [Mark-ZJTang/alam_plus_pi_metaworld_mt50](https://huggingface.co/Mark-ZJTang/alam_plus_pi_metaworld_mt50) |
+| LIBERO π0 policy shared by four suites | [Mark-ZJTang/alam_plus_pi_libero](https://huggingface.co/Mark-ZJTang/alam_plus_pi_libero) |
+
+The exact local placement and file hashes are recorded in
+[`huggingface_manifest.json`](workflows/publishing/huggingface_manifest.json)
+and [`WEIGHTS_MANIFEST.sha256`](evaluation/WEIGHTS_MANIFEST.sha256).
+To download only the models:
+
+```bash
+bash workflows/publishing/download_release.sh --models-only
+```
+
+The maintainer can inspect the upload plan, verify existing remote models, or
+upload the three model repositories after confirming redistribution rights:
 
 ```bash
 bash workflows/install/install_environments.sh --components publish
-bash workflows/publishing/upload_created_repositories.sh --acknowledge-rights
+bash workflows/publishing/upload_models.sh --dry-run
+bash workflows/publishing/upload_models.sh --verify-only
+bash workflows/publishing/upload_models.sh --execute --acknowledge-rights
 ```
 
-After checking repository IDs, cards, and redistribution rights:
-
-```bash
-hf auth login
-HF_XET_HIGH_PERFORMANCE=1 \
-  bash workflows/publishing/upload_created_repositories.sh \
-  --execute --acknowledge-rights
-```
-
-If a previous invocation already completed OXE staging but stopped before or
-during network transfer, resume without re-reading its approximately 44 GiB of
-shard payloads:
-
-```bash
-HF_XET_HIGH_PERFORMANCE=1 \
-  bash workflows/publishing/upload_created_repositories.sh \
-  --resume --execute --acknowledge-rights
-```
-
-Resume mode still checks the local audit, weight hashes, every expected OXE
-shard name and byte size, every build receipt, and aggregate layout metadata
-before uploading. It never rebuilds a completed shard. Runtime state is written to
-`.runtime/publishing/upload_created_repositories.status`; `status=PASS` is only
-written after all four bulk-upload repositories pass verification.
-
-Execute mode performs the full local audit, stages and verifies the OXE shards, computes exact bytes, uploads the four bulk repositories from largest to smallest, and verifies each remote file set and content hash before continuing. A token cached by `hf auth login` is sufficient; `HF_TOKEN` remains an optional override. OXE packaging happens before network upload and can take many hours on shared storage. The packer reports members, GiB, throughput, and ETA every approximately 30 seconds; the resumable large-folder uploader reports transfer state every 30 seconds after the terminal prints `Uploading ...`. `CALVIN_task_ABC_D` remains in the manifest for explicit single-artifact publication, but is intentionally excluded from this bulk command because of its size. Use `publish_huggingface.py --artifact ID` for a single artifact.
-
-To inspect local archive progress and throughput from another terminal without
-modifying the active upload:
-
-```bash
-python3 workflows/publishing/monitor_upload.py --interval 5
-```
-
-This reports completed shards, the active shard percentage, and sampled MiB/s.
-After the terminal prints `Uploading ...`, network progress is reported by the
-Hugging Face large-folder uploader itself.
-
-The publication shell is parsed completely before long-running work begins.
-Consequently, an edit to the on-disk workflow during a run cannot corrupt the
-already-running shell parser; maintainers should still freeze release files
-until remote verification completes.
-
-The four destinations included in the bulk-upload command are exactly:
-
-- `Mark-ZJTang/Oxe_mix10_datasets` (dataset)
-- `Mark-ZJTang/alam_pretrain` (model)
-- `Mark-ZJTang/alam_plus_pi_libero` (model)
-- `Mark-ZJTang/alam_plus_pi_metaworld_mt50` (model)
-
-`Mark-ZJTang/CALVIN_task_ABC_D` remains a separately selectable dataset target
-and is not uploaded by `upload_created_repositories.sh`.
-
-The two downstream LeRobot destinations are fixed as
-`Mark-ZJTang/metaworld_mt50` and
-`Mark-ZJTang/libero_real`. They are intentionally excluded from the
-four-repository command above. Their separate largest-first command creates
-either repository if it does not exist, uploads the original read-only roots,
-and verifies each remote file before continuing:
-
-```bash
-HF_XET_HIGH_PERFORMANCE=1 \
-  bash workflows/publishing/upload_downstream_datasets.sh \
-  --execute --acknowledge-rights
-```
-
-This downstream command uses a no-local-cache upload path for the two original LeRobot roots, so it does not write HF resume metadata into either read-only source dataset. CALVIN and OXE are packed into deterministic, uncompressed approximately 10 GiB tar shards to avoid publishing millions of loose files. The downloader verifies every archive hash, rejects unsafe tar paths, and atomically restores the loader-compatible directory.
-
-To build or resume the two dataset staging trees without touching their source directories:
-
-```bash
-.venvs/publish/bin/python workflows/publishing/prepare_dataset_archives.py \
-  --execute --verify-existing
-```
-
-Resume is safe across both interruption windows. A `*.tar.partial` is rebuilt,
-while a tar that was atomically completed but interrupted before its small
-SHA-256 state file was written is first checked against the exact expected
-member sequence and sizes, then hashed and reused. Existing source datasets and
-completed shards are never rewritten by the recovery path.
-
-After a single repository upload, verify its complete remote file set, sizes, and Git/LFS hashes before continuing:
-
-```bash
-.venvs/publish/bin/python workflows/publishing/verify_huggingface.py \
-  --artifact alam_pretrain
-```
+The execute command prompts for a Hugging Face write token without echoing or
+saving it in the repository. The script checks all 46 local weight files before
+upload and verifies the remote files afterward. It never uploads datasets.
+For datasets, use the original-project links in
+[Dataset sources](#dataset-sources-not-mirrored).
 
 ## Integrity and red line
 
@@ -579,11 +494,10 @@ after their corresponding run finishes):
 | Historical evaluation-log recalculation | MetaWorld 434/500; LIBERO 496/498/495/472 out of 500 |
 | ALAM checkpoint loading | strict 458-tensor restore plus encoder execution is required by the test |
 | Dataset relative paths | CALVIN, ten OXE roots, MetaWorld LeRobot, LIBERO LeRobot PASS |
-| Dataset archive/download unit test | PASS on a synthetic fixture; full source-dataset staging remains a maintainer action |
 
 Release gates that are intentionally still open:
 
 1. Confirm redistribution rights and license metadata for all model and dataset artifacts.
-2. Publish the CALVIN archive after its redistribution review, record immutable revisions for all seven repositories, then test a fresh download on a clean machine.
+2. Rebuild the expected training-data layouts from upstream sources and test them on a clean machine; upstream downloads alone are not byte-identical to the historical converted data.
 3. Confirm the LIBERO Spatial checkpoint attribution from a server log or a controlled rerun; the retained client log alone does not prove the loaded server path.
 4. When an A100 is idle, run `workflows/tests/test_all.sh gpu` and `e2e`. Static/CPU success must not be reported as simulator/GPU success.

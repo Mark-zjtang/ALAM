@@ -29,7 +29,7 @@ done
 cd "$REPO_ROOT"
 bash workflows/install/install_environments.sh --components "$COMPONENTS"
 if [[ "$DOWNLOAD_MODE" -eq 1 ]]; then
-  DOWNLOAD_CMD=("$ENV_ROOT/publish/bin/python" workflows/publishing/download_huggingface.py)
+  DOWNLOAD_CMD=(bash workflows/publishing/download_release.sh --models-only)
   [[ -z "$HF_ORG" ]] || DOWNLOAD_CMD+=(--org "$HF_ORG")
   "${DOWNLOAD_CMD[@]}"
 fi

@@ -8,14 +8,15 @@ load_project_env "$REPO_ROOT/.env"
 ENV_ROOT="${ALAM_ENV_ROOT:-$REPO_ROOT/.venvs}"
 [[ "$ENV_ROOT" == /* ]] || ENV_ROOT="$REPO_ROOT/$ENV_ROOT"
 PUBLISH_PYTHON="$ENV_ROOT/publish/bin/python"
-MODE=all
+MODE=models
 ORG_ARGS=()
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --models-only) MODE=models; shift ;;
+    --all) MODE=all; shift ;;
     --org) ORG_ARGS=(--org "$2"); shift 2 ;;
     -h|--help)
-      echo "Usage: $0 [--models-only] [--org OWNER]"
+      echo "Usage: $0 [--models-only|--all] [--org OWNER]"
       exit 0
       ;;
     *) echo "Unknown argument: $1" >&2; exit 2 ;;
