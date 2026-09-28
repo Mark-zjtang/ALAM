@@ -80,7 +80,10 @@ fi
 unset GIT_ASKPASS SSH_ASKPASS VSCODE_GIT_ASKPASS_NODE VSCODE_GIT_ASKPASS_MAIN VSCODE_GIT_IPC_HANDLE
 export GIT_TERMINAL_PROMPT=1
 echo 'Pushing ALAM code and Git LFS assets. If prompted, use your GitHub username and access token.'
-git_remote push -u origin main
+# These release assets are not managed with LFS file locking. Skip only the
+# lock-verification API that can time out; the LFS objects still upload.
+git_remote -c 'lfs.https://github.com/Mark-zjtang/ALAM.git/info/lfs.locksverify=false' \
+  push -u origin main
 
 published_sha=$(remote_main_sha)
 [[ $published_sha == "$local_sha" ]] || {
