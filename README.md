@@ -3,6 +3,14 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2605.10819-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2605.10819)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Hugging_Face-ffd21e)](https://huggingface.co/Mark-ZJTang)
 
+![ALAM latent-action learning and algebraic consistency](figures/alam_framework.png)
+
+*ALAM latent-action learning.*
+
+![ALAM and VLA policy framework](figures/overall_framework.png)
+
+*ALAM + π0 framework.*
+
 ALAM learns structured latent actions from video and uses them to improve vision-language-action policies. This repository provides ALAM pretraining and ALAM + π0 training and evaluation for MetaWorld MT50 and LIBERO.
 
 ## 📰 News
