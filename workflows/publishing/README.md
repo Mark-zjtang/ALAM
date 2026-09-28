@@ -13,7 +13,7 @@ bash workflows/publishing/download_release.sh --models-only
 | [alam_plus_pi_metaworld_mt50](https://huggingface.co/Mark-ZJTang/alam_plus_pi_metaworld_mt50) | π0 policy post-trained on MetaWorld demonstrations with frozen ALAM |
 | [alam_plus_pi_libero](https://huggingface.co/Mark-ZJTang/alam_plus_pi_libero) | π0 policy post-trained on LIBERO demonstrations with frozen ALAM |
 
-The [download manifest](huggingface_manifest.json) records model paths; file hashes are in the [weights manifest](../../evaluation/WEIGHTS_MANIFEST.sha256). Dataset links are in the [main README](../../README.md). Neither datasets nor model binaries are bundled with GitHub.
+The [download manifest](huggingface_manifest.json) records model paths. Dataset links are in the [main README](../../README.md). Neither datasets nor model binaries are bundled with GitHub.
 
 ## Maintainer: push code to GitHub
 

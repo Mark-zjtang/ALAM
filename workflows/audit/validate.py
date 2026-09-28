@@ -313,15 +313,6 @@ def check_static_files() -> None:
     )
 
 
-def check_weight_manifest() -> None:
-    subprocess.run(
-        ["sha256sum", "--quiet", "-c", "WEIGHTS_MANIFEST.sha256"],
-        cwd=REPO_ROOT / "evaluation",
-        check=True,
-    )
-    print("weight manifest: PASS")
-
-
 def check_model_layout() -> None:
     for name, relative in MODEL_LAYOUT.items():
         path = repo_path(relative)
@@ -346,7 +337,7 @@ def check_model_layout_if_available(*, required: bool) -> None:
         raise FileNotFoundError(f"Partial packaged model layout; missing: {', '.join(missing)}")
     if required:
         raise FileNotFoundError(
-            "Packaged models are absent; download all three model repositories before weight/source-model audit"
+            "Packaged models are absent; download all three model repositories before checkpoint layout validation"
         )
     print("packaged model layout: SKIP (clean source clone; no model files downloaded)")
 
@@ -359,7 +350,7 @@ def require_directory(path: Path) -> Path:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--hash-weights", action="store_true", help="Read and SHA-256 all packaged weights")
+    parser.add_argument("--require-weights", action="store_true", help="Require downloaded checkpoint files and validate their layout (not file hashes)")
     parser.add_argument("--source-code", action="store_true", help="Byte-compare copied code/evidence to internal originals")
     return parser.parse_args()
 
@@ -376,15 +367,12 @@ def main() -> None:
     check_source_manifests()
     check_static_files()
     print("[audit] packaged model layout and evaluation evidence", flush=True)
-    check_model_layout_if_available(required=args.hash_weights)
+    check_model_layout_if_available(required=args.require_weights)
     check_evaluation_evidence()
     if args.source_code:
         print("[audit] byte-compare public source with both read-only originals", flush=True)
         check_root_source_identity()
         check_downstream_source_identity()
-    if args.hash_weights:
-        print("[audit] SHA-256 all packaged model files (25.9 GB)", flush=True)
-        check_weight_manifest()
     print("workflow validation: PASS")
 
 

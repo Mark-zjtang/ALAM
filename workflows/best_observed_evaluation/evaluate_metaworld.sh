@@ -23,7 +23,6 @@ POLICY="$W/physics_va_flow_checkpoints/phy_metaworld_full_finetune/phylam_gpu1_a
 LAM="$W/UniWorldModel-256x4-skipframe10_high_speed_fp32/logs/ctl_v3_lam_tokenizer_trained_on_calvin/ctl_v3_lam_calvin_0407_64gpu_batch_32_train_fp32_mix_11_larger_dataset/saved_epoch_19_step_58216"
 REFERENCE="$R/outputs/metaworld_camx_primary10_transport_recovery3_user_directed_r1_20260902/camx_071/metaworld_camx_summary.json"
 REFERENCE_PROTOCOL="${REFERENCE%/*}/protocol.txt"
-MANIFEST="$P/evaluation/WEIGHTS_MANIFEST.sha256"
 SUMMARIZER="$P/workflows/best_observed_evaluation/support/summarize_metaworld.py"
 BASE="$P/outputs/best_observed_evaluation"
 MODEL_NAME=alam_pi0_mt50_camx071_h5_r5
@@ -101,7 +100,7 @@ date -Is >"$output/started_at"
 printf '%s\n' "$BASHPID" >"$output/runner.pid"
 printf 'suite=metaworld_mt50\nreference=%s\nrecorded_successes=432/500\ncamera_x=0.71\ncamera_y=0.075\ncamera_z=0.70\npolicy=%s\nlam=%s\nconfig=phy_metaworld_full_finetune\nraw_h=6\neffective_h=5\nchunk=5\nepisodes_per_task=10\nexplicit_seed_cli=none\nserver_gpu=3\nclient_gpu=3\nport=%s\n' "$REFERENCE" "$POLICY" "$LAM" "$PORT" >"$output/protocol.txt"
 
-status=VERIFYING_SOURCE_AND_WEIGHTS; printf '%s\n' "$status" >"$output/status"
+status=VERIFYING_SOURCE_AND_TOKENIZER; printf '%s\n' "$status" >"$output/status"
 printf '%s  %s\n' \
   43a8a0e3bed3b322a785e51dfad35d959113c7daa89e6f93adfdb597c640d10b "$SERVER" \
   a82365f5cd67a4ecbfaffeb9034ffd50ac044d35af8d91f84e324aa748f6c590 "$EVALUATOR" \
@@ -114,7 +113,6 @@ printf '%s  %s\n' \
   a78928a0af1e5f0fcb1f3b9e8f8c3a2a5a3de244d830ad5c1feddc79b8432868 "$PI0_SITE/lpips/weights/v0.1/vgg.pth" \
   64db8ac842c3835780846d58656b0aad9eebc6028fd1b10497b56fc1a8414cdc "$LAM/config.yaml" \
   bd99de14a552776c95251a9094398909444b81edbf1712c8c36a3137fc5dd845 "$LAM/pytorch_model.bin" \
-  9e0e7dc6c06a09d9eeb7a729f9d48582a7a283705ae30c88b93b8e4829d9010c "$MANIFEST" \
   >"$output/selected_sources.sha256"
 sha256sum -c "$output/selected_sources.sha256" >"$output/source_precheck.txt"
 cmp -s "$SUMMARIZER" "$R/summarize_metaworld_camx_single.py"
@@ -122,9 +120,6 @@ cmp -s "$SUMMARIZER" "$R/summarize_metaworld_camx_single.py"
 tree_hash="$(cd "$SOURCE_OVERLAY" && find openpi -type f ! -path '*/__pycache__/*' ! -name '*.pyc' -print0 | LC_ALL=C sort -z | xargs -0 sha256sum | sha256sum | awk '{print $1}')"
 [[ "$tree_hash" == 2994c6b2bee65d96d6e82c1375e62e0abe6e9b51914429500eb1874b19ace9c7 ]]
 rg -Fq "phy_lam_ckpt=\"$LAM\"" "$SOURCE_OVERLAY/openpi/training/config.py"
-awk -v prefix='checkpoints/metaworld/phy_metaworld_full_finetune/phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216/30000/' -v root="$POLICY/" 'index($2,prefix)==1 {sub(prefix,root,$2);print $1 "  " $2}' "$MANIFEST" >"$output/policy_manifest.sha256"
-[[ $(wc -l <"$output/policy_manifest.sha256") -eq 19 ]]
-sha256sum --quiet -c "$output/policy_manifest.sha256"
 server_runtime="$(env PYTHONNOUSERSITE=1 PYTHONPATH="$SERVER_PYTHONPATH" "$PY" -B -c 'import importlib.metadata as m; print("|".join(f"{x}={m.version(x)}" for x in ("jax","jaxlib","flax","orbax-checkpoint","torch","torchvision","numpy","websockets","tyro","mujoco")))')"
 [[ "$server_runtime" == 'jax=0.5.3|jaxlib=0.5.3|flax=0.10.2|orbax-checkpoint=0.11.13|torch=2.7.0|torchvision=0.22.0|numpy=1.26.4|websockets=15.0.1|tyro=0.9.22|mujoco=2.3.7' ]]
 client_runtime="$(

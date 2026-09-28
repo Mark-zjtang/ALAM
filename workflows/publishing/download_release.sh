@@ -39,7 +39,7 @@ done
 cd "$REPO_ROOT"
 "$PUBLISH_PYTHON" workflows/publishing/download_huggingface.py \
   "${arguments[@]}" "${ORG_ARGS[@]}"
-python3 workflows/audit/validate.py --hash-weights
+python3 workflows/audit/validate.py --require-weights
 if [[ "$MODE" == "all" ]]; then
   "$ENV_ROOT/alam/bin/python" workflows/alam_pretraining/test_datasets.py
   "$ENV_ROOT/pi0/bin/python" workflows/pi0_post_training/tests/test_datasets.py

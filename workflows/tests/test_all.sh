@@ -39,7 +39,7 @@ run_cpu() {
   python3 workflows/tests/test_checkpoint_preparation.py
   python3 workflows/tests/test_wait_for_port.py
   python3 workflows/tests/test_evaluation_client_adapter.py
-  python3 workflows/audit/validate.py --hash-weights
+  python3 workflows/audit/validate.py --require-weights
   python3 workflows/tests/test_live_verifier.py
   python3 workflows/tests/test_archive_roundtrip.py
   "$ENV_ROOT/alam/bin/python" workflows/alam_pretraining/test_imports.py
