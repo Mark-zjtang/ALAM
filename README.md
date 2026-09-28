@@ -41,7 +41,7 @@ We pretrain ALAM to learn latent actions from videos without action labels, usin
 
 | Pretrained weights | Dataset | Paper-scale resources | Download |
 | --- | --- | --- | --- |
-| ALAM latent-action tokenizer | **[OXE](https://github.com/google-deepmind/open_x_embodiment) (10 datasets):** RT-1 (`fractal20220817`), BridgeData-V2, TACO-Play, JaCo-Play, Berkeley Cable Routing, RoboTurk, NYU Door-Opening, VIOLA, Berkeley AutoLab UR5, TOTO.<br>**[CALVIN ABC→D](https://github.com/mees/calvin/blob/main/dataset/README.md)** | 128 × H20 GPUs | [🤗 alam_pretrain](https://huggingface.co/Mark-ZJTang/alam_pretrain) |
+| ALAM latent-action tokenizer | **[OXE](https://github.com/google-deepmind/open_x_embodiment) (10 datasets):** RT-1 (`fractal20220817`), BridgeData-V2, TACO-Play, JaCo-Play, Berkeley Cable Routing, RoboTurk, NYU Door-Opening, VIOLA, Berkeley AutoLab UR5, TOTO.<br>**[CALVIN ABC→D](https://github.com/mees/calvin/blob/main/dataset/README.md)** | 128 × H20 GPUs | [🤗alam_pretrain](https://huggingface.co/Mark-ZJTang/alam_pretrain) |
 
 Both checkpoints in `alam_pretrain` are pretrained on Mix-11; their directory names indicate the downstream policy that uses them. See the [pretraining guide](workflows/alam_pretraining/README.md) for dataset preparation and sampling weights.
 
@@ -68,8 +68,8 @@ Download a policy and its matching ALAM tokenizer to evaluate. Training datasets
 
 | Post-trained weights | Training dataset | Post-training resources | 🤗 Model download |
 | --- | --- | --- | --- |
-| ALAM + π0, MetaWorld | [🤗 MetaWorld demonstrations](https://huggingface.co/datasets/Mark-ZJTang/metaworld_mt50) | 8 × H20 GPUs | [🤗 alam_plus_pi_metaworld_mt50](https://huggingface.co/Mark-ZJTang/alam_plus_pi_metaworld_mt50) |
-| ALAM + π0, LIBERO | [🤗 LIBERO demonstrations](https://huggingface.co/datasets/Mark-ZJTang/libero_real) | 8 × H20 GPUs | [🤗 alam_plus_pi_libero](https://huggingface.co/Mark-ZJTang/alam_plus_pi_libero) |
+| ALAM + π0, MetaWorld | [🤗MetaWorld demonstrations](https://huggingface.co/datasets/Mark-ZJTang/metaworld_mt50) | 8 × H20 GPUs | [🤗 alam_plus_pi_metaworld_mt50](https://huggingface.co/Mark-ZJTang/alam_plus_pi_metaworld_mt50) |
+| ALAM + π0, LIBERO | [🤗LIBERO demonstrations](https://huggingface.co/datasets/Mark-ZJTang/libero_real) | 8 × H20 GPUs | [🤗 alam_plus_pi_libero](https://huggingface.co/Mark-ZJTang/alam_plus_pi_libero) |
 
 GPU counts in both weight tables describe our paper-scale training runs, not evaluation requirements. The following commands download both policies and their ALAM tokenizers to `evaluation/checkpoints/`:
 
