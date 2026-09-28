@@ -57,10 +57,24 @@ remote_main_sha() {
 
 local_sha=$(git rev-parse HEAD)
 remote_sha=$(remote_main_sha)
-if [[ -n $remote_sha && $remote_sha != "$local_sha" ]] &&
-   ! git merge-base --is-ancestor "$remote_sha" "$local_sha"; then
-  echo 'Remote main is not an ancestor of this release; inspect it before publishing. No force push is used.' >&2
-  exit 2
+if [[ -n $remote_sha && $remote_sha != "$local_sha" ]]; then
+  # ls-remote reports a SHA without downloading its commit object. Fetch the
+  # branch before ancestry checks, and use the fetched tip if it moved meanwhile.
+  if ! git_remote fetch --no-tags origin main; then
+    echo 'Could not fetch remote main; no push was attempted. Retry after checking the connection.' >&2
+    exit 1
+  fi
+  remote_sha=$(git rev-parse --verify 'FETCH_HEAD^{commit}')
+  if ! git merge-base --is-ancestor "$remote_sha" "$local_sha"; then
+    if git merge-base --is-ancestor "$local_sha" "$remote_sha"; then
+      echo 'Local main is behind GitHub. Run: git merge --ff-only FETCH_HEAD' >&2
+    else
+      echo 'Local main and GitHub main have different new commits. Review: git log --oneline --left-right HEAD...FETCH_HEAD' >&2
+      echo 'To keep the remote changes and replay your local commits, run: git rebase FETCH_HEAD' >&2
+    fi
+    echo 'Then rerun this script. No push was attempted.' >&2
+    exit 2
+  fi
 fi
 
 if [[ ${1:-} == --dry-run ]]; then

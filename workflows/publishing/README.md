@@ -26,4 +26,6 @@ bash workflows/publishing/upload_github.sh
 
 If Git asks for a username, enter your GitHub username. At the **Password** prompt, enter a GitHub personal access token with repository write access, **not** your account password. The script pushes to `Mark-zjtang/ALAM` without force-pushing.
 
+The script fetches remote `main` before checking commit history. If GitHub has new changes, follow the synchronization command it prints and rerun the script.
+
 Do not put your GitHub token in a command, URL, `.env`, README, or chat. The code-push script does not write it to this repository or a credential helper.
