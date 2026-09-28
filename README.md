@@ -20,45 +20,77 @@ ALAM learns structured latent actions from video and uses them to improve vision
 
 ## 🛠️ Environment setup
 
-Run commands from the repository root. Create `.env` once, then set the dataset paths needed for your stage:
+We use separate environments for ALAM pretraining and π0 post-training; the MetaWorld and LIBERO installers each add their simulator environment alongside the shared π0 policy server.
+
+From the repository root, copy `.env.example` to `.env` and install the stages you need:
 
 ```bash
 cp -n .env.example .env
+
+bash workflows/alam_pretraining/install.sh       # ALAM pretraining
+bash workflows/pi0_post_training/install.sh     # π0 post-training
+bash workflows/metaworld_evaluation/install.sh  # MetaWorld evaluation
+bash workflows/libero_evaluation/install.sh     # LIBERO evaluation
 ```
 
-A **local path** is a directory on your machine, not a web link. Relative paths in `.env` start at this repository's root: `HF_LEROBOT_HOME=data/lerobot` means `<repository>/data/lerobot`. Keep credentials out of `.env`.
-
-Install only the environments you need:
-
-| Stage | Install command | Environments created | Python |
-| --- | --- | --- | --- |
-| ALAM pretraining | `bash workflows/alam_pretraining/install.sh` | `.venvs/alam` | 3.10 |
-| ALAM + π0 post-training | `bash workflows/pi0_post_training/install.sh` | `.venvs/pi0` | 3.11 |
-| MetaWorld evaluation | `bash workflows/metaworld_evaluation/install.sh` | `.venvs/pi0`, `.venvs/metaworld` | 3.11 |
-| LIBERO evaluation | `bash workflows/libero_evaluation/install.sh` | `.venvs/pi0`, `.venvs/libero` | 3.11 / 3.8 |
+Set dataset directories in `.env`; relative paths start at the repository root.
 
 ## 📦 Datasets and model weights
 
-Training datasets are not bundled. Download the converted MetaWorld and LIBERO datasets from Hugging Face; obtain CALVIN and Open X-Embodiment from their projects. Set their local directories in `.env`.
+We pretrain ALAM on **Mix-11: 10 Open X-Embodiment (OXE) datasets + CALVIN**, using video without action labels. We then freeze the pretrained ALAM encoder and post-train π0 on MetaWorld or LIBERO demonstrations.
 
-| Dataset | Download |
-| --- | --- |
-| CALVIN ABC→D | [CALVIN](https://github.com/mees/calvin/blob/main/dataset/README.md) |
-| Open X-Embodiment | [Open X-Embodiment](https://github.com/google-deepmind/open_x_embodiment) |
-| MetaWorld | [🤗 metaworld_mt50](https://huggingface.co/datasets/Mark-ZJTang/metaworld_mt50) |
-| LIBERO | [🤗 libero](https://huggingface.co/datasets/Mark-ZJTang/libero_real) |
+| Training data | Stage | Download |
+| --- | --- | --- |
+| CALVIN ABC→D | ALAM pretraining | [CALVIN](https://github.com/mees/calvin/blob/main/dataset/README.md) |
+| OXE, 10 selected datasets | ALAM pretraining | [Open X-Embodiment](https://github.com/google-deepmind/open_x_embodiment) |
+| MetaWorld demonstrations | π0 post-training | [🤗 metaworld_mt50](https://huggingface.co/datasets/Mark-ZJTang/metaworld_mt50) |
+| LIBERO demonstrations | π0 post-training | [🤗 libero](https://huggingface.co/datasets/Mark-ZJTang/libero_real) |
 
-| Released weights | Hugging Face |
-| --- | --- |
-| MetaWorld and LIBERO ALAM tokenizers | [🤗 alam_pretrain](https://huggingface.co/Mark-ZJTang/alam_pretrain) |
-| MetaWorld π0 policy | [🤗 alam_plus_pi_metaworld_mt50](https://huggingface.co/Mark-ZJTang/alam_plus_pi_metaworld_mt50) |
-| LIBERO π0 policy, shared by four suites | [🤗 alam_plus_pi_libero](https://huggingface.co/Mark-ZJTang/alam_plus_pi_libero) |
+The OXE selection is **RT-1 (fractal20220817), BridgeData-V2, TACO-Play, JaCo-Play, Berkeley Cable Routing, RoboTurk, NYU Door-Opening, VIOLA, Berkeley AutoLab UR5, and TOTO**. Dataset identifiers and sampling weights are listed in the [pretraining guide](workflows/alam_pretraining/README.md). Download datasets separately and prepare the loader-compatible layouts described there.
+
+**Pretrained weights**
+
+| Model | How we train it | Paper-scale resources | Download |
+| --- | --- | --- | --- |
+| ALAM latent-action tokenizer | Video pretraining on Mix-11 (10 OXE sources + CALVIN) | 128 × H20 GPUs | [🤗 alam_pretrain](https://huggingface.co/Mark-ZJTang/alam_pretrain) |
+
+**Post-trained weights**
+
+| Model | How we train it | Paper-scale resources | Download |
+| --- | --- | --- | --- |
+| ALAM + π0, MetaWorld | Initialize from π0 base; freeze the Mix-11 ALAM encoder; train on MetaWorld demonstrations for 30k steps | 8 × H20 GPUs | [🤗 alam_plus_pi_metaworld_mt50](https://huggingface.co/Mark-ZJTang/alam_plus_pi_metaworld_mt50) |
+| ALAM + π0, LIBERO | Initialize from π0 base; freeze the Mix-11 ALAM encoder; train on LIBERO demonstrations for 30k steps; one policy serves all four suites | 8 × H20 GPUs | [🤗 alam_plus_pi_libero](https://huggingface.co/Mark-ZJTang/alam_plus_pi_libero) |
+
+The two checkpoints in `alam_pretrain` come from the video-pretraining pipeline; their directory names identify which downstream policy uses them. GPU counts refer to our [paper experiments](https://arxiv.org/pdf/2605.10819).
 
 ```bash
+bash workflows/install/install_environments.sh --components publish
 bash workflows/publishing/download_release.sh --models-only
 ```
 
 Weights are placed under `evaluation/checkpoints/`; download paths are in the [manifest](workflows/publishing/huggingface_manifest.json) and hashes in the [weights manifest](evaluation/WEIGHTS_MANIFEST.sha256). Evaluation does not need the training datasets.
+
+## 🗂️ Repository layout
+
+```text
+ALAM/
+├── Algebraic_latent_action_model/  # ALAM tokenizer and trainer
+├── configs/lam/                   # Mix-11 pretraining configuration
+├── workflows/
+│   ├── alam_pretraining/          # Video pretraining
+│   ├── pi0_post_training/         # Policy post-training and serving
+│   ├── metaworld_evaluation/      # MetaWorld evaluation
+│   └── libero_evaluation/         # LIBERO evaluation
+├── evaluation/                   # π0 implementation and simulators
+│   └── checkpoints/              # Downloaded weights
+│       ├── alam/                 # Mix-11 pretrained ALAM tokenizers
+│       ├── metaworld/            # Post-trained MetaWorld policy
+│       └── libero/               # Post-trained LIBERO policy
+├── data/                         # User-downloaded training data
+│   ├── alam/{calvin,oxe_videos}/  # Pretraining data
+│   └── lerobot/                  # Downstream demonstrations
+└── outputs/                      # Training checkpoints and evaluation results
+```
 
 ## 🏋️ Training
 
@@ -72,6 +104,8 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 bash workflows/pi0_post_training/finetune_l
 ```
 
 See the [pretraining](workflows/alam_pretraining/README.md) and [post-training](workflows/pi0_post_training/README.md) guides for data layout and multi-node settings.
+
+For a new robot environment or dataset, convert demonstrations to LeRobot format, adapt observation/action mappings, and compute dataset-specific normalization statistics. Follow [Fine-tuning on your own dataset](workflows/pi0_post_training/README.md#fine-tuning-on-your-own-dataset) to register the training configuration and launch a new run.
 
 ## 🎯 Evaluation
 

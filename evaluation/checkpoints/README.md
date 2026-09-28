@@ -3,6 +3,8 @@
 Model binaries are released on Hugging Face and intentionally excluded from the
 GitHub repository.  After downloading, the following relative paths must exist:
 
+`alam/` contains pretrained tokenizers learned from Mix-11 (10 OXE video sources + CALVIN). The `metaworld` and `libero` labels within it identify downstream pairing, not the pretraining data. The separate `metaworld/` and `libero/` directories contain π0 policies initialized from π0 base and post-trained on the corresponding demonstrations with a frozen ALAM encoder.
+
 ```text
 evaluation/checkpoints/
 ├── alam/

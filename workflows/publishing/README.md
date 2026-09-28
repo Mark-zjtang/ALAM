@@ -9,9 +9,9 @@ bash workflows/publishing/download_release.sh --models-only
 
 | Model repository | Contents |
 | --- | --- |
-| [alam_pretrain](https://huggingface.co/Mark-ZJTang/alam_pretrain) | MetaWorld and LIBERO ALAM tokenizers |
-| [alam_plus_pi_metaworld_mt50](https://huggingface.co/Mark-ZJTang/alam_plus_pi_metaworld_mt50) | MetaWorld policy |
-| [alam_plus_pi_libero](https://huggingface.co/Mark-ZJTang/alam_plus_pi_libero) | LIBERO policy |
+| [alam_pretrain](https://huggingface.co/Mark-ZJTang/alam_pretrain) | ALAM tokenizers pretrained on Mix-11: 10 OXE video sources + CALVIN |
+| [alam_plus_pi_metaworld_mt50](https://huggingface.co/Mark-ZJTang/alam_plus_pi_metaworld_mt50) | π0 policy post-trained on MetaWorld demonstrations with frozen ALAM |
+| [alam_plus_pi_libero](https://huggingface.co/Mark-ZJTang/alam_plus_pi_libero) | π0 policy post-trained on LIBERO demonstrations with frozen ALAM |
 
 The [download manifest](huggingface_manifest.json) records model paths; file hashes are in the [weights manifest](../../evaluation/WEIGHTS_MANIFEST.sha256). Dataset links are in the [main README](../../README.md). Neither datasets nor model binaries are bundled with GitHub.
 
