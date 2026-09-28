@@ -1,0 +1,1256 @@
+2026-04-13 11:29:50,555 - __main__ - INFO - Evaluating policy on phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:29:50,555 - root - INFO - Waiting for server at ws://0.0.0.0:7666...
+2026-04-13 11:30:10,037 - __main__ - INFO - Episode 0: success=True, reward=209.6019
+2026-04-13 11:30:10,038 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:30:14,664 - __main__ - INFO - Episode 1: success=True, reward=232.6431
+2026-04-13 11:30:14,664 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:30:18,477 - __main__ - INFO - Episode 2: success=True, reward=226.7057
+2026-04-13 11:30:18,477 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:30:22,076 - __main__ - INFO - Episode 3: success=True, reward=209.8541
+2026-04-13 11:30:22,077 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:30:25,482 - __main__ - INFO - Episode 4: success=True, reward=201.3224
+2026-04-13 11:30:25,483 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:30:28,985 - __main__ - INFO - Episode 5: success=True, reward=261.4881
+2026-04-13 11:30:28,986 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:30:32,439 - __main__ - INFO - Episode 6: success=True, reward=234.4866
+2026-04-13 11:30:32,439 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:30:36,576 - __main__ - INFO - Episode 7: success=True, reward=227.1642
+2026-04-13 11:30:36,576 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:30:40,506 - __main__ - INFO - Episode 8: success=True, reward=217.2445
+2026-04-13 11:30:40,506 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:30:47,490 - __main__ - INFO - Episode 9: success=False, reward=368.4353
+2026-04-13 11:30:47,490 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:30:48,879 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:30:48,879 - __main__ - INFO - Task difficulty: hard
+2026-04-13 11:30:48,879 - __main__ - INFO - assembly-v3 Success rate: 90.00%
+2026-04-13 11:30:48,879 - __main__ - INFO - =====================================================
+
+2026-04-13 11:30:54,537 - __main__ - INFO - Episode 0: success=True, reward=195.2289
+2026-04-13 11:30:54,537 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:30:58,115 - __main__ - INFO - Episode 1: success=True, reward=200.6236
+2026-04-13 11:30:58,115 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:31:01,522 - __main__ - INFO - Episode 2: success=True, reward=188.3207
+2026-04-13 11:31:01,522 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:31:04,792 - __main__ - INFO - Episode 3: success=True, reward=198.7201
+2026-04-13 11:31:04,792 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:31:07,942 - __main__ - INFO - Episode 4: success=True, reward=201.9623
+2026-04-13 11:31:07,943 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:31:11,106 - __main__ - INFO - Episode 5: success=True, reward=213.8238
+2026-04-13 11:31:11,106 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:31:14,681 - __main__ - INFO - Episode 6: success=True, reward=217.1401
+2026-04-13 11:31:14,681 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:31:19,645 - __main__ - INFO - Episode 7: success=True, reward=265.5026
+2026-04-13 11:31:19,645 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:31:24,514 - __main__ - INFO - Episode 8: success=True, reward=219.2778
+2026-04-13 11:31:24,514 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:31:31,088 - __main__ - INFO - Episode 9: success=False, reward=13.2302
+2026-04-13 11:31:31,088 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:31:33,054 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:31:33,054 - __main__ - INFO - Task difficulty: medium
+2026-04-13 11:31:33,054 - __main__ - INFO - basketball-v3 Success rate: 90.00%
+2026-04-13 11:31:33,054 - __main__ - INFO - =====================================================
+
+2026-04-13 11:31:43,791 - __main__ - INFO - Episode 0: success=True, reward=194.3985
+2026-04-13 11:31:43,792 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:31:49,161 - __main__ - INFO - Episode 1: success=True, reward=99.6983
+2026-04-13 11:31:49,161 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:31:53,823 - __main__ - INFO - Episode 2: success=True, reward=33.4452
+2026-04-13 11:31:53,823 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:31:59,257 - __main__ - INFO - Episode 3: success=True, reward=204.0284
+2026-04-13 11:31:59,257 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:32:06,730 - __main__ - INFO - Episode 4: success=False, reward=66.6618
+2026-04-13 11:32:06,730 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:32:13,658 - __main__ - INFO - Episode 5: success=False, reward=37.0420
+2026-04-13 11:32:13,658 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:32:20,743 - __main__ - INFO - Episode 6: success=True, reward=99.2049
+2026-04-13 11:32:20,743 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:32:25,740 - __main__ - INFO - Episode 7: success=True, reward=35.9434
+2026-04-13 11:32:25,741 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:32:32,716 - __main__ - INFO - Episode 8: success=False, reward=25.4684
+2026-04-13 11:32:32,716 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:32:39,361 - __main__ - INFO - Episode 9: success=False, reward=25.0750
+2026-04-13 11:32:39,361 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:32:40,299 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:32:40,299 - __main__ - INFO - Task difficulty: medium
+2026-04-13 11:32:40,300 - __main__ - INFO - bin-picking-v3 Success rate: 60.00%
+2026-04-13 11:32:40,300 - __main__ - INFO - =====================================================
+
+2026-04-13 11:32:46,037 - __main__ - INFO - Episode 0: success=True, reward=288.2660
+2026-04-13 11:32:46,037 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:32:49,921 - __main__ - INFO - Episode 1: success=True, reward=282.1123
+2026-04-13 11:32:49,921 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:32:56,736 - __main__ - INFO - Episode 2: success=False, reward=240.7288
+2026-04-13 11:32:56,737 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:33:03,207 - __main__ - INFO - Episode 3: success=False, reward=729.7039
+2026-04-13 11:33:03,207 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:33:06,554 - __main__ - INFO - Episode 4: success=True, reward=294.0685
+2026-04-13 11:33:06,554 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:33:12,522 - __main__ - INFO - Episode 5: success=False, reward=118.6334
+2026-04-13 11:33:12,522 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:33:16,232 - __main__ - INFO - Episode 6: success=True, reward=255.3958
+2026-04-13 11:33:16,233 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:33:29,122 - __main__ - INFO - Episode 7: success=True, reward=285.1539
+2026-04-13 11:33:29,122 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:33:34,971 - __main__ - INFO - Episode 8: success=True, reward=287.5999
+2026-04-13 11:33:34,971 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:33:40,226 - __main__ - INFO - Episode 9: success=True, reward=305.0677
+2026-04-13 11:33:40,226 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:33:41,372 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:33:41,372 - __main__ - INFO - Task difficulty: medium
+2026-04-13 11:33:41,372 - __main__ - INFO - box-close-v3 Success rate: 70.00%
+2026-04-13 11:33:41,372 - __main__ - INFO - =====================================================
+
+2026-04-13 11:33:47,757 - __main__ - INFO - Episode 0: success=True, reward=169.7104
+2026-04-13 11:33:47,757 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:33:50,603 - __main__ - INFO - Episode 1: success=True, reward=139.4077
+2026-04-13 11:33:50,603 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:33:53,643 - __main__ - INFO - Episode 2: success=True, reward=149.4097
+2026-04-13 11:33:53,643 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:33:57,789 - __main__ - INFO - Episode 3: success=True, reward=176.9237
+2026-04-13 11:33:57,789 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:00,306 - __main__ - INFO - Episode 4: success=True, reward=162.8633
+2026-04-13 11:34:00,307 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:02,880 - __main__ - INFO - Episode 5: success=True, reward=143.6618
+2026-04-13 11:34:02,880 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:05,057 - __main__ - INFO - Episode 6: success=True, reward=126.3682
+2026-04-13 11:34:05,057 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:07,631 - __main__ - INFO - Episode 7: success=True, reward=160.5840
+2026-04-13 11:34:07,631 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:09,971 - __main__ - INFO - Episode 8: success=True, reward=145.8767
+2026-04-13 11:34:09,971 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:12,159 - __main__ - INFO - Episode 9: success=True, reward=121.9352
+2026-04-13 11:34:12,159 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:13,530 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:34:13,530 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:34:13,530 - __main__ - INFO - button-press-topdown-v3 Success rate: 100.00%
+2026-04-13 11:34:13,530 - __main__ - INFO - =====================================================
+
+2026-04-13 11:34:18,165 - __main__ - INFO - Episode 0: success=True, reward=0.0000
+2026-04-13 11:34:18,165 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:20,072 - __main__ - INFO - Episode 1: success=True, reward=0.0000
+2026-04-13 11:34:20,072 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:22,182 - __main__ - INFO - Episode 2: success=True, reward=0.0000
+2026-04-13 11:34:22,183 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:24,376 - __main__ - INFO - Episode 3: success=True, reward=0.0000
+2026-04-13 11:34:24,376 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:26,338 - __main__ - INFO - Episode 4: success=True, reward=0.0000
+2026-04-13 11:34:26,338 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:28,512 - __main__ - INFO - Episode 5: success=True, reward=0.0000
+2026-04-13 11:34:28,512 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:30,276 - __main__ - INFO - Episode 6: success=True, reward=1.1540
+2026-04-13 11:34:30,277 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:32,311 - __main__ - INFO - Episode 7: success=True, reward=0.0000
+2026-04-13 11:34:32,311 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:34,371 - __main__ - INFO - Episode 8: success=True, reward=0.0000
+2026-04-13 11:34:34,371 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:36,693 - __main__ - INFO - Episode 9: success=True, reward=0.0000
+2026-04-13 11:34:36,693 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:37,710 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:34:37,710 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:34:37,710 - __main__ - INFO - button-press-topdown-wall-v3 Success rate: 100.00%
+2026-04-13 11:34:37,710 - __main__ - INFO - =====================================================
+
+2026-04-13 11:34:42,011 - __main__ - INFO - Episode 0: success=True, reward=42.3728
+2026-04-13 11:34:42,011 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:44,093 - __main__ - INFO - Episode 1: success=True, reward=40.1935
+2026-04-13 11:34:44,093 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:46,249 - __main__ - INFO - Episode 2: success=True, reward=36.1131
+2026-04-13 11:34:46,249 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:48,305 - __main__ - INFO - Episode 3: success=True, reward=41.3711
+2026-04-13 11:34:48,305 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:50,469 - __main__ - INFO - Episode 4: success=True, reward=42.0774
+2026-04-13 11:34:50,469 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:52,843 - __main__ - INFO - Episode 5: success=True, reward=38.9829
+2026-04-13 11:34:52,844 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:55,297 - __main__ - INFO - Episode 6: success=True, reward=39.1822
+2026-04-13 11:34:55,297 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:34:58,196 - __main__ - INFO - Episode 7: success=True, reward=40.8023
+2026-04-13 11:34:58,196 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:01,143 - __main__ - INFO - Episode 8: success=True, reward=43.3811
+2026-04-13 11:35:01,144 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:03,680 - __main__ - INFO - Episode 9: success=True, reward=39.1362
+2026-04-13 11:35:03,680 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:04,704 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:35:04,704 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:35:04,705 - __main__ - INFO - button-press-v3 Success rate: 100.00%
+2026-04-13 11:35:04,705 - __main__ - INFO - =====================================================
+
+2026-04-13 11:35:12,331 - __main__ - INFO - Episode 0: success=True, reward=156.8059
+2026-04-13 11:35:12,332 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:15,038 - __main__ - INFO - Episode 1: success=True, reward=151.8275
+2026-04-13 11:35:15,039 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:17,932 - __main__ - INFO - Episode 2: success=True, reward=153.3645
+2026-04-13 11:35:17,932 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:20,534 - __main__ - INFO - Episode 3: success=True, reward=155.3720
+2026-04-13 11:35:20,534 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:23,020 - __main__ - INFO - Episode 4: success=True, reward=139.9238
+2026-04-13 11:35:23,020 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:26,053 - __main__ - INFO - Episode 5: success=True, reward=153.6392
+2026-04-13 11:35:26,053 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:29,041 - __main__ - INFO - Episode 6: success=True, reward=148.6815
+2026-04-13 11:35:29,041 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:31,577 - __main__ - INFO - Episode 7: success=True, reward=150.6237
+2026-04-13 11:35:31,577 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:34,012 - __main__ - INFO - Episode 8: success=True, reward=149.2708
+2026-04-13 11:35:34,013 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:36,115 - __main__ - INFO - Episode 9: success=True, reward=140.8991
+2026-04-13 11:35:36,115 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:37,495 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:35:37,495 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:35:37,495 - __main__ - INFO - button-press-wall-v3 Success rate: 100.00%
+2026-04-13 11:35:37,495 - __main__ - INFO - =====================================================
+
+2026-04-13 11:35:40,978 - __main__ - INFO - Episode 0: success=True, reward=20.0314
+2026-04-13 11:35:40,978 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:42,251 - __main__ - INFO - Episode 1: success=True, reward=19.8146
+2026-04-13 11:35:42,251 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:43,892 - __main__ - INFO - Episode 2: success=True, reward=26.9077
+2026-04-13 11:35:43,893 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:45,615 - __main__ - INFO - Episode 3: success=True, reward=27.0163
+2026-04-13 11:35:45,615 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:46,910 - __main__ - INFO - Episode 4: success=True, reward=22.0302
+2026-04-13 11:35:46,911 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:48,337 - __main__ - INFO - Episode 5: success=True, reward=21.9746
+2026-04-13 11:35:48,337 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:49,729 - __main__ - INFO - Episode 6: success=True, reward=22.9984
+2026-04-13 11:35:49,730 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:50,841 - __main__ - INFO - Episode 7: success=True, reward=19.0482
+2026-04-13 11:35:50,841 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:52,084 - __main__ - INFO - Episode 8: success=True, reward=19.1372
+2026-04-13 11:35:52,084 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:53,221 - __main__ - INFO - Episode 9: success=True, reward=19.0723
+2026-04-13 11:35:53,221 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:35:54,576 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:35:54,576 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:35:54,577 - __main__ - INFO - coffee-button-v3 Success rate: 100.00%
+2026-04-13 11:35:54,577 - __main__ - INFO - =====================================================
+
+2026-04-13 11:35:59,947 - __main__ - INFO - Episode 0: success=True, reward=85.5469
+2026-04-13 11:35:59,947 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:36:03,099 - __main__ - INFO - Episode 1: success=True, reward=67.0387
+2026-04-13 11:36:03,099 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:36:09,601 - __main__ - INFO - Episode 2: success=False, reward=20.0383
+2026-04-13 11:36:09,601 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:36:12,812 - __main__ - INFO - Episode 3: success=True, reward=62.4318
+2026-04-13 11:36:12,812 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:36:19,706 - __main__ - INFO - Episode 4: success=False, reward=43.2353
+2026-04-13 11:36:19,707 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:36:22,686 - __main__ - INFO - Episode 5: success=True, reward=78.1666
+2026-04-13 11:36:22,686 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:36:30,565 - __main__ - INFO - Episode 6: success=False, reward=34.5912
+2026-04-13 11:36:30,566 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:36:38,877 - __main__ - INFO - Episode 7: success=False, reward=54.0333
+2026-04-13 11:36:38,878 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:36:48,098 - __main__ - INFO - Episode 8: success=False, reward=44.3383
+2026-04-13 11:36:48,098 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:36:51,825 - __main__ - INFO - Episode 9: success=True, reward=82.0094
+2026-04-13 11:36:51,825 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:36:52,519 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:36:52,520 - __main__ - INFO - Task difficulty: medium
+2026-04-13 11:36:52,520 - __main__ - INFO - coffee-pull-v3 Success rate: 50.00%
+2026-04-13 11:36:52,520 - __main__ - INFO - =====================================================
+
+2026-04-13 11:36:58,427 - __main__ - INFO - Episode 0: success=True, reward=42.7469
+2026-04-13 11:36:58,428 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:01,292 - __main__ - INFO - Episode 1: success=True, reward=61.7162
+2026-04-13 11:37:01,292 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:04,118 - __main__ - INFO - Episode 2: success=True, reward=48.5329
+2026-04-13 11:37:04,118 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:06,432 - __main__ - INFO - Episode 3: success=True, reward=43.5827
+2026-04-13 11:37:06,432 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:08,386 - __main__ - INFO - Episode 4: success=True, reward=50.9833
+2026-04-13 11:37:08,386 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:10,491 - __main__ - INFO - Episode 5: success=True, reward=50.4269
+2026-04-13 11:37:10,491 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:12,829 - __main__ - INFO - Episode 6: success=True, reward=39.6140
+2026-04-13 11:37:12,829 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:14,893 - __main__ - INFO - Episode 7: success=True, reward=50.9214
+2026-04-13 11:37:14,893 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:16,679 - __main__ - INFO - Episode 8: success=True, reward=44.2330
+2026-04-13 11:37:16,679 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:18,606 - __main__ - INFO - Episode 9: success=True, reward=40.2484
+2026-04-13 11:37:18,606 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:19,500 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:37:19,500 - __main__ - INFO - Task difficulty: medium
+2026-04-13 11:37:19,500 - __main__ - INFO - coffee-push-v3 Success rate: 100.00%
+2026-04-13 11:37:19,500 - __main__ - INFO - =====================================================
+
+2026-04-13 11:37:29,750 - __main__ - INFO - Episode 0: success=False, reward=428.5077
+2026-04-13 11:37:29,750 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:32,317 - __main__ - INFO - Episode 1: success=True, reward=203.9527
+2026-04-13 11:37:32,318 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:39,094 - __main__ - INFO - Episode 2: success=False, reward=747.0709
+2026-04-13 11:37:39,095 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:45,752 - __main__ - INFO - Episode 3: success=False, reward=410.2780
+2026-04-13 11:37:45,752 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:48,133 - __main__ - INFO - Episode 4: success=True, reward=170.5671
+2026-04-13 11:37:48,133 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:54,769 - __main__ - INFO - Episode 5: success=False, reward=236.6260
+2026-04-13 11:37:54,769 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:37:57,536 - __main__ - INFO - Episode 6: success=True, reward=213.9853
+2026-04-13 11:37:57,536 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:38:05,203 - __main__ - INFO - Episode 7: success=False, reward=270.8112
+2026-04-13 11:38:05,203 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:38:14,578 - __main__ - INFO - Episode 8: success=False, reward=366.3707
+2026-04-13 11:38:14,578 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:38:23,379 - __main__ - INFO - Episode 9: success=False, reward=353.4746
+2026-04-13 11:38:23,380 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:38:24,612 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:38:24,612 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:38:24,612 - __main__ - INFO - dial-turn-v3 Success rate: 30.00%
+2026-04-13 11:38:24,612 - __main__ - INFO - =====================================================
+
+2026-04-13 11:38:36,228 - __main__ - INFO - Episode 0: success=False, reward=0.0000
+2026-04-13 11:38:36,228 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:38:43,656 - __main__ - INFO - Episode 1: success=False, reward=207.2927
+2026-04-13 11:38:43,656 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:38:50,106 - __main__ - INFO - Episode 2: success=False, reward=232.5704
+2026-04-13 11:38:50,106 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:38:56,464 - __main__ - INFO - Episode 3: success=False, reward=14.4781
+2026-04-13 11:38:56,464 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:02,829 - __main__ - INFO - Episode 4: success=False, reward=2.0526
+2026-04-13 11:39:02,830 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:05,641 - __main__ - INFO - Episode 5: success=True, reward=40.4310
+2026-04-13 11:39:05,642 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:08,306 - __main__ - INFO - Episode 6: success=True, reward=84.9746
+2026-04-13 11:39:08,306 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:14,774 - __main__ - INFO - Episode 7: success=False, reward=0.0000
+2026-04-13 11:39:14,774 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:17,716 - __main__ - INFO - Episode 8: success=True, reward=90.8974
+2026-04-13 11:39:17,716 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:20,813 - __main__ - INFO - Episode 9: success=True, reward=101.1726
+2026-04-13 11:39:20,813 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:22,168 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:39:22,168 - __main__ - INFO - Task difficulty: very_hard
+2026-04-13 11:39:22,168 - __main__ - INFO - disassemble-v3 Success rate: 40.00%
+2026-04-13 11:39:22,168 - __main__ - INFO - =====================================================
+
+2026-04-13 11:39:26,311 - __main__ - INFO - Episode 0: success=True, reward=113.8605
+2026-04-13 11:39:26,312 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:28,378 - __main__ - INFO - Episode 1: success=True, reward=84.7117
+2026-04-13 11:39:28,379 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:30,717 - __main__ - INFO - Episode 2: success=True, reward=106.2312
+2026-04-13 11:39:30,717 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:32,964 - __main__ - INFO - Episode 3: success=True, reward=130.6548
+2026-04-13 11:39:32,965 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:35,064 - __main__ - INFO - Episode 4: success=True, reward=112.0465
+2026-04-13 11:39:35,064 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:37,370 - __main__ - INFO - Episode 5: success=True, reward=146.6170
+2026-04-13 11:39:37,370 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:39,806 - __main__ - INFO - Episode 6: success=True, reward=136.6673
+2026-04-13 11:39:39,807 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:42,778 - __main__ - INFO - Episode 7: success=True, reward=126.3327
+2026-04-13 11:39:42,778 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:46,097 - __main__ - INFO - Episode 8: success=True, reward=119.2629
+2026-04-13 11:39:46,097 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:49,664 - __main__ - INFO - Episode 9: success=True, reward=159.2037
+2026-04-13 11:39:49,665 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:39:50,141 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:39:50,142 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:39:50,142 - __main__ - INFO - door-close-v3 Success rate: 100.00%
+2026-04-13 11:39:50,142 - __main__ - INFO - =====================================================
+
+2026-04-13 11:39:59,419 - __main__ - INFO - Episode 0: success=True, reward=493.5473
+2026-04-13 11:39:59,420 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:02,680 - __main__ - INFO - Episode 1: success=True, reward=97.4612
+2026-04-13 11:40:02,680 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:08,109 - __main__ - INFO - Episode 2: success=True, reward=504.5186
+2026-04-13 11:40:08,109 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:11,072 - __main__ - INFO - Episode 3: success=True, reward=101.6172
+2026-04-13 11:40:11,073 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:14,283 - __main__ - INFO - Episode 4: success=True, reward=99.7854
+2026-04-13 11:40:14,283 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:17,300 - __main__ - INFO - Episode 5: success=True, reward=98.1885
+2026-04-13 11:40:17,300 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:20,560 - __main__ - INFO - Episode 6: success=True, reward=93.5027
+2026-04-13 11:40:20,560 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:23,624 - __main__ - INFO - Episode 7: success=True, reward=95.8012
+2026-04-13 11:40:23,624 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:26,569 - __main__ - INFO - Episode 8: success=True, reward=99.6574
+2026-04-13 11:40:26,569 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:28,815 - __main__ - INFO - Episode 9: success=True, reward=102.8047
+2026-04-13 11:40:28,816 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:30,767 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:40:30,767 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:40:30,768 - __main__ - INFO - door-lock-v3 Success rate: 100.00%
+2026-04-13 11:40:30,768 - __main__ - INFO - =====================================================
+
+2026-04-13 11:40:36,938 - __main__ - INFO - Episode 0: success=True, reward=292.2041
+2026-04-13 11:40:36,938 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:39,656 - __main__ - INFO - Episode 1: success=True, reward=288.6723
+2026-04-13 11:40:39,656 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:42,370 - __main__ - INFO - Episode 2: success=True, reward=285.8842
+2026-04-13 11:40:42,370 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:45,144 - __main__ - INFO - Episode 3: success=True, reward=285.2465
+2026-04-13 11:40:45,145 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:47,972 - __main__ - INFO - Episode 4: success=True, reward=292.6104
+2026-04-13 11:40:47,972 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:50,900 - __main__ - INFO - Episode 5: success=True, reward=283.9607
+2026-04-13 11:40:50,900 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:53,695 - __main__ - INFO - Episode 6: success=True, reward=297.2145
+2026-04-13 11:40:53,696 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:56,467 - __main__ - INFO - Episode 7: success=True, reward=283.7429
+2026-04-13 11:40:56,467 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:40:59,408 - __main__ - INFO - Episode 8: success=True, reward=296.0626
+2026-04-13 11:40:59,408 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:02,209 - __main__ - INFO - Episode 9: success=True, reward=284.8443
+2026-04-13 11:41:02,210 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:03,686 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:41:03,686 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:41:03,686 - __main__ - INFO - door-open-v3 Success rate: 100.00%
+2026-04-13 11:41:03,687 - __main__ - INFO - =====================================================
+
+2026-04-13 11:41:07,724 - __main__ - INFO - Episode 0: success=True, reward=89.2729
+2026-04-13 11:41:07,725 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:09,433 - __main__ - INFO - Episode 1: success=True, reward=98.1354
+2026-04-13 11:41:09,433 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:10,833 - __main__ - INFO - Episode 2: success=True, reward=75.5779
+2026-04-13 11:41:10,834 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:12,517 - __main__ - INFO - Episode 3: success=True, reward=88.4124
+2026-04-13 11:41:12,517 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:14,384 - __main__ - INFO - Episode 4: success=True, reward=117.4634
+2026-04-13 11:41:14,384 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:16,125 - __main__ - INFO - Episode 5: success=True, reward=96.9022
+2026-04-13 11:41:16,125 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:18,229 - __main__ - INFO - Episode 6: success=True, reward=105.3995
+2026-04-13 11:41:18,229 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:19,710 - __main__ - INFO - Episode 7: success=True, reward=81.6509
+2026-04-13 11:41:19,710 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:21,873 - __main__ - INFO - Episode 8: success=True, reward=101.1845
+2026-04-13 11:41:21,873 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:24,096 - __main__ - INFO - Episode 9: success=True, reward=104.8081
+2026-04-13 11:41:24,096 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:24,518 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:41:24,518 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:41:24,518 - __main__ - INFO - door-unlock-v3 Success rate: 100.00%
+2026-04-13 11:41:24,518 - __main__ - INFO - =====================================================
+
+2026-04-13 11:41:31,481 - __main__ - INFO - Episode 0: success=True, reward=219.3157
+2026-04-13 11:41:31,482 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:34,292 - __main__ - INFO - Episode 1: success=True, reward=197.3186
+2026-04-13 11:41:34,292 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:42,133 - __main__ - INFO - Episode 2: success=False, reward=300.2120
+2026-04-13 11:41:42,133 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:44,579 - __main__ - INFO - Episode 3: success=True, reward=156.7782
+2026-04-13 11:41:44,580 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:53,531 - __main__ - INFO - Episode 4: success=False, reward=396.6164
+2026-04-13 11:41:53,532 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:56,019 - __main__ - INFO - Episode 5: success=True, reward=172.2281
+2026-04-13 11:41:56,019 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:41:58,486 - __main__ - INFO - Episode 6: success=True, reward=190.3573
+2026-04-13 11:41:58,486 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:00,974 - __main__ - INFO - Episode 7: success=True, reward=160.4211
+2026-04-13 11:42:00,975 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:03,255 - __main__ - INFO - Episode 8: success=True, reward=193.8360
+2026-04-13 11:42:03,255 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:05,260 - __main__ - INFO - Episode 9: success=True, reward=158.8791
+2026-04-13 11:42:05,260 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:05,760 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:42:05,761 - __main__ - INFO - Task difficulty: hard
+2026-04-13 11:42:05,761 - __main__ - INFO - hand-insert-v3 Success rate: 80.00%
+2026-04-13 11:42:05,761 - __main__ - INFO - =====================================================
+
+2026-04-13 11:42:11,232 - __main__ - INFO - Episode 0: success=True, reward=11.0886
+2026-04-13 11:42:11,232 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:13,886 - __main__ - INFO - Episode 1: success=True, reward=11.4286
+2026-04-13 11:42:13,886 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:16,862 - __main__ - INFO - Episode 2: success=True, reward=18.0561
+2026-04-13 11:42:16,862 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:19,693 - __main__ - INFO - Episode 3: success=True, reward=53.0649
+2026-04-13 11:42:19,693 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:22,360 - __main__ - INFO - Episode 4: success=True, reward=20.7517
+2026-04-13 11:42:22,360 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:25,435 - __main__ - INFO - Episode 5: success=True, reward=11.5395
+2026-04-13 11:42:25,435 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:28,397 - __main__ - INFO - Episode 6: success=True, reward=11.3615
+2026-04-13 11:42:28,397 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:31,007 - __main__ - INFO - Episode 7: success=True, reward=12.2175
+2026-04-13 11:42:31,007 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:33,798 - __main__ - INFO - Episode 8: success=True, reward=11.1120
+2026-04-13 11:42:33,799 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:36,614 - __main__ - INFO - Episode 9: success=True, reward=17.2690
+2026-04-13 11:42:36,614 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:36,904 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:42:36,904 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:42:36,904 - __main__ - INFO - drawer-close-v3 Success rate: 100.00%
+2026-04-13 11:42:36,904 - __main__ - INFO - =====================================================
+
+2026-04-13 11:42:43,338 - __main__ - INFO - Episode 0: success=True, reward=359.3826
+2026-04-13 11:42:43,338 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:46,141 - __main__ - INFO - Episode 1: success=True, reward=340.7060
+2026-04-13 11:42:46,141 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:48,954 - __main__ - INFO - Episode 2: success=True, reward=318.3228
+2026-04-13 11:42:48,954 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:51,678 - __main__ - INFO - Episode 3: success=True, reward=321.3696
+2026-04-13 11:42:51,679 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:55,041 - __main__ - INFO - Episode 4: success=True, reward=360.1809
+2026-04-13 11:42:55,042 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:42:59,416 - __main__ - INFO - Episode 5: success=True, reward=342.1552
+2026-04-13 11:42:59,417 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:03,499 - __main__ - INFO - Episode 6: success=True, reward=342.7075
+2026-04-13 11:43:03,500 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:07,069 - __main__ - INFO - Episode 7: success=True, reward=360.0118
+2026-04-13 11:43:07,069 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:10,323 - __main__ - INFO - Episode 8: success=True, reward=334.0639
+2026-04-13 11:43:10,323 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:14,680 - __main__ - INFO - Episode 9: success=True, reward=347.2432
+2026-04-13 11:43:14,680 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:14,920 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:43:14,920 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:43:14,921 - __main__ - INFO - drawer-open-v3 Success rate: 100.00%
+2026-04-13 11:43:14,921 - __main__ - INFO - =====================================================
+
+2026-04-13 11:43:21,012 - __main__ - INFO - Episode 0: success=True, reward=260.5166
+2026-04-13 11:43:21,013 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:23,745 - __main__ - INFO - Episode 1: success=True, reward=258.9310
+2026-04-13 11:43:23,745 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:26,086 - __main__ - INFO - Episode 2: success=True, reward=254.5515
+2026-04-13 11:43:26,086 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:28,553 - __main__ - INFO - Episode 3: success=True, reward=259.4608
+2026-04-13 11:43:28,553 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:30,894 - __main__ - INFO - Episode 4: success=True, reward=260.2749
+2026-04-13 11:43:30,894 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:33,519 - __main__ - INFO - Episode 5: success=True, reward=260.6344
+2026-04-13 11:43:33,519 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:36,069 - __main__ - INFO - Episode 6: success=True, reward=253.7940
+2026-04-13 11:43:36,069 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:38,509 - __main__ - INFO - Episode 7: success=True, reward=268.0104
+2026-04-13 11:43:38,509 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:40,653 - __main__ - INFO - Episode 8: success=True, reward=254.2813
+2026-04-13 11:43:40,654 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:42,976 - __main__ - INFO - Episode 9: success=True, reward=260.5429
+2026-04-13 11:43:42,976 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:43,840 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:43:43,840 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:43:43,840 - __main__ - INFO - faucet-open-v3 Success rate: 100.00%
+2026-04-13 11:43:43,840 - __main__ - INFO - =====================================================
+
+2026-04-13 11:43:49,285 - __main__ - INFO - Episode 0: success=True, reward=336.8857
+2026-04-13 11:43:49,285 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:52,239 - __main__ - INFO - Episode 1: success=True, reward=372.6465
+2026-04-13 11:43:52,239 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:54,738 - __main__ - INFO - Episode 2: success=True, reward=315.1268
+2026-04-13 11:43:54,738 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:43:58,244 - __main__ - INFO - Episode 3: success=True, reward=382.1221
+2026-04-13 11:43:58,244 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:00,919 - __main__ - INFO - Episode 4: success=True, reward=315.6706
+2026-04-13 11:44:00,919 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:03,602 - __main__ - INFO - Episode 5: success=True, reward=295.1330
+2026-04-13 11:44:03,602 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:06,566 - __main__ - INFO - Episode 6: success=True, reward=311.7297
+2026-04-13 11:44:06,566 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:09,455 - __main__ - INFO - Episode 7: success=True, reward=354.0486
+2026-04-13 11:44:09,455 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:12,295 - __main__ - INFO - Episode 8: success=True, reward=335.6660
+2026-04-13 11:44:12,295 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:15,125 - __main__ - INFO - Episode 9: success=True, reward=331.8241
+2026-04-13 11:44:15,125 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:16,771 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:44:16,771 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:44:16,771 - __main__ - INFO - faucet-close-v3 Success rate: 100.00%
+2026-04-13 11:44:16,771 - __main__ - INFO - =====================================================
+
+2026-04-13 11:44:21,556 - __main__ - INFO - Episode 0: success=True, reward=128.1042
+2026-04-13 11:44:21,557 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:23,769 - __main__ - INFO - Episode 1: success=True, reward=119.3362
+2026-04-13 11:44:23,770 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:26,086 - __main__ - INFO - Episode 2: success=True, reward=119.9490
+2026-04-13 11:44:26,086 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:28,520 - __main__ - INFO - Episode 3: success=True, reward=116.6457
+2026-04-13 11:44:28,521 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:30,894 - __main__ - INFO - Episode 4: success=True, reward=125.4707
+2026-04-13 11:44:30,894 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:33,068 - __main__ - INFO - Episode 5: success=True, reward=123.7583
+2026-04-13 11:44:33,069 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:35,381 - __main__ - INFO - Episode 6: success=True, reward=119.3549
+2026-04-13 11:44:35,382 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:38,295 - __main__ - INFO - Episode 7: success=True, reward=120.2873
+2026-04-13 11:44:38,295 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:40,973 - __main__ - INFO - Episode 8: success=True, reward=122.5428
+2026-04-13 11:44:40,973 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:43,808 - __main__ - INFO - Episode 9: success=True, reward=126.7144
+2026-04-13 11:44:43,808 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:44,279 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:44:44,280 - __main__ - INFO - Task difficulty: medium
+2026-04-13 11:44:44,280 - __main__ - INFO - hammer-v3 Success rate: 100.00%
+2026-04-13 11:44:44,280 - __main__ - INFO - =====================================================
+
+2026-04-13 11:44:50,082 - __main__ - INFO - Episode 0: success=True, reward=72.8616
+2026-04-13 11:44:50,083 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:51,430 - __main__ - INFO - Episode 1: success=True, reward=55.0731
+2026-04-13 11:44:51,430 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:52,912 - __main__ - INFO - Episode 2: success=True, reward=56.4426
+2026-04-13 11:44:52,912 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:54,850 - __main__ - INFO - Episode 3: success=True, reward=60.9563
+2026-04-13 11:44:54,850 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:56,146 - __main__ - INFO - Episode 4: success=True, reward=49.9711
+2026-04-13 11:44:56,146 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:44:58,148 - __main__ - INFO - Episode 5: success=True, reward=65.1115
+2026-04-13 11:44:58,148 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:00,080 - __main__ - INFO - Episode 6: success=True, reward=68.8128
+2026-04-13 11:45:00,081 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:01,813 - __main__ - INFO - Episode 7: success=True, reward=72.0064
+2026-04-13 11:45:01,813 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:03,535 - __main__ - INFO - Episode 8: success=True, reward=64.6580
+2026-04-13 11:45:03,535 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:04,985 - __main__ - INFO - Episode 9: success=True, reward=53.4110
+2026-04-13 11:45:04,985 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:05,716 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:45:05,716 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:45:05,716 - __main__ - INFO - handle-press-side-v3 Success rate: 100.00%
+2026-04-13 11:45:05,716 - __main__ - INFO - =====================================================
+
+2026-04-13 11:45:08,988 - __main__ - INFO - Episode 0: success=True, reward=26.6443
+2026-04-13 11:45:08,989 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:10,255 - __main__ - INFO - Episode 1: success=True, reward=43.5044
+2026-04-13 11:45:10,255 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:11,858 - __main__ - INFO - Episode 2: success=True, reward=52.8694
+2026-04-13 11:45:11,858 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:13,201 - __main__ - INFO - Episode 3: success=True, reward=57.0242
+2026-04-13 11:45:13,201 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:14,639 - __main__ - INFO - Episode 4: success=True, reward=44.6045
+2026-04-13 11:45:14,639 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:15,612 - __main__ - INFO - Episode 5: success=True, reward=47.2530
+2026-04-13 11:45:15,612 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:16,932 - __main__ - INFO - Episode 6: success=True, reward=55.7880
+2026-04-13 11:45:16,932 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:18,075 - __main__ - INFO - Episode 7: success=True, reward=48.0284
+2026-04-13 11:45:18,075 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:19,365 - __main__ - INFO - Episode 8: success=True, reward=63.0213
+2026-04-13 11:45:19,365 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:20,674 - __main__ - INFO - Episode 9: success=True, reward=57.3416
+2026-04-13 11:45:20,674 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:20,954 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:45:20,954 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:45:20,955 - __main__ - INFO - handle-press-v3 Success rate: 100.00%
+2026-04-13 11:45:20,955 - __main__ - INFO - =====================================================
+
+2026-04-13 11:45:29,736 - __main__ - INFO - Episode 0: success=False, reward=14.1635
+2026-04-13 11:45:29,736 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:32,109 - __main__ - INFO - Episode 1: success=True, reward=123.2933
+2026-04-13 11:45:32,110 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:38,959 - __main__ - INFO - Episode 2: success=False, reward=12.0297
+2026-04-13 11:45:38,959 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:44,112 - __main__ - INFO - Episode 3: success=False, reward=251.1628
+2026-04-13 11:45:44,112 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:50,793 - __main__ - INFO - Episode 4: success=False, reward=13.3786
+2026-04-13 11:45:50,793 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:45:57,934 - __main__ - INFO - Episode 5: success=False, reward=84.5895
+2026-04-13 11:45:57,935 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:46:04,256 - __main__ - INFO - Episode 6: success=False, reward=13.8887
+2026-04-13 11:46:04,256 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:46:10,706 - __main__ - INFO - Episode 7: success=False, reward=128.0027
+2026-04-13 11:46:10,706 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:46:18,032 - __main__ - INFO - Episode 8: success=False, reward=113.6713
+2026-04-13 11:46:18,032 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:46:22,324 - __main__ - INFO - Episode 9: success=True, reward=194.4000
+2026-04-13 11:46:22,324 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:46:23,268 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:46:23,268 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:46:23,268 - __main__ - INFO - handle-pull-side-v3 Success rate: 20.00%
+2026-04-13 11:46:23,268 - __main__ - INFO - =====================================================
+
+2026-04-13 11:46:29,819 - __main__ - INFO - Episode 0: success=True, reward=43.2486
+2026-04-13 11:46:29,820 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:46:33,447 - __main__ - INFO - Episode 1: success=True, reward=72.0128
+2026-04-13 11:46:33,447 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:46:39,723 - __main__ - INFO - Episode 2: success=True, reward=64.8103
+2026-04-13 11:46:39,723 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:46:44,197 - __main__ - INFO - Episode 3: success=True, reward=57.4236
+2026-04-13 11:46:44,197 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:46:47,807 - __main__ - INFO - Episode 4: success=True, reward=69.7974
+2026-04-13 11:46:47,807 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:46:50,915 - __main__ - INFO - Episode 5: success=True, reward=36.2921
+2026-04-13 11:46:50,915 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:46:53,532 - __main__ - INFO - Episode 6: success=True, reward=33.8540
+2026-04-13 11:46:53,533 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:46:56,983 - __main__ - INFO - Episode 7: success=True, reward=46.5511
+2026-04-13 11:46:56,983 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:47:00,018 - __main__ - INFO - Episode 8: success=True, reward=44.3532
+2026-04-13 11:47:00,018 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:47:06,912 - __main__ - INFO - Episode 9: success=False, reward=64.9567
+2026-04-13 11:47:06,912 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:47:07,217 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:47:07,217 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:47:07,217 - __main__ - INFO - handle-pull-v3 Success rate: 90.00%
+2026-04-13 11:47:07,217 - __main__ - INFO - =====================================================
+
+2026-04-13 11:47:16,302 - __main__ - INFO - Episode 0: success=False, reward=207.4037
+2026-04-13 11:47:16,302 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:47:19,221 - __main__ - INFO - Episode 1: success=True, reward=214.5874
+2026-04-13 11:47:19,221 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:47:25,777 - __main__ - INFO - Episode 2: success=False, reward=108.0977
+2026-04-13 11:47:25,777 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:47:32,662 - __main__ - INFO - Episode 3: success=False, reward=112.2076
+2026-04-13 11:47:32,662 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:47:34,923 - __main__ - INFO - Episode 4: success=True, reward=139.5701
+2026-04-13 11:47:34,923 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:47:41,640 - __main__ - INFO - Episode 5: success=False, reward=261.3092
+2026-04-13 11:47:41,640 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:47:48,046 - __main__ - INFO - Episode 6: success=False, reward=56.5361
+2026-04-13 11:47:48,047 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:47:53,968 - __main__ - INFO - Episode 7: success=False, reward=176.1132
+2026-04-13 11:47:53,968 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:01,526 - __main__ - INFO - Episode 8: success=False, reward=104.9042
+2026-04-13 11:48:01,526 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:04,475 - __main__ - INFO - Episode 9: success=True, reward=256.0773
+2026-04-13 11:48:04,476 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:05,789 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:48:05,789 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:48:05,789 - __main__ - INFO - lever-pull-v3 Success rate: 30.00%
+2026-04-13 11:48:05,789 - __main__ - INFO - =====================================================
+
+2026-04-13 11:48:12,053 - __main__ - INFO - Episode 0: success=True, reward=326.7638
+2026-04-13 11:48:12,054 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:15,962 - __main__ - INFO - Episode 1: success=True, reward=351.5488
+2026-04-13 11:48:15,962 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:19,725 - __main__ - INFO - Episode 2: success=True, reward=316.0679
+2026-04-13 11:48:19,726 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:22,544 - __main__ - INFO - Episode 3: success=True, reward=206.2754
+2026-04-13 11:48:22,544 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:26,130 - __main__ - INFO - Episode 4: success=True, reward=298.5101
+2026-04-13 11:48:26,130 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:29,426 - __main__ - INFO - Episode 5: success=True, reward=258.3813
+2026-04-13 11:48:29,426 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:32,636 - __main__ - INFO - Episode 6: success=True, reward=289.7294
+2026-04-13 11:48:32,637 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:35,557 - __main__ - INFO - Episode 7: success=True, reward=255.3594
+2026-04-13 11:48:35,557 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:39,006 - __main__ - INFO - Episode 8: success=True, reward=341.5879
+2026-04-13 11:48:39,007 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:41,834 - __main__ - INFO - Episode 9: success=True, reward=243.3928
+2026-04-13 11:48:41,834 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:41,999 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:48:41,999 - __main__ - INFO - Task difficulty: very_hard
+2026-04-13 11:48:41,999 - __main__ - INFO - pick-place-wall-v3 Success rate: 100.00%
+2026-04-13 11:48:41,999 - __main__ - INFO - =====================================================
+
+2026-04-13 11:48:49,527 - __main__ - INFO - Episode 0: success=True, reward=130.2826
+2026-04-13 11:48:49,528 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:53,719 - __main__ - INFO - Episode 1: success=True, reward=112.7991
+2026-04-13 11:48:53,720 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:48:57,851 - __main__ - INFO - Episode 2: success=True, reward=95.6951
+2026-04-13 11:48:57,851 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:02,555 - __main__ - INFO - Episode 3: success=True, reward=118.5334
+2026-04-13 11:49:02,555 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:07,173 - __main__ - INFO - Episode 4: success=True, reward=103.2086
+2026-04-13 11:49:07,173 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:11,810 - __main__ - INFO - Episode 5: success=True, reward=119.0599
+2026-04-13 11:49:11,810 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:17,787 - __main__ - INFO - Episode 6: success=True, reward=202.4578
+2026-04-13 11:49:17,787 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:24,461 - __main__ - INFO - Episode 7: success=False, reward=118.6136
+2026-04-13 11:49:24,461 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:28,549 - __main__ - INFO - Episode 8: success=True, reward=86.9357
+2026-04-13 11:49:28,550 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:33,821 - __main__ - INFO - Episode 9: success=True, reward=148.9870
+2026-04-13 11:49:33,821 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:35,168 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:49:35,168 - __main__ - INFO - Task difficulty: hard
+2026-04-13 11:49:35,168 - __main__ - INFO - pick-out-of-hole-v3 Success rate: 90.00%
+2026-04-13 11:49:35,168 - __main__ - INFO - =====================================================
+
+2026-04-13 11:49:39,197 - __main__ - INFO - Episode 0: success=True, reward=76.5864
+2026-04-13 11:49:39,197 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:41,255 - __main__ - INFO - Episode 1: success=True, reward=67.8452
+2026-04-13 11:49:41,255 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:43,609 - __main__ - INFO - Episode 2: success=True, reward=70.3368
+2026-04-13 11:49:43,610 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:45,315 - __main__ - INFO - Episode 3: success=True, reward=73.2397
+2026-04-13 11:49:45,315 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:47,577 - __main__ - INFO - Episode 4: success=True, reward=136.1597
+2026-04-13 11:49:47,577 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:49,763 - __main__ - INFO - Episode 5: success=True, reward=74.6777
+2026-04-13 11:49:49,763 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:51,870 - __main__ - INFO - Episode 6: success=True, reward=66.6051
+2026-04-13 11:49:51,870 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:54,040 - __main__ - INFO - Episode 7: success=True, reward=70.8087
+2026-04-13 11:49:54,040 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:56,190 - __main__ - INFO - Episode 8: success=True, reward=60.4060
+2026-04-13 11:49:56,190 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:58,437 - __main__ - INFO - Episode 9: success=True, reward=67.9800
+2026-04-13 11:49:58,438 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:49:59,208 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:49:59,208 - __main__ - INFO - Task difficulty: hard
+2026-04-13 11:49:59,208 - __main__ - INFO - pick-place-v3 Success rate: 100.00%
+2026-04-13 11:49:59,208 - __main__ - INFO - =====================================================
+
+2026-04-13 11:50:02,995 - __main__ - INFO - Episode 0: success=True, reward=115.2868
+2026-04-13 11:50:02,995 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:05,119 - __main__ - INFO - Episode 1: success=True, reward=117.0362
+2026-04-13 11:50:05,120 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:06,994 - __main__ - INFO - Episode 2: success=True, reward=115.6469
+2026-04-13 11:50:06,994 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:08,966 - __main__ - INFO - Episode 3: success=True, reward=114.4325
+2026-04-13 11:50:08,966 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:11,325 - __main__ - INFO - Episode 4: success=True, reward=122.9363
+2026-04-13 11:50:11,325 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:13,127 - __main__ - INFO - Episode 5: success=True, reward=126.8848
+2026-04-13 11:50:13,127 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:15,012 - __main__ - INFO - Episode 6: success=True, reward=130.1581
+2026-04-13 11:50:15,013 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:16,917 - __main__ - INFO - Episode 7: success=True, reward=134.1348
+2026-04-13 11:50:16,917 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:18,774 - __main__ - INFO - Episode 8: success=True, reward=122.0146
+2026-04-13 11:50:18,774 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:20,619 - __main__ - INFO - Episode 9: success=True, reward=124.5403
+2026-04-13 11:50:20,619 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:21,015 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:50:21,016 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:50:21,016 - __main__ - INFO - plate-slide-v3 Success rate: 100.00%
+2026-04-13 11:50:21,016 - __main__ - INFO - =====================================================
+
+2026-04-13 11:50:24,921 - __main__ - INFO - Episode 0: success=True, reward=117.8089
+2026-04-13 11:50:24,922 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:26,883 - __main__ - INFO - Episode 1: success=True, reward=135.5190
+2026-04-13 11:50:26,884 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:28,677 - __main__ - INFO - Episode 2: success=True, reward=120.1864
+2026-04-13 11:50:28,677 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:30,541 - __main__ - INFO - Episode 3: success=True, reward=146.4912
+2026-04-13 11:50:30,542 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:32,384 - __main__ - INFO - Episode 4: success=True, reward=133.6070
+2026-04-13 11:50:32,385 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:34,265 - __main__ - INFO - Episode 5: success=True, reward=139.4614
+2026-04-13 11:50:34,266 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:36,065 - __main__ - INFO - Episode 6: success=True, reward=134.0992
+2026-04-13 11:50:36,065 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:38,008 - __main__ - INFO - Episode 7: success=True, reward=144.8324
+2026-04-13 11:50:38,008 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:39,887 - __main__ - INFO - Episode 8: success=True, reward=144.9852
+2026-04-13 11:50:39,887 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:41,754 - __main__ - INFO - Episode 9: success=True, reward=132.4254
+2026-04-13 11:50:41,754 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:42,674 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:50:42,674 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:50:42,674 - __main__ - INFO - plate-slide-side-v3 Success rate: 100.00%
+2026-04-13 11:50:42,674 - __main__ - INFO - =====================================================
+
+2026-04-13 11:50:48,304 - __main__ - INFO - Episode 0: success=True, reward=207.3553
+2026-04-13 11:50:48,304 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:50,147 - __main__ - INFO - Episode 1: success=True, reward=145.5832
+2026-04-13 11:50:50,147 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:53,200 - __main__ - INFO - Episode 2: success=True, reward=187.2259
+2026-04-13 11:50:53,200 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:56,386 - __main__ - INFO - Episode 3: success=True, reward=226.0470
+2026-04-13 11:50:56,387 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:57,939 - __main__ - INFO - Episode 4: success=True, reward=99.0153
+2026-04-13 11:50:57,939 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:50:59,591 - __main__ - INFO - Episode 5: success=True, reward=137.7739
+2026-04-13 11:50:59,592 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:02,834 - __main__ - INFO - Episode 6: success=True, reward=233.0371
+2026-04-13 11:51:02,834 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:06,020 - __main__ - INFO - Episode 7: success=True, reward=211.9384
+2026-04-13 11:51:06,021 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:08,920 - __main__ - INFO - Episode 8: success=True, reward=214.7400
+2026-04-13 11:51:08,920 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:10,468 - __main__ - INFO - Episode 9: success=True, reward=100.1093
+2026-04-13 11:51:10,468 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:11,755 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:51:11,756 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:51:11,756 - __main__ - INFO - plate-slide-back-v3 Success rate: 100.00%
+2026-04-13 11:51:11,756 - __main__ - INFO - =====================================================
+
+2026-04-13 11:51:15,931 - __main__ - INFO - Episode 0: success=True, reward=128.4952
+2026-04-13 11:51:15,931 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:17,526 - __main__ - INFO - Episode 1: success=True, reward=113.5399
+2026-04-13 11:51:17,526 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:19,051 - __main__ - INFO - Episode 2: success=True, reward=99.9050
+2026-04-13 11:51:19,051 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:20,791 - __main__ - INFO - Episode 3: success=True, reward=112.9821
+2026-04-13 11:51:20,791 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:22,408 - __main__ - INFO - Episode 4: success=True, reward=116.5427
+2026-04-13 11:51:22,408 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:24,437 - __main__ - INFO - Episode 5: success=True, reward=160.1364
+2026-04-13 11:51:24,437 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:26,022 - __main__ - INFO - Episode 6: success=True, reward=99.2244
+2026-04-13 11:51:26,023 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:27,637 - __main__ - INFO - Episode 7: success=True, reward=108.3307
+2026-04-13 11:51:27,637 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:29,928 - __main__ - INFO - Episode 8: success=True, reward=177.8127
+2026-04-13 11:51:29,928 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:31,444 - __main__ - INFO - Episode 9: success=True, reward=104.2175
+2026-04-13 11:51:31,444 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:32,967 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:51:32,967 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:51:32,967 - __main__ - INFO - plate-slide-back-side-v3 Success rate: 100.00%
+2026-04-13 11:51:32,967 - __main__ - INFO - =====================================================
+
+2026-04-13 11:51:39,201 - __main__ - INFO - Episode 0: success=True, reward=148.6869
+2026-04-13 11:51:39,202 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:43,062 - __main__ - INFO - Episode 1: success=True, reward=306.5375
+2026-04-13 11:51:43,063 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:45,620 - __main__ - INFO - Episode 2: success=True, reward=116.2931
+2026-04-13 11:51:45,620 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:50,398 - __main__ - INFO - Episode 3: success=True, reward=258.6724
+2026-04-13 11:51:50,398 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:55,305 - __main__ - INFO - Episode 4: success=True, reward=130.6344
+2026-04-13 11:51:55,305 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:51:59,310 - __main__ - INFO - Episode 5: success=True, reward=130.8766
+2026-04-13 11:51:59,311 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:02,346 - __main__ - INFO - Episode 6: success=True, reward=134.8155
+2026-04-13 11:52:02,346 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:04,399 - __main__ - INFO - Episode 7: success=True, reward=131.4729
+2026-04-13 11:52:04,400 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:11,226 - __main__ - INFO - Episode 8: success=False, reward=38.6124
+2026-04-13 11:52:11,226 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:14,202 - __main__ - INFO - Episode 9: success=True, reward=133.1948
+2026-04-13 11:52:14,203 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:15,623 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:52:15,624 - __main__ - INFO - Task difficulty: medium
+2026-04-13 11:52:15,624 - __main__ - INFO - peg-insert-side-v3 Success rate: 90.00%
+2026-04-13 11:52:15,624 - __main__ - INFO - =====================================================
+
+2026-04-13 11:52:24,668 - __main__ - INFO - Episode 0: success=False, reward=101.7564
+2026-04-13 11:52:24,668 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:28,370 - __main__ - INFO - Episode 1: success=True, reward=123.6641
+2026-04-13 11:52:28,371 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:31,789 - __main__ - INFO - Episode 2: success=True, reward=136.8802
+2026-04-13 11:52:31,789 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:34,803 - __main__ - INFO - Episode 3: success=True, reward=29.5702
+2026-04-13 11:52:34,803 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:37,799 - __main__ - INFO - Episode 4: success=True, reward=32.9923
+2026-04-13 11:52:37,799 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:41,242 - __main__ - INFO - Episode 5: success=True, reward=120.5679
+2026-04-13 11:52:41,242 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:44,854 - __main__ - INFO - Episode 6: success=True, reward=126.8774
+2026-04-13 11:52:44,854 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:48,490 - __main__ - INFO - Episode 7: success=True, reward=124.9163
+2026-04-13 11:52:48,490 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:51,718 - __main__ - INFO - Episode 8: success=True, reward=31.3963
+2026-04-13 11:52:51,718 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:55,415 - __main__ - INFO - Episode 9: success=True, reward=130.5102
+2026-04-13 11:52:55,416 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:52:56,319 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:52:56,320 - __main__ - INFO - Task difficulty: easy
+2026-04-13 11:52:56,320 - __main__ - INFO - peg-unplug-side-v3 Success rate: 90.00%
+2026-04-13 11:52:56,320 - __main__ - INFO - =====================================================
+
+2026-04-13 11:53:05,471 - __main__ - INFO - Episode 0: success=False, reward=198.0059
+2026-04-13 11:53:05,471 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:10,078 - __main__ - INFO - Episode 1: success=True, reward=321.1993
+2026-04-13 11:53:10,078 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:11,868 - __main__ - INFO - Episode 2: success=True, reward=32.5169
+2026-04-13 11:53:11,869 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:13,536 - __main__ - INFO - Episode 3: success=True, reward=35.3845
+2026-04-13 11:53:13,537 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:17,052 - __main__ - INFO - Episode 4: success=True, reward=274.6416
+2026-04-13 11:53:17,052 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:24,279 - __main__ - INFO - Episode 5: success=False, reward=66.1094
+2026-04-13 11:53:24,280 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:26,363 - __main__ - INFO - Episode 6: success=True, reward=88.2416
+2026-04-13 11:53:26,363 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:29,713 - __main__ - INFO - Episode 7: success=True, reward=183.8284
+2026-04-13 11:53:29,713 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:36,446 - __main__ - INFO - Episode 8: success=False, reward=76.9735
+2026-04-13 11:53:36,446 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:42,696 - __main__ - INFO - Episode 9: success=False, reward=271.8125
+2026-04-13 11:53:42,696 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:44,021 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:53:44,021 - __main__ - INFO - Task difficulty: medium
+2026-04-13 11:53:44,021 - __main__ - INFO - soccer-v3 Success rate: 60.00%
+2026-04-13 11:53:44,021 - __main__ - INFO - =====================================================
+
+2026-04-13 11:53:48,780 - __main__ - INFO - Episode 0: success=True, reward=163.8037
+2026-04-13 11:53:48,780 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:51,396 - __main__ - INFO - Episode 1: success=True, reward=167.9278
+2026-04-13 11:53:51,396 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:53,858 - __main__ - INFO - Episode 2: success=True, reward=168.8184
+2026-04-13 11:53:53,858 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:56,259 - __main__ - INFO - Episode 3: success=True, reward=150.3424
+2026-04-13 11:53:56,260 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:53:59,025 - __main__ - INFO - Episode 4: success=True, reward=174.9551
+2026-04-13 11:53:59,025 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:54:02,279 - __main__ - INFO - Episode 5: success=True, reward=174.7561
+2026-04-13 11:54:02,279 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:54:04,786 - __main__ - INFO - Episode 6: success=True, reward=166.6709
+2026-04-13 11:54:04,787 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:54:07,769 - __main__ - INFO - Episode 7: success=True, reward=162.3909
+2026-04-13 11:54:07,769 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:54:10,166 - __main__ - INFO - Episode 8: success=True, reward=162.9860
+2026-04-13 11:54:10,167 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:54:12,579 - __main__ - INFO - Episode 9: success=True, reward=169.4204
+2026-04-13 11:54:12,579 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:54:13,635 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:54:13,636 - __main__ - INFO - Task difficulty: very_hard
+2026-04-13 11:54:13,636 - __main__ - INFO - stick-push-v3 Success rate: 100.00%
+2026-04-13 11:54:13,636 - __main__ - INFO - =====================================================
+
+2026-04-13 11:54:18,888 - __main__ - INFO - Episode 0: success=True, reward=219.1860
+2026-04-13 11:54:18,888 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:54:22,597 - __main__ - INFO - Episode 1: success=True, reward=148.0643
+2026-04-13 11:54:22,597 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:54:27,013 - __main__ - INFO - Episode 2: success=True, reward=42.2423
+2026-04-13 11:54:27,014 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:54:34,171 - __main__ - INFO - Episode 3: success=False, reward=15.4777
+2026-04-13 11:54:34,172 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:54:43,001 - __main__ - INFO - Episode 4: success=False, reward=15.0613
+2026-04-13 11:54:43,001 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:54:48,671 - __main__ - INFO - Episode 5: success=True, reward=225.3768
+2026-04-13 11:54:48,671 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:54:55,610 - __main__ - INFO - Episode 6: success=True, reward=281.4071
+2026-04-13 11:54:55,611 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:55:00,525 - __main__ - INFO - Episode 7: success=True, reward=166.2070
+2026-04-13 11:55:00,525 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:55:16,269 - __main__ - INFO - Episode 8: success=False, reward=168.8980
+2026-04-13 11:55:16,269 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:55:26,020 - __main__ - INFO - Episode 9: success=True, reward=210.0777
+2026-04-13 11:55:26,020 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:55:28,545 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:55:28,545 - __main__ - INFO - Task difficulty: very_hard
+2026-04-13 11:55:28,545 - __main__ - INFO - stick-pull-v3 Success rate: 70.00%
+2026-04-13 11:55:28,545 - __main__ - INFO - =====================================================
+
+2026-04-13 11:56:02,910 - __main__ - INFO - Episode 0: success=True, reward=49.7619
+2026-04-13 11:56:03,610 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:56:08,416 - __main__ - INFO - Episode 1: success=True, reward=210.3307
+2026-04-13 11:56:08,416 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:56:25,961 - __main__ - INFO - Episode 2: success=True, reward=213.2594
+2026-04-13 11:56:25,961 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:56:29,481 - __main__ - INFO - Episode 3: success=True, reward=200.8581
+2026-04-13 11:56:29,481 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:56:34,219 - __main__ - INFO - Episode 4: success=True, reward=193.0440
+2026-04-13 11:56:34,219 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:56:38,051 - __main__ - INFO - Episode 5: success=True, reward=192.6611
+2026-04-13 11:56:38,051 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:56:42,095 - __main__ - INFO - Episode 6: success=True, reward=232.9111
+2026-04-13 11:56:42,095 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:56:46,655 - __main__ - INFO - Episode 7: success=True, reward=163.3761
+2026-04-13 11:56:46,655 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:56:50,850 - __main__ - INFO - Episode 8: success=True, reward=173.3378
+2026-04-13 11:56:50,851 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:56:54,450 - __main__ - INFO - Episode 9: success=True, reward=138.2309
+2026-04-13 11:56:54,450 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:56:54,591 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:56:54,591 - __main__ - INFO - Task difficulty: hard
+2026-04-13 11:56:54,591 - __main__ - INFO - push-v3 Success rate: 100.00%
+2026-04-13 11:56:54,591 - __main__ - INFO - =====================================================
+
+2026-04-13 11:57:30,786 - __main__ - INFO - Episode 0: success=True, reward=226.0246
+2026-04-13 11:57:30,787 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:57:36,837 - __main__ - INFO - Episode 1: success=True, reward=230.0340
+2026-04-13 11:57:36,837 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:57:41,219 - __main__ - INFO - Episode 2: success=True, reward=234.1713
+2026-04-13 11:57:41,219 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:57:45,748 - __main__ - INFO - Episode 3: success=True, reward=207.7950
+2026-04-13 11:57:45,749 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:57:50,095 - __main__ - INFO - Episode 4: success=True, reward=246.3001
+2026-04-13 11:57:50,096 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:57:53,963 - __main__ - INFO - Episode 5: success=True, reward=296.0889
+2026-04-13 11:57:53,963 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:58:01,744 - __main__ - INFO - Episode 6: success=True, reward=270.7061
+2026-04-13 11:58:01,745 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:58:06,944 - __main__ - INFO - Episode 7: success=True, reward=248.5626
+2026-04-13 11:58:06,944 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:58:13,319 - __main__ - INFO - Episode 8: success=True, reward=230.8414
+2026-04-13 11:58:13,320 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:58:21,327 - __main__ - INFO - Episode 9: success=True, reward=261.6821
+2026-04-13 11:58:21,327 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:58:24,012 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 11:58:24,012 - __main__ - INFO - Task difficulty: medium
+2026-04-13 11:58:24,012 - __main__ - INFO - push-wall-v3 Success rate: 100.00%
+2026-04-13 11:58:24,012 - __main__ - INFO - =====================================================
+
+2026-04-13 11:58:50,917 - __main__ - INFO - Episode 0: success=False, reward=17.0792
+2026-04-13 11:58:50,917 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:59:00,125 - __main__ - INFO - Episode 1: success=False, reward=20.9955
+2026-04-13 11:59:00,126 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:59:04,970 - __main__ - INFO - Episode 2: success=True, reward=6.4080
+2026-04-13 11:59:04,970 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:59:09,590 - __main__ - INFO - Episode 3: success=True, reward=36.8144
+2026-04-13 11:59:09,591 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:59:19,582 - __main__ - INFO - Episode 4: success=True, reward=10.1385
+2026-04-13 11:59:19,583 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:59:29,648 - __main__ - INFO - Episode 5: success=True, reward=24.4293
+2026-04-13 11:59:29,648 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:59:41,273 - __main__ - INFO - Episode 6: success=False, reward=18.3911
+2026-04-13 11:59:41,274 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:59:49,417 - __main__ - INFO - Episode 7: success=False, reward=17.3932
+2026-04-13 11:59:49,417 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 11:59:53,080 - __main__ - INFO - Episode 8: success=True, reward=4.6147
+2026-04-13 11:59:53,080 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:00:03,344 - __main__ - INFO - Episode 9: success=False, reward=21.1544
+2026-04-13 12:00:03,345 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:00:03,553 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 12:00:03,553 - __main__ - INFO - Task difficulty: hard
+2026-04-13 12:00:03,554 - __main__ - INFO - push-back-v3 Success rate: 50.00%
+2026-04-13 12:00:03,554 - __main__ - INFO - =====================================================
+
+2026-04-13 12:00:31,152 - __main__ - INFO - Episode 0: success=True, reward=273.0833
+2026-04-13 12:00:31,152 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:00:33,202 - __main__ - INFO - Episode 1: success=True, reward=339.8048
+2026-04-13 12:00:33,202 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:00:36,097 - __main__ - INFO - Episode 2: success=True, reward=179.4018
+2026-04-13 12:00:36,097 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:00:39,751 - __main__ - INFO - Episode 3: success=True, reward=264.7295
+2026-04-13 12:00:39,751 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:00:48,564 - __main__ - INFO - Episode 4: success=False, reward=1259.4791
+2026-04-13 12:00:48,564 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:00:56,699 - __main__ - INFO - Episode 5: success=False, reward=1032.9034
+2026-04-13 12:00:56,699 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:01:03,267 - __main__ - INFO - Episode 6: success=True, reward=441.5502
+2026-04-13 12:01:03,267 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:01:11,811 - __main__ - INFO - Episode 7: success=False, reward=1350.0570
+2026-04-13 12:01:11,811 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:01:18,633 - __main__ - INFO - Episode 8: success=True, reward=368.8233
+2026-04-13 12:01:18,633 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:01:30,055 - __main__ - INFO - Episode 9: success=False, reward=1594.8873
+2026-04-13 12:01:30,055 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:01:30,799 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 12:01:30,799 - __main__ - INFO - Task difficulty: easy
+2026-04-13 12:01:30,799 - __main__ - INFO - reach-v3 Success rate: 60.00%
+2026-04-13 12:01:30,799 - __main__ - INFO - =====================================================
+
+2026-04-13 12:01:50,220 - __main__ - INFO - Episode 0: success=True, reward=216.5277
+2026-04-13 12:01:50,220 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:01:53,684 - __main__ - INFO - Episode 1: success=True, reward=250.4703
+2026-04-13 12:01:53,684 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:02:03,481 - __main__ - INFO - Episode 2: success=False, reward=1538.4613
+2026-04-13 12:02:03,482 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:02:06,856 - __main__ - INFO - Episode 3: success=True, reward=285.6823
+2026-04-13 12:02:06,856 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:02:10,034 - __main__ - INFO - Episode 4: success=True, reward=207.6499
+2026-04-13 12:02:10,035 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:02:16,602 - __main__ - INFO - Episode 5: success=True, reward=220.8224
+2026-04-13 12:02:16,603 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:02:25,539 - __main__ - INFO - Episode 6: success=False, reward=1669.8828
+2026-04-13 12:02:25,540 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:02:32,474 - __main__ - INFO - Episode 7: success=True, reward=392.2455
+2026-04-13 12:02:32,475 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:02:36,175 - __main__ - INFO - Episode 8: success=True, reward=290.3530
+2026-04-13 12:02:36,175 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:02:38,658 - __main__ - INFO - Episode 9: success=True, reward=171.7848
+2026-04-13 12:02:38,658 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:02:38,903 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 12:02:38,904 - __main__ - INFO - Task difficulty: easy
+2026-04-13 12:02:38,904 - __main__ - INFO - reach-wall-v3 Success rate: 80.00%
+2026-04-13 12:02:38,904 - __main__ - INFO - =====================================================
+
+2026-04-13 12:03:04,440 - __main__ - INFO - Episode 0: success=True, reward=202.5499
+2026-04-13 12:03:04,440 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:03:08,453 - __main__ - INFO - Episode 1: success=True, reward=145.5332
+2026-04-13 12:03:08,453 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:03:12,531 - __main__ - INFO - Episode 2: success=True, reward=148.2788
+2026-04-13 12:03:12,531 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:03:19,015 - __main__ - INFO - Episode 3: success=True, reward=150.1424
+2026-04-13 12:03:19,015 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:03:22,473 - __main__ - INFO - Episode 4: success=True, reward=153.3157
+2026-04-13 12:03:22,473 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:03:30,467 - __main__ - INFO - Episode 5: success=True, reward=193.6738
+2026-04-13 12:03:30,467 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:03:34,456 - __main__ - INFO - Episode 6: success=True, reward=160.9775
+2026-04-13 12:03:34,456 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:03:38,474 - __main__ - INFO - Episode 7: success=True, reward=175.6432
+2026-04-13 12:03:38,474 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:03:42,528 - __main__ - INFO - Episode 8: success=True, reward=168.4971
+2026-04-13 12:03:42,529 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:03:46,978 - __main__ - INFO - Episode 9: success=True, reward=161.2519
+2026-04-13 12:03:46,979 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:03:48,480 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 12:03:48,480 - __main__ - INFO - Task difficulty: very_hard
+2026-04-13 12:03:48,480 - __main__ - INFO - shelf-place-v3 Success rate: 100.00%
+2026-04-13 12:03:48,480 - __main__ - INFO - =====================================================
+
+2026-04-13 12:04:06,127 - __main__ - INFO - Episode 0: success=True, reward=91.1469
+2026-04-13 12:04:06,127 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:04:10,245 - __main__ - INFO - Episode 1: success=True, reward=100.5829
+2026-04-13 12:04:10,245 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:04:15,601 - __main__ - INFO - Episode 2: success=True, reward=95.1367
+2026-04-13 12:04:15,601 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:04:20,777 - __main__ - INFO - Episode 3: success=True, reward=100.5858
+2026-04-13 12:04:20,778 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:04:23,937 - __main__ - INFO - Episode 4: success=True, reward=109.1564
+2026-04-13 12:04:23,937 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:04:28,474 - __main__ - INFO - Episode 5: success=True, reward=108.3033
+2026-04-13 12:04:28,474 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:04:33,258 - __main__ - INFO - Episode 6: success=True, reward=93.6013
+2026-04-13 12:04:33,258 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:04:37,009 - __main__ - INFO - Episode 7: success=True, reward=103.6233
+2026-04-13 12:04:37,010 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:04:40,354 - __main__ - INFO - Episode 8: success=True, reward=94.0503
+2026-04-13 12:04:40,354 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:04:43,179 - __main__ - INFO - Episode 9: success=True, reward=104.9379
+2026-04-13 12:04:43,179 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:04:43,782 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 12:04:43,782 - __main__ - INFO - Task difficulty: medium
+2026-04-13 12:04:43,782 - __main__ - INFO - sweep-into-v3 Success rate: 100.00%
+2026-04-13 12:04:43,782 - __main__ - INFO - =====================================================
+
+2026-04-13 12:04:56,082 - __main__ - INFO - Episode 0: success=True, reward=239.3974
+2026-04-13 12:04:56,082 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:05:00,763 - __main__ - INFO - Episode 1: success=True, reward=293.0503
+2026-04-13 12:05:00,763 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:05:04,526 - __main__ - INFO - Episode 2: success=True, reward=270.8431
+2026-04-13 12:05:04,526 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:05:08,280 - __main__ - INFO - Episode 3: success=True, reward=227.4857
+2026-04-13 12:05:08,280 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:05:12,607 - __main__ - INFO - Episode 4: success=True, reward=278.2534
+2026-04-13 12:05:12,607 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:05:18,315 - __main__ - INFO - Episode 5: success=True, reward=223.5781
+2026-04-13 12:05:18,315 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:05:21,775 - __main__ - INFO - Episode 6: success=True, reward=228.3555
+2026-04-13 12:05:21,775 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:05:26,266 - __main__ - INFO - Episode 7: success=True, reward=248.2571
+2026-04-13 12:05:26,266 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:05:30,197 - __main__ - INFO - Episode 8: success=True, reward=246.2122
+2026-04-13 12:05:30,198 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:05:33,938 - __main__ - INFO - Episode 9: success=True, reward=252.3216
+2026-04-13 12:05:33,938 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:05:34,293 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 12:05:34,293 - __main__ - INFO - Task difficulty: medium
+2026-04-13 12:05:34,293 - __main__ - INFO - sweep-v3 Success rate: 100.00%
+2026-04-13 12:05:34,293 - __main__ - INFO - =====================================================
+
+2026-04-13 12:05:48,972 - __main__ - INFO - Episode 0: success=True, reward=66.7970
+2026-04-13 12:05:48,972 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:05:52,582 - __main__ - INFO - Episode 1: success=True, reward=91.3660
+2026-04-13 12:05:52,582 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:05:55,798 - __main__ - INFO - Episode 2: success=True, reward=78.4492
+2026-04-13 12:05:55,799 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:06:01,443 - __main__ - INFO - Episode 3: success=True, reward=87.0959
+2026-04-13 12:06:01,443 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:06:05,554 - __main__ - INFO - Episode 4: success=True, reward=91.1643
+2026-04-13 12:06:05,555 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:06:09,796 - __main__ - INFO - Episode 5: success=True, reward=81.3035
+2026-04-13 12:06:09,796 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:06:14,340 - __main__ - INFO - Episode 6: success=True, reward=86.1055
+2026-04-13 12:06:14,341 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:06:20,574 - __main__ - INFO - Episode 7: success=True, reward=94.0921
+2026-04-13 12:06:20,575 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:06:24,288 - __main__ - INFO - Episode 8: success=True, reward=92.2439
+2026-04-13 12:06:24,289 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:06:30,936 - __main__ - INFO - Episode 9: success=True, reward=90.6483
+2026-04-13 12:06:30,937 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:06:32,416 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 12:06:32,416 - __main__ - INFO - Task difficulty: easy
+2026-04-13 12:06:32,416 - __main__ - INFO - window-open-v3 Success rate: 100.00%
+2026-04-13 12:06:32,416 - __main__ - INFO - =====================================================
+
+2026-04-13 12:06:44,546 - __main__ - INFO - Episode 0: success=True, reward=137.0409
+2026-04-13 12:06:44,546 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:06:48,794 - __main__ - INFO - Episode 1: success=True, reward=123.2936
+2026-04-13 12:06:48,794 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:06:53,974 - __main__ - INFO - Episode 2: success=True, reward=129.4087
+2026-04-13 12:06:53,974 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:06:58,773 - __main__ - INFO - Episode 3: success=True, reward=122.0770
+2026-04-13 12:06:58,773 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:07:05,115 - __main__ - INFO - Episode 4: success=True, reward=137.9138
+2026-04-13 12:07:05,116 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:07:10,224 - __main__ - INFO - Episode 5: success=True, reward=131.4404
+2026-04-13 12:07:10,224 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:07:16,025 - __main__ - INFO - Episode 6: success=True, reward=130.7231
+2026-04-13 12:07:16,025 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:07:22,315 - __main__ - INFO - Episode 7: success=True, reward=126.2351
+2026-04-13 12:07:22,316 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:07:28,055 - __main__ - INFO - Episode 8: success=True, reward=120.5775
+2026-04-13 12:07:28,055 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:07:34,160 - __main__ - INFO - Episode 9: success=True, reward=135.2793
+2026-04-13 12:07:34,161 - __main__ - INFO - port: 7666, replan_steps: 5
+2026-04-13 12:07:34,437 - __main__ - INFO - evaluate_model: phylam_gpu1_ah6_l1_loss_steps30001_0412_phy2_mix_11_larger_dataset_epoch19_step_58216_infer_ah5_rstep_5_0409_shell_new_eval_30k_cpos_x_0.7
+2026-04-13 12:07:34,438 - __main__ - INFO - Task difficulty: easy
+2026-04-13 12:07:34,438 - __main__ - INFO - window-close-v3 Success rate: 100.00%
+2026-04-13 12:07:34,438 - __main__ - INFO - =====================================================
+
+2026-04-13 12:07:34,439 - __main__ - INFO - EASY         | Success Rate: 89.29% | Tasks: 28 | Episodes: 280
+2026-04-13 12:07:34,439 - __main__ - INFO - MEDIUM       | Success Rate: 83.64% | Tasks: 11 | Episodes: 110
+2026-04-13 12:07:34,439 - __main__ - INFO - HARD         | Success Rate: 85.00% | Tasks: 6 | Episodes: 60
+2026-04-13 12:07:34,439 - __main__ - INFO - VERY_HARD    | Success Rate: 82.00% | Tasks: 5 | Episodes: 50

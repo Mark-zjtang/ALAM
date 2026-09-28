@@ -1,0 +1,89 @@
+diffusion_policy_config:
+  _target_: uni_world_model.diffusion_policy.models.diffusion_policy.DiffusionPolicyModel
+  world_model:
+    _target_: uni_world_model.world_model.models.worldmodel.WorldModel
+    model_lang: 
+      _target_: transformers.T5EncoderModel.from_pretrained
+      pretrained_model_name_or_path: "/mnt/workspace/czj/models/models--t5-base/snapshots/a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1"
+    model_vision: 
+      _target_: uni_world_model.world_model.modules.understand_encoder.dinov2_encoder.DinoV2Encoder
+      pretrained_model_name_or_path: "/mnt/workspace/czj/models/dinov2-giant"
+    model_causal_transformer:
+      _target_: uni_world_model.world_model.models.gpt2.GPT2Model
+      config: 
+        _target_: uni_world_model.world_model.models.gpt2.GPT2Config
+        vocab_size: 1
+        n_embd: 768
+        n_layer: 12
+        n_head: 12
+        activation_function: "relu"
+        dropout: 0.1
+        n_positions: 1024
+    hidden_size: 768
+    sequence_length: 1
+    chunk_size: 10
+    per_latent_action_len: 7
+    latent_action_codebook_size: 256
+    latent_action_pred: true
+    img_feat_dim: 1536
+    lang_feat_dim: 768
+    freeze_lang: true
+    freeze_vision: true
+  diffusion_head:
+    _target_: uni_world_model.diffusion_policy.modules.dit.DiT
+    attention_head_dim: 48
+    dropout: 0.2
+    final_dropout: true
+    interleave_self_attention: true
+    norm_type: "ada_norm"
+    num_attention_heads: 16
+    num_layers: 16
+    output_dim: 1024
+    positional_embeddings: null
+
+  dp_hidden_size: 1024
+  input_embedding_dim: 768
+  noise_beta_alpha: 1.5
+  noise_beta_beta: 1.0
+  noise_s: 0.999
+  num_inference_timesteps: 16
+  num_timestep_buckets: 1000
+  act_pred: True
+  act_dim: 7
+  add_pos_embed: true
+  freeze_world_model: false
+  pretrained_model_path: null
+
+
+latent_action_tokenizer_path: "/mnt/workspace/czj/worldmodel/UniWorldModel/logs/0524-vocab256x7/latent_action_tokenizer_trained_on_calvin/saved_epoch_100_step_175300"
+
+dataset_config: 
+  data_type: "calvin"
+  lmdb_dir: "/mnt/workspace/caizhejia.czj/lmdb_datasets/task_ABC_D"
+  rgb_shape: [200, 200]
+  skip_frame: 10
+
+dataloader_config:
+  bs_per_gpu: 32
+  workers_per_gpu: 7
+  prefetch_factor: 2
+
+rgb_preprocessor_config: 
+  model_vision_type: "raw"
+  vision_aug_config: 
+    do_random_resized_crop: false
+    do_random_shift: true
+  
+training_config:
+  num_epochs: 40
+  num_warmup_epochs: 1
+  print_steps: 100
+  lr_max: 0.0002
+  weight_decay: 0.0001
+  gradient_accumulation_steps: 4
+  save_epochs: 1
+  save_steps: 10000
+  save_path: "/mnt/workspace/czj/worldmodel-on-nebula/debug_diffusion_policy_clavin_nopretrain/"
+  resume_ckpt_path: null
+  max_epoch: 40
+  pred_binary_gripper_action: true

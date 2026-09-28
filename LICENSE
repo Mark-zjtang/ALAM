@@ -1,0 +1,11 @@
+SPDX-License-Identifier: MIT OR Apache-2.0
+
+Original ALAM code in this repository is dual-licensed under the MIT License
+or the Apache License, Version 2.0, at your option.
+
+The MIT license text is in LICENSE-MIT. The Apache-2.0 license text is in
+evaluation/LICENSE.
+
+This grant applies only to material for which the ALAM authors hold the
+necessary rights. Bundled third-party code and assets retain their own
+licenses and notices, including evaluation/third_party/libero/LICENSE.

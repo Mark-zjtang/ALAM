@@ -1,0 +1,193 @@
+
+====================================================================================================================================================================================================================================================================
+## 03/11
+## libero评估的命令 libero_10
+# CUDA_VISIBLE_DEVICES=1 uv run scripts/serve_policy.py --port=8621 policy:checkpoint --policy.config=phy_libero_finetune --policy.dir=/mnt/workspace/tangzuojin.tzj/physics_va_flow_checkpoints/phy_libero_finetune/physics_va_flow_0310_4GPU_10_horizon/20000
+# CUDA_VISIBLE_DEVICES=1 python examples/libero/main.py --args.port 8621 --args.task-suite-name "libero_10"       --args.model_name physics_va_flow_0307_2GPU_10_horizon_chunk_size_5
+
+
+
+## libero评估的命令 libero_spatial
+# CUDA_VISIBLE_DEVICES=2 uv run scripts/serve_policy.py --port=7621 policy:checkpoint --policy.config=phy_libero_finetune --policy.dir=/mnt/workspace/tangzuojin.tzj/physics_va_flow_checkpoints/phy_libero_finetune/physics_va_flow_0310_4GPU_10_horizon/20000
+
+# CUDA_VISIBLE_DEVICES=2 python examples/libero/main.py --args.port 7621 --args.task-suite-name "libero_spatial"  --args.model_name physics_va_flow_0307_2GPU_10_horizon_chunk_size_5
+
+
+## libero评估的命令 libero_object
+# CUDA_VISIBLE_DEVICES=3 uv run scripts/serve_policy.py --port=6621 policy:checkpoint --policy.config=phy_libero_finetune --policy.dir=/mnt/workspace/tangzuojin.tzj/physics_va_flow_checkpoints/phy_libero_finetune/physics_va_flow_0310_4GPU_10_horizon/20000
+
+# CUDA_VISIBLE_DEVICES=3 python examples/libero/main.py --args.port 6621 --args.task-suite-name "libero_object"   --args.model_name physics_va_flow_0307_2GPU_10_horizon_chunk_size_5
+
+## libero评估的命令
+# CUDA_VISIBLE_DEVICES=1 uv run scripts/serve_policy.py --port=5621 policy:checkpoint --policy.config=phy_libero_finetune --policy.dir=/mnt/workspace/tangzuojin.tzj/physics_va_flow_checkpoints/phy_libero_finetune/physics_va_flow_0310_4GPU_10_horizon/20000
+
+
+phy_va_flow@20k_checkpoint: training horzion 10, infer horizon 10, libero replan_step 5,
+| Libero Spatial | Libero Object | Libero Goal | Libero 10 | Average |
+| 97.4 | 98.8 |  |  77.2(replan_step 5/ replan_step10 ) |  |
+
+====================================================================================================================================================================================================================================================================
+
+## 03/17
+## libero评估的命令 libero_10 training horizon 21
+CUDA_VISIBLE_DEVICES=3 uv run scripts/serve_policy.py --port=9786 policy:checkpoint --policy.config=phy_libero_finetune --policy.dir=/mnt/workspace/tangzuojin.tzj/physics_va_flow_checkpoints/phy_libero_finetune/physics_va_flow_0313_4GPU_20_horizon/30000
+
+phy_va_flow@20k_checkpoint: training horzion 20, infer horizon 20, libero replan_step 15,
+| Libero Spatial | Libero Object | Libero Goal | Libero 10 | Average |
+|                |               |             |      91.4     |         |
+
+
+phy_va_flow@20k_checkpoint: training horzion 20, infer horizon 20, libero replan_step 5,
+| Libero Spatial | Libero Object | Libero Goal | Libero 10 | Average |
+|                |               |       94.8      |      92.2    |         |
+
+
+
+phy_va_flow@20k_checkpoint: training horzion 20, infer horizon 15, libero replan_step 5,
+| Libero Spatial | Libero Object | Libero Goal | Libero 10    | Average |
+|                |               |             |              |          |
+
+
+
+phy_va_flow@20k_checkpoint: training horzion 20, infer horizon 10, libero replan_step 5,
+| Libero Spatial | Libero Object | Libero Goal | Libero 10 | Average |
+|                |               |             |      92.8     |         |
+
+
+phy_va_flow@20k_checkpoint: training horzion 20, infer horizon 10, libero replan_step 10,
+| Libero Spatial | Libero Object | Libero Goal | Libero 10 | Average |
+|                |               |             |      90.4     |         |
+
+
+##metaworld evaluation results
+
+##physics_va_flow_0307_2GPU_10_horizon training 10 infer 10 replan_step 5 (25k_cpt)
+四个任务独立运行的平均成功率：
+80.25， 74.29, 62.06           avg: 72.2
+
+##physics_va_flow_0307_2GPU_10_horizon training 10 infer 10 replan_step 10 (30k_cpt)
+四个任务独立运行的平均成功率：
+59.23， 55.33, 
+
+##physics_va_flow_0307_2GPU_10_horizon training 10 infer 10 replan_step 10 (25k_cpt)
+四个任务独立运行的平均成功率：
+50.94， 50.83, 49.64
+
+##physics_va_flow_0313_8GPU_20_horizon_infer_20_horizon_chunk_size_10_test1_25k_cpt_skip_a_batch_for_training
+四个任务独立运行的平均成功率：
+66.41, 
+
+##03/25 在metaworld中进行评测
+physics_va_flow_0307_2GPU_training_10_infer_10_horizon_chunk_size_5_0324_new_eval_30k_cpt_episodes_10
+2026-03-24 15:46:52,443 - __main__ - INFO - EASY         | Success Rate: 78.57% | Tasks: 28 | Episodes: 280
+2026-03-24 15:46:52,444 - __main__ - INFO - MEDIUM       | Success Rate: 37.27% | Tasks: 11 | Episodes: 110
+2026-03-24 15:46:52,444 - __main__ - INFO - HARD         | Success Rate: 56.00% | Tasks: 5 | Episodes: 50
+2026-03-24 15:46:52,444 - __main__ - INFO - VERY_HARD    | Success Rate: 68.00% | Tasks: 5 | Episodes: 50
+
+physics_va_flow_0307_2GPU_training_10_infer_10_horizon_chunk_size_5_0324_new_eval2_30k_cpt_episodes_10
+2026-03-24 18:34:53,568 - __main__ - INFO - EASY         | Success Rate: 79.29% | Tasks: 28 | Episodes: 280
+2026-03-24 18:34:53,568 - __main__ - INFO - MEDIUM       | Success Rate: 38.18% | Tasks: 11 | Episodes: 110
+2026-03-24 18:34:53,568 - __main__ - INFO - HARD         | Success Rate: 54.00% | Tasks: 5 | Episodes: 50
+2026-03-24 18:34:53,569 - __main__ - INFO - VERY_HARD    | Success Rate: 70.00% | Tasks: 5 | Episodes: 50
+
+physics_va_flow_0307_2GPU_training_10_infer_10_horizon_chunk_size_5_0324_new_eval3_30k_cpt_episodes_10
+2026-03-24 21:12:08,216 - __main__ - INFO - EASY         | Success Rate: 77.14% | Tasks: 28 | Episodes: 280
+2026-03-24 21:12:08,217 - __main__ - INFO - MEDIUM       | Success Rate: 42.73% | Tasks: 11 | Episodes: 110
+2026-03-24 21:12:08,217 - __main__ - INFO - HARD         | Success Rate: 56.00% | Tasks: 5 | Episodes: 50
+2026-03-24 21:12:08,217 - __main__ - INFO - VERY_HARD    | Success Rate: 76.00% | Tasks: 5 | Episodes: 50
+
+physics_va_flow_0307_2GPU_training_10_infer_10_horizon_chunk_size_5_0324_new_eval4_30k_cpt_episodes_10
+2026-03-25 15:36:10,360 - __main__ - INFO - EASY         | Success Rate: 78.57% | Tasks: 28 | Episodes: 280
+2026-03-25 15:36:10,360 - __main__ - INFO - MEDIUM       | Success Rate: 40.00% | Tasks: 11 | Episodes: 110
+2026-03-25 15:36:10,360 - __main__ - INFO - HARD         | Success Rate: 52.00% | Tasks: 5 | Episodes: 50
+2026-03-25 15:36:10,360 - __main__ - INFO - VERY_HARD    | Success Rate: 66.00% | Tasks: 5 | Episodes: 50
+
+
+=================================================================================================================
+
+physics_va_flow_0307_2GPU_training_10_infer_10_horizon_chunk_size_10_0324_new_eval_30k_cpt_episodes_10
+2026-03-24 15:35:58,799 - __main__ - INFO - EASY         | Success Rate: 73.57% | Tasks: 28 | Episodes: 280
+2026-03-24 15:35:58,799 - __main__ - INFO - MEDIUM       | Success Rate: 41.82% | Tasks: 11 | Episodes: 110
+2026-03-24 15:35:58,799 - __main__ - INFO - HARD         | Success Rate: 42.00% | Tasks: 5 | Episodes: 50
+2026-03-24 15:35:58,799 - __main__ - INFO - VERY_HARD    | Success Rate: 66.00% | Tasks: 5 | Episodes: 50
+eval2
+2026-03-24 18:23:11,100 - __main__ - INFO - EASY         | Success Rate: 75.00% | Tasks: 28 | Episodes: 280
+2026-03-24 18:23:11,100 - __main__ - INFO - MEDIUM       | Success Rate: 39.09% | Tasks: 11 | Episodes: 110
+2026-03-24 18:23:11,100 - __main__ - INFO - HARD         | Success Rate: 36.00% | Tasks: 5 | Episodes: 50
+2026-03-24 18:23:11,100 - __main__ - INFO - VERY_HARD    | Success Rate: 64.00% | Tasks: 5 | Episodes: 50
+eval3
+2026-03-24 20:59:58,560 - __main__ - INFO - EASY         | Success Rate: 73.21% | Tasks: 28 | Episodes: 280
+2026-03-24 20:59:58,560 - __main__ - INFO - MEDIUM       | Success Rate: 37.27% | Tasks: 11 | Episodes: 110
+2026-03-24 20:59:58,560 - __main__ - INFO - HARD         | Success Rate: 40.00% | Tasks: 5 | Episodes: 50
+2026-03-24 20:59:58,560 - __main__ - INFO - VERY_HARD    | Success Rate: 72.00% | Tasks: 5 | Episodes: 50
+eval4
+2026-03-25 15:18:53,542 - __main__ - INFO - EASY         | Success Rate: 74.64% | Tasks: 28 | Episodes: 280
+2026-03-25 15:18:53,542 - __main__ - INFO - MEDIUM       | Success Rate: 38.18% | Tasks: 11 | Episodes: 110
+2026-03-25 15:18:53,542 - __main__ - INFO - HARD         | Success Rate: 46.00% | Tasks: 5 | Episodes: 50
+2026-03-25 15:18:53,542 - __main__ - INFO - VERY_HARD    | Success Rate: 72.00% | Tasks: 5 | Episodes: 50
+eval5
+2026-03-24 20:59:58,560 - __main__ - INFO - EASY         | Success Rate: 73.21% | Tasks: 28 | Episodes: 280
+2026-03-24 20:59:58,560 - __main__ - INFO - MEDIUM       | Success Rate: 37.27% | Tasks: 11 | Episodes: 110
+2026-03-24 20:59:58,560 - __main__ - INFO - HARD         | Success Rate: 40.00% | Tasks: 5 | Episodes: 50
+2026-03-24 20:59:58,560 - __main__ - INFO - VERY_HARD    | Success Rate: 72.00% | Tasks: 5 | Episodes: 50
+
+=================================================================================================================
+physics_va_flow_0321_8GPU10_horizon_true_no_skip_a_batch_training_10_infer_10_horizon_chunk_size_5_0324_new_eval_30k_cpt_episodes_10
+2026-03-24 15:48:27,089 - __main__ - INFO - EASY         | Success Rate: 82.86% | Tasks: 28 | Episodes: 280
+2026-03-24 15:48:27,089 - __main__ - INFO - MEDIUM       | Success Rate: 44.55% | Tasks: 11 | Episodes: 110
+2026-03-24 15:48:27,089 - __main__ - INFO - HARD         | Success Rate: 48.00% | Tasks: 5 | Episodes: 50
+2026-03-24 15:48:27,089 - __main__ - INFO - VERY_HARD    | Success Rate: 70.00% | Tasks: 5 | Episodes: 50
+eval2
+2026-03-24 18:31:22,069 - __main__ - INFO - EASY         | Success Rate: 79.29% | Tasks: 28 | Episodes: 280
+2026-03-24 18:31:22,069 - __main__ - INFO - MEDIUM       | Success Rate: 55.45% | Tasks: 11 | Episodes: 110
+2026-03-24 18:31:22,069 - __main__ - INFO - HARD         | Success Rate: 40.00% | Tasks: 5 | Episodes: 50
+2026-03-24 18:31:22,069 - __main__ - INFO - VERY_HARD    | Success Rate: 68.00% | Tasks: 5 | Episodes: 50
+eval3
+2026-03-24 21:15:08,315 - __main__ - INFO - EASY         | Success Rate: 81.07% | Tasks: 28 | Episodes: 280
+2026-03-24 21:15:08,315 - __main__ - INFO - MEDIUM       | Success Rate: 43.64% | Tasks: 11 | Episodes: 110
+2026-03-24 21:15:08,315 - __main__ - INFO - HARD         | Success Rate: 42.00% | Tasks: 5 | Episodes: 50
+2026-03-24 21:15:08,315 - __main__ - INFO - VERY_HARD    | Success Rate: 58.00% | Tasks: 5 | Episodes: 50
+eval4
+2026-03-25 14:58:53,572 - __main__ - INFO - EASY         | Success Rate: 83.21% | Tasks: 28 | Episodes: 280
+2026-03-25 14:58:53,572 - __main__ - INFO - MEDIUM       | Success Rate: 55.45% | Tasks: 11 | Episodes: 110
+2026-03-25 14:58:53,572 - __main__ - INFO - HARD         | Success Rate: 38.00% | Tasks: 5 | Episodes: 50
+2026-03-25 14:58:53,572 - __main__ - INFO - VERY_HARD    | Success Rate: 72.00% | Tasks: 5 | Episodes: 50
+eval5
+2026-03-25 16:41:44,542 - __main__ - INFO - EASY         | Success Rate: 79.64% | Tasks: 28 | Episodes: 280
+2026-03-25 16:41:44,542 - __main__ - INFO - MEDIUM       | Success Rate: 48.18% | Tasks: 11 | Episodes: 110
+2026-03-25 16:41:44,542 - __main__ - INFO - HARD         | Success Rate: 42.00% | Tasks: 5 | Episodes: 50
+2026-03-25 16:41:44,542 - __main__ - INFO - VERY_HARD    | Success Rate: 60.00% | Tasks: 5 | Episodes: 50
+
+
+杰哥要被麻烦你帮我提交一下用xdl,我最近老被杀
+
+cd /mnt/workspace/tangzuojin.tzj
+source miniconda3/bin/activate ctl_lam
+
+cd /mnt/workspace/tangzuojin.tzj/physics_latent_world_xingyun_training
+sh run_nebula.sh
+
+
+
+
+=====================================================================================
+####0505 record experimental results
+libero task config(same one checkpoint, only infer ah and replan_step are different):
+=====================================================================================
+
+
+libero object: 99.6   train ah 20 ;  infer ah 14  ; replan_step  10
+
+libero goal: 99.0    train ah 20 ;  infer ah 18 ; replan_step 7
+
+libero Spatial:98.2  train ah 20 ;  infer ah 14 ; replan_step 10
+
+libero long(10): 94.4  train ah 20; infer ah 18 ; replan_step 12
+
+
+
+
+
+
+
+=====================================================================================

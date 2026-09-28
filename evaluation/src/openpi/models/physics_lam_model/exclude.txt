@@ -1,0 +1,6 @@
+*.gif
+*.png
+*.tmp
+*.git
+*.pyc
+*/__pycache__/

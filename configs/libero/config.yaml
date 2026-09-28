@@ -1,0 +1,6 @@
+# Paths are relative to the repository root. Public launchers always cd there first.
+benchmark_root: evaluation/third_party/libero/libero/libero
+bddl_files: evaluation/third_party/libero/libero/libero/bddl_files
+init_states: evaluation/third_party/libero/libero/libero/init_files
+datasets: data/libero/demonstrations
+assets: evaluation/third_party/libero/libero/libero/assets

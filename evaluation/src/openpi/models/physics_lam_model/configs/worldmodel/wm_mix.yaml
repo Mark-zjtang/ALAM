@@ -1,0 +1,123 @@
+world_model_config:
+  _target_: uni_world_model.world_model.models.worldmodel.WorldModel
+  model_lang: 
+    _target_: transformers.T5EncoderModel.from_pretrained
+    pretrained_model_name_or_path: "/mnt/workspace/czj/models/models--t5-base/snapshots/a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1"
+  model_vision: 
+    _target_: uni_world_model.world_model.modules.understand_encoder.dinov2_encoder.DinoV2Encoder
+    pretrained_model_name_or_path: "/mnt/workspace/czj/models/dinov2-giant"
+  model_causal_transformer:
+    _target_: uni_world_model.world_model.models.gpt2.GPT2Model
+    config: 
+      _target_: uni_world_model.world_model.models.gpt2.GPT2Config
+      vocab_size: 1
+      n_embd: 768
+      n_layer: 12
+      n_head: 12
+      activation_function: "relu"
+      dropout: 0.1
+      n_positions: 1024
+  hidden_size: 768
+  sequence_length: 1
+  chunk_size: 10
+  per_latent_action_len: 7
+  latent_action_codebook_size: 256
+  latent_action_pred: true
+  img_feat_dim: 1536
+  lang_feat_dim: 768
+  freeze_lang: true
+  freeze_vision: true
+  obs_pred: false
+
+latent_action_tokenizer_path: "/mnt/workspace/czj/worldmodel-mixed/UniWorldModel-oxe-skipframe5-calvin-skipframe10/logs/latent_action_tokenizer_trained_on_calvin/saved_epoch_60_step_735180/"
+
+dataset_config:
+  data_type: "mix"
+  rgb_shape: [200, 200]
+  lmdb_dir: "/mnt/workspace/caizhejia.czj/lmdb_datasets/" 
+  video_dir: "/mnt/workspace/caizhejia.czj/video_datasets/"
+  skip_frame: 5
+  weighted: true
+  sub_data_configs: [
+    {
+      data_type: "oxe",
+      data_name: "fractal20220817_data",
+      weight: 150
+    },
+    {
+      data_type: "oxe",
+      data_name: "bridge",
+      weight: 50
+    },
+    {
+      data_type: "oxe",
+      data_name: "taco_play",
+      weight: 5
+    },
+    {
+      data_type: "oxe",
+      data_name: "jaco_play",
+      weight: 20
+    },
+    {
+      data_type: "oxe",
+      data_name: "berkeley_cable_routing",
+      weight: 20
+    },
+    {
+      data_type: "oxe",
+      data_name: "roboturk",
+      weight: 10
+    },
+    {
+      data_type: "oxe",
+      data_name: "nyu_door_opening_surprising_effectiveness",
+      weight: 5
+    },
+    {
+      data_type: "oxe",
+      data_name: "viola",
+      weight: 3
+    },
+    {
+      data_type: "oxe",
+      data_name: "berkeley_autolab_ur5",
+      weight: 5
+    },
+    {
+      data_type: "oxe",
+      data_name: "toto",
+      weight: 5
+    },
+    {
+      data_type: "calvin",
+      data_name: "task_ABC_D",
+      skip_frame: 10,
+      weight: 200
+    },
+  ]
+
+dataloader_config:
+  bs_per_gpu: 64
+  workers_per_gpu: 7
+  prefetch_factor: 2
+
+rgb_preprocessor_config: 
+  model_vision_type: "raw"
+  vision_aug_config: 
+    do_random_resized_crop: false
+    do_random_shift: true
+  
+training_config:
+  num_epochs: 100
+  num_warmup_epochs: 2
+  print_steps: 100
+  lr_max: 0.0001
+  weight_decay: 0.0001
+  gradient_accumulation_steps: 4
+  save_epochs: 1
+  save_steps: 1000
+  save_path: "/mnt/workspace/czj/worldmodel-mixed/world_model_stage_2/UniWorldModel-oxe-skipframe5-calvin-skipframe10/"
+  resume_ckpt_path: null
+  max_epoch: 100
+  pred_binary_gripper_action: true

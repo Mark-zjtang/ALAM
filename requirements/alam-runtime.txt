@@ -1,0 +1,11 @@
+# Additions to the preserved root requirements.txt.
+# PyTorch 2.8 matches the original pytorch280 training launcher.
+-r ../requirements.txt
+torch==2.8.0
+torchvision==0.23.0
+torchmetrics==1.6.0
+xformers==0.0.32.post2
+# Pin the three historically unpinned direct requirements to the audited
+# Python 3.10 resolution while keeping the root requirements.txt byte-identical.
+IPython==8.39.0
+diffusers==0.32.2

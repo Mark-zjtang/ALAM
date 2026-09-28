@@ -1,0 +1,4 @@
+# LIBERO evaluation client environment. Both referenced files are preserved
+# snapshots; openpi-client and the local LIBERO package are installed separately.
+-r requirements.txt
+-r ../../third_party/libero/requirements.txt

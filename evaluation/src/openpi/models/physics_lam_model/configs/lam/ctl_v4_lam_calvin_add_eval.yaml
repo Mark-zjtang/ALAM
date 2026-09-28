@@ -1,0 +1,66 @@
+### model
+latent_action_model_config: 
+  _target_: uni_world_model.latent_action_model.models.ctl_latent_action_tokenizer_v4.LatentActionTokenizer
+  ## image channel
+  dino_model: 
+    _target_: uni_world_model.latent_action_model.modules.dinov2_encoder.DinoV2Encoder
+    # pretrained_model_name_or_path: "/mnt/nas-data-3/czj/models/dinov2-giant"
+    pretrained_model_name_or_path: "/mnt/workspace/tangzuojin.tzj/models/dinov2-giant"
+  in_dim: 3
+  dino_dim: 1536
+  model_dim: 768
+  latent_dim: 128
+  num_latents: 256
+  patch_size: 14
+  enc_blocks: 12
+  dec_blocks: 12
+  num_heads: 12
+  action_num_codes: 4
+  freeze_vision: True
+  loss_config:
+    use_abs_recons_loss: False
+    commit_loss_w: 1.0
+    recon_loss_w: 1.0
+    perceptual_loss_w: 1.0
+    additivity_loss_w: 1.0
+    cycle_loss_w: 1.0
+    flow_loss_w: 1.0
+    cka_loss_w: 1.0
+
+
+
+### dataset
+dataset_config:
+  data_type: "video_npz_3seq"
+  npz_dir: "/mnt/workspace/tangzuojin.tzj/task_ABC_D" 
+  # npz_dir: "/mnt/nas-data-3/zjtang/task_ABC_D"
+  rgb_shape: [200, 200]
+  skip_frame: 10 # 10,3
+  small_data: False 
+
+
+
+dataloader_config:
+  bs_per_gpu: 16 # default 32, first runing verion 0107 is 32, changed to 128 for 0108. In na175 batch 64 for 8 gpus is failed because out of memory
+  workers_per_gpu: 7
+  prefetch_factor: 2
+
+rgb_preprocessor_config: 
+  model_vision_type: "raw"
+  vision_aug_config: 
+    do_random_resized_crop: false
+    do_random_shift: true
+
+### training
+training_config:
+  num_epochs: 60
+  num_warmup_epochs: 1
+  print_steps: 10
+  lr_max: 0.0001
+  weight_decay: 0.0001
+  gradient_accumulation_steps: 2
+  save_epochs: 1
+  save_steps: 1000
+  save_path: "/mnt/workspace/tangzuojin.tzj/UniWorldModel-256x4-skipframe10_high_speed_fp32_add_eval/logs/ctl_v4_lam_tokenizer_trained_on_calvin/ctl_v4_lam_calvin_0122_64gpu_batch_16_train_fp32/saved_epoch_29_step_50837_add_eval"
+  resume_ckpt_path: "/mnt/workspace/tangzuojin.tzj/UniWorldModel-256x4-skipframe10_high_speed_fp32_add_eval/logs/ctl_v4_lam_tokenizer_trained_on_calvin/ctl_v4_lam_calvin_0122_64gpu_batch_16_train_fp32/saved_epoch_29_step_50837"
+

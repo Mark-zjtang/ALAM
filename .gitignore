@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Environments and editor state
+.env
+.venv/
+.venvs/
+venv/
+.tools/
+.runtime/
+.idea/
+.vscode/
+.DS_Store
+core
+core-*
+core.*
+
+# Packaging
+build/
+dist/
+*.egg-info/
+
+# Local configs
+configs/lam/*_local.yaml
+
+# Training outputs
+logs/
+runs/
+wandb/
+outputs/
+checkpoints/
+saved_epoch_*/
+temp_epoch_*/
+*.log
+pytorch_model.bin
+
+# Keep compact, publication-facing evaluation evidence in Git.
+!evaluation/evaluation_evidence/**/*.log
+
+# Model binaries are published on Hugging Face, not in the GitHub code repo.
+# Keep only their local layout documentation in Git.
+!evaluation/checkpoints/
+evaluation/checkpoints/*
+!evaluation/checkpoints/README.md
+
+# Local datasets and caches
+task_ABC_D/
+video_datasets/
+lmdb_datasets/
+tensorflow_datasets/
+.cache/
+data/
+hf_staging/

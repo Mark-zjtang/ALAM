@@ -1,0 +1,63 @@
+world_model_config:
+  _target_: uni_world_model.world_model.models.worldmodel.WorldModel
+  model_lang: 
+    _target_: transformers.T5EncoderModel.from_pretrained
+    pretrained_model_name_or_path: "/mnt/workspace/czj/models/models--t5-base/snapshots/a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1"
+  model_vision: 
+    _target_: uni_world_model.world_model.modules.understand_encoder.dinov2_encoder.DinoV2Encoder
+    pretrained_model_name_or_path: "/mnt/workspace/czj/models/dinov2-giant"
+  model_causal_transformer:
+    _target_: uni_world_model.world_model.models.gpt2.GPT2Model
+    config: 
+      _target_: uni_world_model.world_model.models.gpt2.GPT2Config
+      vocab_size: 1
+      n_embd: 768
+      n_layer: 12
+      n_head: 12
+      activation_function: "relu"
+      dropout: 0.1
+      n_positions: 1024
+  hidden_size: 768
+  sequence_length: 1
+  chunk_size: 10
+  per_latent_action_len: 4
+  latent_action_codebook_size: 32
+  latent_action_pred: true
+  img_feat_dim: 1536
+  lang_feat_dim: 768
+  freeze_lang: true
+  freeze_vision: true
+  obs_pred: true
+
+latent_action_tokenizer_path: "/mnt/workspace/czj/worldmodel-bf16/UniWorldModel-256x4-skipframe5/logs/latent_action_dino_codebook32_tokenizer_trained_on_calvin/saved_epoch_100_step_87700/"
+
+dataset_config: 
+  data_type: "calvin"
+  lmdb_dir: "/mnt/workspace/caizhejia.czj/lmdb_datasets/task_ABC_D"
+  rgb_shape: [200, 200]
+  skip_frame: 5
+
+dataloader_config:
+  bs_per_gpu: 64
+  workers_per_gpu: 7
+  prefetch_factor: 2
+
+rgb_preprocessor_config: 
+  model_vision_type: "raw"
+  vision_aug_config: 
+    do_random_resized_crop: false
+    do_random_shift: true
+  
+training_config:
+  num_epochs: 100
+  num_warmup_epochs: 2
+  print_steps: 100
+  lr_max: 0.0001
+  weight_decay: 0.0001
+  gradient_accumulation_steps: 4
+  save_epochs: 1
+  save_steps: 1000
+  save_path: "/mnt/workspace/czj/worldmodel_on_nebula_dino_stage2_foresight_first/worldmodel_dino_wm_dino_predict_0621/logs/world_model_trained_on_calvin/"
+  resume_ckpt_path: null
+  max_epoch: 100
+  pred_binary_gripper_action: true

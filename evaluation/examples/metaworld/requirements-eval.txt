@@ -1,0 +1,16 @@
+# Curated MetaWorld evaluation client environment.
+# The preserved requirements.txt contains an unusable `some-package` placeholder;
+# openpi-client is installed from this repository by the environment installer.
+imageio==2.37.2
+imageio-ffmpeg==0.6.0
+gymnasium==1.2.2
+metaworld==2.0.0
+mujoco==3.6.0
+numpy==1.26.4
+opencv-python==4.10.0.84
+packaging==25.0
+pillow==12.0.0
+torch==2.2.0
+tqdm==4.67.1
+tyro==0.9.35
+websockets==15.0.1

@@ -1,0 +1,105 @@
+diffusion_policy_config:
+  _target_: uni_world_model.diffusion_policy.models.diffusion_policy.DiffusionPolicyModel
+  world_model:
+    _target_: uni_world_model.world_model.models.worldmodel.WorldModel
+    model_lang: 
+      _target_: transformers.T5EncoderModel.from_pretrained
+      pretrained_model_name_or_path: "/mnt/workspace/tangzuojin.tzj/models/models--t5-base/snapshots/a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1"
+    model_vision: 
+      _target_: uni_world_model.world_model.modules.understand_encoder.dinov2_encoder.DinoV2Encoder
+      pretrained_model_name_or_path: "/mnt/workspace/tangzuojin.tzj/models/dinov2-giant"
+    model_causal_transformer:
+      # _target_: uni_world_model.world_model.models.gpt2.GPT2Model
+      config: 
+        _target_: uni_world_model.world_model.models.gpt2.GPT2Config
+        vocab_size: 1
+        n_embd: 768
+        n_layer: 12
+        n_head: 12
+        activation_function: "relu"
+        
+        dropout: 0.1
+        n_positions: 1024
+    hidden_size: 768
+    sequence_length: 1
+    chunk_size: 10
+    per_latent_action_len: 7
+    latent_action_codebook_size: 256
+    latent_action_pred: true
+    img_feat_dim: 1536
+    lang_feat_dim: 768
+    freeze_lang: true
+    freeze_vision: true
+  diffusion_head:
+    _target_: uni_world_model.diffusion_policy.modules.dit.DiT
+    attention_head_dim: 48
+    dropout: 0.2
+    final_dropout: true
+    interleave_self_attention: true
+    norm_type: "ada_norm"
+    num_attention_heads: 16
+    num_layers: 16
+    output_dim: 1024
+    positional_embeddings: null
+
+  dp_hidden_size: 1024
+  input_embedding_dim: 768
+  noise_beta_alpha: 1.5
+  noise_beta_beta: 1.0
+  noise_s: 0.999
+  num_inference_timesteps: 16
+  num_timestep_buckets: 1000
+  act_pred: True
+  act_dim: 7
+  add_pos_embed: true
+  freeze_world_model: false
+  pretrained_model_path: null
+  # pretrained_model_path: "/mnt/workspace/czj/worldmodel/UniWorldModel-gpt2-h20-256x7-raw/logs/world_model_trained_on_calvin/saved_epoch_100_step_34900/pytorch_model.bin"
+
+  latent_dim: 1024        # LAM z_e 的维度，需与 LAM 配置保持一致
+  use_joint_flow: true   # 是否启用联合流
+
+  # 损失权重
+  lambda_la: 1.0         # 潜动作辅助分类损失权重
+  lambda_a: 1.0        # 动作流损失权重（与原 200× 一致）
+  lambda_w: 1.0          # 世界流损失权重
+  lambda_c: 0.5          # 耦合一致性损失权重
+
+latent_action_tokenizer_path: "/mnt/workspace/tangzuojin.tzj/UniWorldModel-256x4-skipframe10_high_speed_fp32/logs/ctl_v3_lam_tokenizer_trained_on_calvin/ctl_v3_lam_calvin_0118_32gpu_batch_32_train_fp32/saved_epoch_39_step_68367"
+
+dataset_config: 
+  data_type: "jointflow_downstream"
+  dataset_root: "/mnt/workspace/tangzuojin.tzj/metaworld_mt50"
+  rgb_shape: [224, 224]
+  skip_frame: 1
+  chunk_size: 10
+  act_dim: 4
+  camera_name: "Third Person"
+  val_size: 50
+  small_data: True
+  
+
+dataloader_config:
+  bs_per_gpu: 32
+  workers_per_gpu: 7
+  prefetch_factor: 2
+
+rgb_preprocessor_config: 
+  model_vision_type: "raw"
+  vision_aug_config: 
+    do_random_resized_crop: false
+    do_random_shift: true
+  
+training_config:
+  num_epochs: 40
+  num_warmup_epochs: 1
+  print_steps: 100
+  lr_max: 0.0002
+  weight_decay: 0.0001
+  gradient_accumulation_steps: 4
+  save_epochs: 1
+  save_steps: 10000
+  save_path: "/mnt/workspace/tangzuojin.tzj/physlatent_vla_server146/training_calvin_0207_test"
+  resume_ckpt_path: null
+  max_epoch: 40
+  pred_binary_gripper_action: true

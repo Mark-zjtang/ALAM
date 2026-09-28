@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "profile_id": "oss_release_x071",
+  "status": "open_source_default",
+  "camera": {
+    "name": "corner2",
+    "position": [0.71, 0.075, 0.70],
+    "coordinate_semantics": "absolute MuJoCo world coordinates"
+  },
+  "policy": {
+    "config": "phy_metaworld_full_finetune",
+    "checkpoint": "evaluation/checkpoints/metaworld/alam_plus_pi_metaworld_mt50_step30000",
+    "alam_checkpoint": "evaluation/checkpoints/alam/metaworld_epoch19_step58216",
+    "raw_action_horizon": 6,
+    "effective_inference_horizon": 5,
+    "chunk_and_replan": 5,
+    "initial_rng_key": 0
+  },
+  "evaluation": {
+    "tasks": 50,
+    "episodes_per_task": 10,
+    "total_episodes": 500,
+    "max_steps": 200,
+    "evaluator_seed_argument": 10,
+    "server_mode": "one_dedicated_server_one_client"
+  },
+  "validated_runtime_2026_09_02": {
+    "client": {
+      "python": "CPython 3.11.16",
+      "metaworld": "2.0.0",
+      "mujoco": "3.6.0",
+      "gymnasium": "1.2.2",
+      "numpy": "1.26.4",
+      "torch": "2.2.0+cu121",
+      "websockets": "15.0.1"
+    },
+    "server": {
+      "python": "CPython 3.11.16",
+      "jax": "0.5.3",
+      "jaxlib": "0.5.3",
+      "flax": "0.10.2",
+      "orbax-checkpoint": "0.11.13",
+      "numpy": "1.26.4",
+      "torch": "2.7.0",
+      "torchvision": "0.22.0",
+      "websockets": "15.0.1"
+    },
+    "transport": "client ping_interval=None during synchronous first-call JAX compilation",
+    "xla_memory_fraction": 0.4,
+    "xla_memory_fraction_note": "validated while sharing the host; it is a resource setting, not a metric setting"
+  },
+  "observed_result_2026_09_02": {
+    "validation_status": "STRUCTURALLY_VALID",
+    "successes": 432,
+    "episodes": 500,
+    "episode_weighted_percent": 86.4,
+    "difficulty_successes": {
+      "easy": [250, 280],
+      "medium": [86, 110],
+      "hard": [54, 60],
+      "very_hard": [42, 50]
+    },
+    "difficulty_macro_percent": 85.36688311688312,
+    "raw_log_sha256": "a6e0cdcc5f44c5fc0cd01321d0de301a449397f7bcb45cc265407a8a80df491e",
+    "execution_source_sha256": {
+      "server_entry": "43a8a0e3bed3b322a785e51dfad35d959113c7daa89e6f93adfdb597c640d10b",
+      "reconstructed_config": "6371e4ebdda95749b5257503891c195485c3dbc647138e53b5d118c873adacd5",
+      "reconstructed_source_overlay_tree": "2994c6b2bee65d96d6e82c1375e62e0abe6e9b51914429500eb1874b19ace9c7",
+      "client_transport_overlay": "a43a47451515ae5634b1c6a4f36937fe47aad81a6a3dd1c63364d45458ad9e9b"
+    }
+  },
+  "source_evidence": {
+    "preserved_evaluator_sha256": "a82365f5cd67a4ecbfaffeb9034ffd50ac044d35af8d91f84e324aa748f6c590",
+    "preserved_policy_rng_sha256": "8851316391ff5f15781729f1638679ab66b85c81b60d97084e4970ee5ec967a7",
+    "preserved_model_sha256": "aecb982abd52e92cf8a81f94b37f8c4825664126cacd07506aaa6c0d33a50d92",
+    "weights_manifest_sha256": "9e0e7dc6c06a09d9eeb7a729f9d48582a7a283705ae30c88b93b8e4829d9010c"
+  },
+  "selection_disclosure": {
+    "camera_selected_after_observing_sweep": true,
+    "camera_values_observed": [0.66, 0.67, 0.71, 0.72],
+    "result_is_strict_historical_reproduction": false,
+    "reason": "Each run constructed a fresh unseeded MT50 task set, so task variants were not paired across cameras."
+  },
+  "historical_evidence_profile": {
+    "camera_position": [0.70, 0.075, 0.70],
+    "successes": 434,
+    "episodes": 500,
+    "episode_weighted_percent": 86.8,
+    "difficulty_macro_percent": 84.98051948051948,
+    "evidence_log": "evaluation/evaluation_evidence/metaworld/mt50_cam_x_0.70.log"
+  }
+}
