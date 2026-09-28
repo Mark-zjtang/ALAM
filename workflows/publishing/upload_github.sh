@@ -56,8 +56,9 @@ remote_main_sha() {
 
 local_sha=$(git rev-parse HEAD)
 remote_sha=$(remote_main_sha)
-if [[ -n $remote_sha && $remote_sha != "$local_sha" ]]; then
-  echo 'Remote main differs from this release; inspect it before publishing. No force push is used.' >&2
+if [[ -n $remote_sha && $remote_sha != "$local_sha" ]] &&
+   ! git merge-base --is-ancestor "$remote_sha" "$local_sha"; then
+  echo 'Remote main is not an ancestor of this release; inspect it before publishing. No force push is used.' >&2
   exit 2
 fi
 
