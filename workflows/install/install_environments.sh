@@ -191,6 +191,7 @@ install_alam() {
 }
 
 install_pi0() {
+  export UV_CACHE_DIR="$UV_CACHE_DIR/pi0-$(id -u)"
   begin_venv_install pi0 3.11
   if [[ "$PI0_INSTALL_MODE" == "source-lock" ]]; then
     # Compatibility mode for the regional registry URLs embedded by the
