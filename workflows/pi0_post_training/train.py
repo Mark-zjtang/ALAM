@@ -28,7 +28,7 @@ SPECS = {
         "repo_id": "metaworld_mt50",
         "raw_horizon": 6,
         "effective_horizon": 5,
-        "alam": "evaluation/checkpoints/alam/metaworld_epoch19_step58216",
+        "alam": "evaluation/checkpoints/alam/alam_pretrain_latent_action_tokenizer",
         "policy": "evaluation/checkpoints/metaworld/alam_plus_pi_metaworld_mt50_step30000",
     },
     "libero": {
@@ -36,7 +36,7 @@ SPECS = {
         "repo_id": "libero_real",
         "raw_horizon": 21,
         "effective_horizon": 20,
-        "alam": "evaluation/checkpoints/alam/metaworld_epoch19_step58216",
+        "alam": "evaluation/checkpoints/alam/alam_pretrain_latent_action_tokenizer",
         "policy": "evaluation/checkpoints/libero/alam_plus_pi_libero_step30000",
     },
 }

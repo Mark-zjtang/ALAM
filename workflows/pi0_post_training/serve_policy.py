@@ -66,7 +66,7 @@ def build_spec(args: argparse.Namespace) -> dict[str, object]:
                 "ALAM_METAWORLD_POLICY", "evaluation/checkpoints/metaworld/alam_plus_pi_metaworld_mt50_step30000"
             ),
             "alam_checkpoint": args.alam_checkpoint or os.environ.get(
-                "ALAM_METAWORLD_TOKENIZER", "evaluation/checkpoints/alam/metaworld_epoch19_step58216"
+                "ALAM_METAWORLD_TOKENIZER", "evaluation/checkpoints/alam/alam_pretrain_latent_action_tokenizer"
             ),
             "effective_horizon": 5,
             "raw_horizon": 6,
@@ -81,7 +81,7 @@ def build_spec(args: argparse.Namespace) -> dict[str, object]:
             "ALAM_LIBERO_POLICY", "evaluation/checkpoints/libero/alam_plus_pi_libero_step30000"
         ),
         "alam_checkpoint": args.alam_checkpoint or os.environ.get(
-            "ALAM_LIBERO_TOKENIZER", "evaluation/checkpoints/alam/metaworld_epoch19_step58216"
+            "ALAM_LIBERO_TOKENIZER", "evaluation/checkpoints/alam/alam_pretrain_latent_action_tokenizer"
         ),
         **suite,
     }

@@ -9,7 +9,7 @@ import types
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
-SHARED = 'evaluation/checkpoints/alam/metaworld_epoch19_step58216'
+SHARED = 'evaluation/checkpoints/alam/alam_pretrain_latent_action_tokenizer'
 
 def load(name, relative):
     spec = importlib.util.spec_from_file_location(name, ROOT / relative)
@@ -38,8 +38,8 @@ def main():
         downloader.main()
     assert len(calls) == 1
     assert set(calls[0]['allow_patterns']) == {
-        'metaworld_epoch19_step58216/config.yaml',
-        'metaworld_epoch19_step58216/pytorch_model.bin',
+        'alam_pretrain_latent_action_tokenizer/config.yaml',
+        'alam_pretrain_latent_action_tokenizer/pytorch_model.bin',
     }
     assert calls[0]['repo_id'] == 'Mark-ZJTang/alam_pretrain'
     print('Shared tokenizer routing, CLI override, and download selection: PASS')

@@ -29,7 +29,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--checkpoint",
-        default="evaluation/checkpoints/alam/metaworld_epoch19_step58216",
+        default="evaluation/checkpoints/alam/alam_pretrain_latent_action_tokenizer",
     )
     parser.add_argument("--calvin-root")
     parser.add_argument("--samples", type=int, default=10)

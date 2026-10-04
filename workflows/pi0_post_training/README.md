@@ -1,8 +1,8 @@
 # ALAM + π0 post-training
 
-Both MetaWorld and LIBERO default to the shared ALAM tokenizer `metaworld_epoch19_step58216` (epoch 19, step 58,216). The directory name is retained for compatibility. Existing `.env` files should set both `ALAM_METAWORLD_TOKENIZER` and `ALAM_LIBERO_TOKENIZER` to `evaluation/checkpoints/alam/metaworld_epoch19_step58216`.
+Both MetaWorld and LIBERO default to the shared ALAM tokenizer `alam_pretrain_latent_action_tokenizer`. Existing `.env` files should set both `ALAM_METAWORLD_TOKENIZER` and `ALAM_LIBERO_TOKENIZER` to `evaluation/checkpoints/alam/alam_pretrain_latent_action_tokenizer`.
 
-The project owner confirms that the shared epoch-19 configuration has passed LIBERO validation. Published benchmark scores remain the recorded results of their original evaluation runs.
+The project owner confirms that the shared tokenizer configuration has passed LIBERO validation. Published benchmark scores remain the recorded results of their original evaluation runs.
 
 We initialize π0 from its base checkpoint and train it on action-labeled demonstrations while keeping the Mix-11-pretrained ALAM encoder frozen. This produces the MetaWorld and LIBERO policy weights released on Hugging Face.
 

@@ -10,7 +10,7 @@
   "policy": {
     "config": "phy_metaworld_full_finetune",
     "checkpoint": "evaluation/checkpoints/metaworld/alam_plus_pi_metaworld_mt50_step30000",
-    "alam_checkpoint": "evaluation/checkpoints/alam/metaworld_epoch19_step58216",
+    "alam_checkpoint": "evaluation/checkpoints/alam/alam_pretrain_latent_action_tokenizer",
     "raw_action_horizon": 6,
     "effective_inference_horizon": 5,
     "chunk_and_replan": 5,

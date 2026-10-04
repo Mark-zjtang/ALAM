@@ -53,7 +53,7 @@ def main() -> None:
             meta_root / "server/server.log",
             "metaworld",
             META_POLICY,
-            "metaworld_epoch19_step58216",
+            "alam_pretrain_latent_action_tokenizer",
             5,
             5,
         )

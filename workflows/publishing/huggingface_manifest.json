@@ -7,8 +7,8 @@
       "repo_id": "Mark-ZJTang/alam_pretrain",
       "download_path": "evaluation/checkpoints/alam",
       "allow_patterns": [
-        "metaworld_epoch19_step58216/config.yaml",
-        "metaworld_epoch19_step58216/pytorch_model.bin"
+        "alam_pretrain_latent_action_tokenizer/config.yaml",
+        "alam_pretrain_latent_action_tokenizer/pytorch_model.bin"
       ]
     },
     {

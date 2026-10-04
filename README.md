@@ -43,7 +43,7 @@ We pretrain ALAM to learn latent actions from videos without action labels, usin
 | --- | --- | --- | --- |
 | ALAM latent-action tokenizer | **[OXE](https://github.com/google-deepmind/open_x_embodiment) (10 datasets):** RT-1 (`fractal20220817`), BridgeData-V2, TACO-Play, JaCo-Play, Berkeley Cable Routing, RoboTurk, NYU Door-Opening, VIOLA, Berkeley AutoLab UR5, TOTO.<br>**[CALVIN ABC→D](https://github.com/mees/calvin/blob/main/dataset/README.md)** | 128 × H20 GPUs | [🤗alam_pretrain](https://huggingface.co/Mark-ZJTang/alam_pretrain) |
 
-MetaWorld and LIBERO use one shared Mix-11-pretrained ALAM tokenizer: `metaworld_epoch19_step58216` (epoch 19, step 58,216). The directory name is retained for download compatibility; it does not restrict the tokenizer to MetaWorld. See the [pretraining guide](workflows/alam_pretraining/README.md) for dataset preparation and sampling weights.
+MetaWorld and LIBERO use one shared Mix-11-pretrained ALAM tokenizer: `alam_pretrain_latent_action_tokenizer`. See the [pretraining guide](workflows/alam_pretraining/README.md) for dataset preparation and sampling weights.
 
 ```bash
 bash workflows/alam_pretraining/pretrain.sh

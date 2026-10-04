@@ -16,7 +16,7 @@ After setting up the [ALAM environment](README.md#training), run from the reposi
 
 ```bash
 bash workflows/alam_pretraining/evaluate_validation.sh --gpu 0 \
-  --checkpoint evaluation/checkpoints/alam/metaworld_epoch19_step58216 \
+  --checkpoint evaluation/checkpoints/alam/alam_pretrain_latent_action_tokenizer \
   --calvin-root data/alam/calvin --samples 100 \
   --output outputs/latent_action_validation/summary.json
 ```

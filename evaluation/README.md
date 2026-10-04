@@ -8,7 +8,7 @@ This directory contains the preserved π0 integration, simulator clients, and as
 | MetaWorld MT50 | [MetaWorld evaluation](../workflows/metaworld_evaluation/README.md) |
 | LIBERO | [LIBERO evaluation](../workflows/libero_evaluation/README.md) |
 
-Downloaded weights belong under `checkpoints/`; use the [download manifest](../workflows/publishing/huggingface_manifest.json) for paths. The three default artifacts are one shared Mix-11-pretrained ALAM tokenizer (`metaworld_epoch19_step58216`) and one post-trained π0 policy for each benchmark.
+Downloaded weights belong under `checkpoints/`; use the [download manifest](../workflows/publishing/huggingface_manifest.json) for paths. The three default artifacts are one shared Mix-11-pretrained ALAM tokenizer (`alam_pretrain_latent_action_tokenizer`) and one post-trained π0 policy for each benchmark.
 
 The [selected completed evaluations](../workflows/best_observed_evaluation/README.md) are historical observations, separate from new portable runs. In particular, the retained LIBERO Spatial client log does not independently prove the loaded server checkpoint.
 

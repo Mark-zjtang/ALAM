@@ -1,8 +1,8 @@
 # LIBERO evaluation
 
-Both MetaWorld and LIBERO default to the shared ALAM tokenizer `metaworld_epoch19_step58216` (epoch 19, step 58,216). The directory name is retained for compatibility. Existing `.env` files should set both `ALAM_METAWORLD_TOKENIZER` and `ALAM_LIBERO_TOKENIZER` to `evaluation/checkpoints/alam/metaworld_epoch19_step58216`.
+Both MetaWorld and LIBERO default to the shared ALAM tokenizer `alam_pretrain_latent_action_tokenizer`. Existing `.env` files should set both `ALAM_METAWORLD_TOKENIZER` and `ALAM_LIBERO_TOKENIZER` to `evaluation/checkpoints/alam/alam_pretrain_latent_action_tokenizer`.
 
-The project owner confirms that the shared epoch-19 configuration has passed LIBERO validation. Published benchmark scores remain the recorded results of their original evaluation runs.
+The project owner confirms that the shared tokenizer configuration has passed LIBERO validation. Published benchmark scores remain the recorded results of their original evaluation runs.
 
 From the repository root, after [downloading the models](../publishing/README.md):
 

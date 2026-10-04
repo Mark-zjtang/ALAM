@@ -9,7 +9,7 @@ bash workflows/publishing/download_release.sh --models-only
 
 | Model repository | Contents |
 | --- | --- |
-| [alam_pretrain](https://huggingface.co/Mark-ZJTang/alam_pretrain) | Shared epoch-19 ALAM tokenizer pretrained on Mix-11: 10 OXE video sources + CALVIN |
+| [alam_pretrain](https://huggingface.co/Mark-ZJTang/alam_pretrain) | Shared ALAM tokenizer pretrained on Mix-11: 10 OXE video sources + CALVIN |
 | [alam_plus_pi_metaworld_mt50](https://huggingface.co/Mark-ZJTang/alam_plus_pi_metaworld_mt50) | π0 policy post-trained on MetaWorld demonstrations with frozen ALAM |
 | [alam_plus_pi_libero](https://huggingface.co/Mark-ZJTang/alam_plus_pi_libero) | π0 policy post-trained on LIBERO demonstrations with frozen ALAM |
 
@@ -30,4 +30,4 @@ The script fetches remote `main` before checking commit history. If GitHub has n
 
 Do not put your GitHub token in a command, URL, `.env`, README, or chat. The code-push script does not write it to this repository or a credential helper.
 
-The default model download fetches one ALAM tokenizer, `metaworld_epoch19_step58216`, for both downstream policies. The download manifest selects only its config and weights.
+The default model download fetches one ALAM tokenizer, `alam_pretrain_latent_action_tokenizer`, for both downstream policies. The download manifest selects only its config and weights.

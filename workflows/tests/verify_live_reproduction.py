@@ -87,7 +87,7 @@ def server_spec(path: Path, checkpoint_name: str, policy_checkpoint: Path) -> di
 def verify_metaworld(output_root: Path) -> dict[str, object]:
     run_root = require_dir(output_root / "evaluation" / "metaworld_mt50", "MetaWorld live output")
     policy = repo_path("evaluation/checkpoints/metaworld/alam_plus_pi_metaworld_mt50_step30000")
-    spec = server_spec(run_root / "server" / "server.log", "metaworld_epoch19_step58216", policy)
+    spec = server_spec(run_root / "server" / "server.log", "alam_pretrain_latent_action_tokenizer", policy)
     if (int(spec["effective_horizon"]), int(spec["replan"])) != (5, 5):
         raise AssertionError(f"MetaWorld inference configuration mismatch: {spec}")
 
@@ -142,7 +142,7 @@ def verify_metaworld(output_root: Path) -> dict[str, object]:
         "status": "PASS",
         "log": str(log_path),
         "policy_checkpoint": str(policy),
-        "alam_checkpoint": "evaluation/checkpoints/alam/metaworld_epoch19_step58216",
+        "alam_checkpoint": "evaluation/checkpoints/alam/alam_pretrain_latent_action_tokenizer",
         "tasks": len(task_names),
         "successes": sum(outcomes),
         "episodes": len(outcomes),
@@ -154,7 +154,7 @@ def verify_metaworld(output_root: Path) -> dict[str, object]:
 
 
 def verify_libero(
-    output_root: Path, checkpoint_name: str = "metaworld_epoch19_step58216"
+    output_root: Path, checkpoint_name: str = "alam_pretrain_latent_action_tokenizer"
 ) -> dict[str, object]:
     policy = repo_path("evaluation/checkpoints/libero/alam_plus_pi_libero_step30000")
     results: dict[str, dict[str, object]] = {}

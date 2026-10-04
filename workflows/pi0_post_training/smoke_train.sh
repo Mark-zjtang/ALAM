@@ -34,13 +34,13 @@ case "$BENCHMARK" in
   metaworld)
     CONFIG_NAME="phy_metaworld_full_finetune"
     DATASET_REL="data/lerobot/metaworld_mt50"
-    ALAM_REL="evaluation/checkpoints/alam/metaworld_epoch19_step58216"
+    ALAM_REL="evaluation/checkpoints/alam/alam_pretrain_latent_action_tokenizer"
     POLICY_REL="evaluation/checkpoints/metaworld/alam_plus_pi_metaworld_mt50_step30000"
     ;;
   libero)
     CONFIG_NAME="phy_libero_full_finetune"
     DATASET_REL="data/lerobot/libero_real"
-    ALAM_REL="evaluation/checkpoints/alam/metaworld_epoch19_step58216"
+    ALAM_REL="evaluation/checkpoints/alam/alam_pretrain_latent_action_tokenizer"
     POLICY_REL="evaluation/checkpoints/libero/alam_plus_pi_libero_step30000"
     ;;
 esac
