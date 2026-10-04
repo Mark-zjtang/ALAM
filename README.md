@@ -118,8 +118,6 @@ ALAM/
 └── outputs/                      # Training checkpoints and evaluation results
 ```
 
-For model downloads and the maintainer's GitHub code-push command, see [Downloads and code publishing](workflows/publishing/README.md).
-
 ALAM-authored code is available under [MIT or Apache-2.0](LICENSE), at your option. Bundled third-party material retains its own license.
 
 ## 📚 Citation
