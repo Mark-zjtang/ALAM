@@ -36,7 +36,7 @@ SPECS = {
         "repo_id": "libero_real",
         "raw_horizon": 21,
         "effective_horizon": 20,
-        "alam": "evaluation/checkpoints/alam/libero_epoch16_step49024",
+        "alam": "evaluation/checkpoints/alam/metaworld_epoch19_step58216",
         "policy": "evaluation/checkpoints/libero/alam_plus_pi_libero_step30000",
     },
 }

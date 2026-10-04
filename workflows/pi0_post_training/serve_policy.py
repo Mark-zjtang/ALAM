@@ -81,7 +81,7 @@ def build_spec(args: argparse.Namespace) -> dict[str, object]:
             "ALAM_LIBERO_POLICY", "evaluation/checkpoints/libero/alam_plus_pi_libero_step30000"
         ),
         "alam_checkpoint": args.alam_checkpoint or os.environ.get(
-            "ALAM_LIBERO_TOKENIZER", "evaluation/checkpoints/alam/libero_epoch16_step49024"
+            "ALAM_LIBERO_TOKENIZER", "evaluation/checkpoints/alam/metaworld_epoch19_step58216"
         ),
         **suite,
     }

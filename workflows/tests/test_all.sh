@@ -40,6 +40,7 @@ run_cpu() {
   python3 workflows/tests/test_wait_for_port.py
   python3 workflows/tests/test_evaluation_client_adapter.py
   python3 workflows/audit/validate.py --require-weights
+  python3 workflows/tests/test_shared_tokenizer.py
   python3 workflows/tests/test_live_verifier.py
   python3 workflows/tests/test_archive_roundtrip.py
   "$ENV_ROOT/alam/bin/python" workflows/alam_pretraining/test_imports.py
@@ -48,8 +49,6 @@ run_cpu() {
   "$ENV_ROOT/pi0/bin/python" workflows/pi0_post_training/tests/test_alam_imports.py
   "$ENV_ROOT/pi0/bin/python" workflows/pi0_post_training/tests/test_datasets.py
   "$ENV_ROOT/alam/bin/python" workflows/alam_pretraining/test_checkpoint.py --device cpu
-  "$ENV_ROOT/alam/bin/python" workflows/alam_pretraining/test_checkpoint.py \
-    --checkpoint evaluation/checkpoints/alam/libero_epoch16_step49024 --device cpu
   "$ENV_ROOT/pi0/bin/python" workflows/pi0_post_training/tests/test_checkpoint.py --benchmark metaworld
   "$ENV_ROOT/pi0/bin/python" workflows/pi0_post_training/tests/test_checkpoint.py --benchmark libero
   python3 workflows/pi0_post_training/tests/test_libero_assets.py

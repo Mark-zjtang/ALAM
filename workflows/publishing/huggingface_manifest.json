@@ -5,7 +5,11 @@
       "id": "alam_pretrain",
       "repo_type": "model",
       "repo_id": "Mark-ZJTang/alam_pretrain",
-      "download_path": "evaluation/checkpoints/alam"
+      "download_path": "evaluation/checkpoints/alam",
+      "allow_patterns": [
+        "metaworld_epoch19_step58216/config.yaml",
+        "metaworld_epoch19_step58216/pytorch_model.bin"
+      ]
     },
     {
       "id": "alam_plus_pi_metaworld_mt50",

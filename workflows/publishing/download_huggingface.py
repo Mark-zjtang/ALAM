@@ -228,6 +228,7 @@ def main() -> None:
             repo_id=repo_id,
             repo_type=artifact["repo_type"],
             local_dir=str(download_target),
+            allow_patterns=artifact.get("allow_patterns"),
             ignore_patterns=["README.md", ".gitattributes"],
         )
         local_cache = download_target / ".cache" / "huggingface"

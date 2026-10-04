@@ -89,7 +89,7 @@ def main() -> None:
                 evaluator_log.symlink_to(EVIDENCE / "libero" / LIBERO_LOGS[suite])
 
         metaworld = verify_metaworld(output)
-        libero = verify_libero(output)
+        libero = verify_libero(output, checkpoint_name="libero_epoch16_step49024")
         assert metaworld["successes"] == 434
         assert libero["suites"]["object"]["successes"] == 498
         assert libero["paper_rounded_percent"] == 98.1

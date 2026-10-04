@@ -40,7 +40,7 @@ case "$BENCHMARK" in
   libero)
     CONFIG_NAME="phy_libero_full_finetune"
     DATASET_REL="data/lerobot/libero_real"
-    ALAM_REL="evaluation/checkpoints/alam/libero_epoch16_step49024"
+    ALAM_REL="evaluation/checkpoints/alam/metaworld_epoch19_step58216"
     POLICY_REL="evaluation/checkpoints/libero/alam_plus_pi_libero_step30000"
     ;;
 esac

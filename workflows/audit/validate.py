@@ -82,8 +82,7 @@ HF_REPOSITORIES = {
 }
 
 MODEL_LAYOUT = {
-    "alam_metaworld": "evaluation/checkpoints/alam/metaworld_epoch19_step58216/pytorch_model.bin",
-    "alam_libero": "evaluation/checkpoints/alam/libero_epoch16_step49024/pytorch_model.bin",
+    "alam_shared": "evaluation/checkpoints/alam/metaworld_epoch19_step58216/pytorch_model.bin",
     "pi0_metaworld": "evaluation/checkpoints/metaworld/alam_plus_pi_metaworld_mt50_step30000/params/_METADATA",
     "pi0_libero": "evaluation/checkpoints/libero/alam_plus_pi_libero_step30000/params/_METADATA",
 }

@@ -1,5 +1,9 @@
 # ALAM pretraining
 
+Both MetaWorld and LIBERO default to the shared ALAM tokenizer `metaworld_epoch19_step58216` (epoch 19, step 58,216). The directory name is retained for compatibility. Existing `.env` files should set both `ALAM_METAWORLD_TOKENIZER` and `ALAM_LIBERO_TOKENIZER` to `evaluation/checkpoints/alam/metaworld_epoch19_step58216`.
+
+The project owner confirms that the shared epoch-19 configuration has passed LIBERO validation. Published benchmark scores remain the recorded results of their original evaluation runs.
+
 We learn ALAM latent actions from **Mix-11: 10 OXE video sources + CALVIN**, without action labels. The [released pretrained weights](https://huggingface.co/Mark-ZJTang/alam_pretrain) come from this stage; downstream policy training uses the frozen encoder.
 
 ## Data mixture

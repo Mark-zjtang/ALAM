@@ -153,12 +153,14 @@ def verify_metaworld(output_root: Path) -> dict[str, object]:
     }
 
 
-def verify_libero(output_root: Path) -> dict[str, object]:
+def verify_libero(
+    output_root: Path, checkpoint_name: str = "metaworld_epoch19_step58216"
+) -> dict[str, object]:
     policy = repo_path("evaluation/checkpoints/libero/alam_plus_pi_libero_step30000")
     results: dict[str, dict[str, object]] = {}
     for suite, (cli_suite, horizon, replan, expected_successes) in LIBERO.items():
         run_root = require_dir(output_root / "evaluation" / "libero" / suite, f"LIBERO {suite} live output")
-        spec = server_spec(run_root / "server" / "server.log", "libero_epoch16_step49024", policy)
+        spec = server_spec(run_root / "server" / "server.log", checkpoint_name, policy)
         if (int(spec["effective_horizon"]), int(spec["replan"])) != (horizon, replan):
             raise AssertionError(f"LIBERO {suite} inference configuration mismatch: {spec}")
         model_name = f"alam_plus_pi_libero_trainH20_inferH{horizon}_replan{replan}"
@@ -196,7 +198,7 @@ def verify_libero(output_root: Path) -> dict[str, object]:
     return {
         "status": "PASS",
         "policy_checkpoint": str(policy),
-        "alam_checkpoint": "evaluation/checkpoints/alam/libero_epoch16_step49024",
+        "alam_checkpoint": f"evaluation/checkpoints/alam/{checkpoint_name}",
         "suites": results,
         "average_percent": average,
         "paper_rounded_percent": 98.1,
