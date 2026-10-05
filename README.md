@@ -35,7 +35,7 @@ bash workflows/libero_evaluation/install.sh     # LIBERO evaluation
 
 Set dataset directories in `.env`; relative paths start at the repository root.
 
-For the environment used in our completed evaluation repeats, follow the
+For the tested evaluation environment, follow the
 [environment alignment guide](workflows/evaluation_reproduction/README.md).
 The default installers select Python 3.11 or 3.8; matching the tested environment
 also requires the exact Python patch versions and Torch wheel builds below.
@@ -46,7 +46,7 @@ also requires the exact Python patch versions and Torch wheel builds below.
 | MetaWorld client | 3.11.16 | 2.2.0+cu121; actions on CPU | MetaWorld 2.0.0; MuJoCo 3.6.0 |
 | LIBERO client | 3.8.20 | 1.11.0+cu113; torchvision 0.12.0+cu113 | robosuite 1.4.1; MuJoCo 3.2.3 |
 
-These repeats used one NVIDIA B200, driver 595.71.05, and Ubuntu 22.04.5.
+The tested host used one NVIDIA B200, driver 595.71.05, and Ubuntu 22.04.5.
 The policy server's CUDA 12.8 wheel is a B200 compatibility adjustment to the
 lock-based installation. Each simulator runs in its own environment. The guide
 includes the installation steps and complete package-version inventories;
@@ -112,28 +112,6 @@ bash workflows/libero_evaluation/evaluate_all_suites.sh --gpu 0
 For a single LIBERO suite, run `bash workflows/libero_evaluation/evaluate_libero.sh spatial --gpu 0` (replace `spatial` with `object`, `goal`, or `long`). Use `--policy-checkpoint PATH` and `--alam-checkpoint PATH` for your own compatible policy and tokenizer.
 
 See the [MetaWorld guide](workflows/metaworld_evaluation/README.md) and [LIBERO guide](workflows/libero_evaluation/README.md) for detailed options and paper results. Individual runs can vary.
-
-### Completed evaluation repeats
-
-Two complete runs on October 4–5, 2026 used identical Python/package-version
-inventories, the shared `alam_pretrain_latent_action_tokenizer`, and the released
-step-30,000 policy for each benchmark. Each run covered MetaWorld 50 × 10 episodes
-and four LIBERO suites of 10 × 50 episodes: **2,500 episodes per run**. All suites
-ran serially with one policy server/client at a time on port 8000.
-
-| Run | MetaWorld difficulty macro (%) | Spatial (%) | Object (%) | Goal (%) | Long (%) | LIBERO mean (%) |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Environment-aligned run 1 | 83.24 | 97.20 | 99.40 | 98.40 | 93.80 | 97.20 |
-| Same-environment run 2 | 86.18 | 96.80 | 98.00 | 97.80 | 94.60 | 96.80 |
-| Mean of these two runs | **84.71** | **97.00** | **98.70** | **98.10** | **94.20** | **97.00** |
-
-MetaWorld episode-weighted results were 430/500 (86.0%) and 442/500 (88.4%);
-these differ from the difficulty-macro metric above. Both runs passed complete
-task/episode and final-summary validation. They are fresh evaluations, separate
-from the paper's historical scores, and use the same configured seeds rather
-than independent seeds. MetaWorld constructs task variants before evaluator
-seeding, so matching seeds do not guarantee identical physical episodes.
-See the [protocol, exact counts, timing, and limitations](workflows/evaluation_reproduction/README.md#completed-runs).
 
 ## 🗂️ Repository layout
 

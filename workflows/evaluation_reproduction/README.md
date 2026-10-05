@@ -1,11 +1,9 @@
 # Evaluation environment alignment
 
-This guide records the environment used for two completed 2,500-episode
-evaluations on October 4–5, 2026. Both used the released step-30,000 MetaWorld
-and LIBERO policies and the shared `alam_pretrain_latent_action_tokenizer`.
-All four LIBERO suites loaded the same LIBERO policy. No policy weights,
-tokenizer weights, algorithm, seed, or benchmark parameters were changed
-between these two runs.
+This guide describes the tested environment for evaluating the released
+step-30,000 MetaWorld and LIBERO policies with the shared
+`alam_pretrain_latent_action_tokenizer`. All four LIBERO suites use the same
+LIBERO policy.
 
 ## Tested versions
 
@@ -36,9 +34,9 @@ Full installed package-version inventories are provided for
 [pi0 (218 packages)](environment/pi0.json),
 [MetaWorld (58 packages)](environment/metaworld.json), and
 [LIBERO (127 packages)](environment/libero.json).
-Each inventory, including the Python patch version, matched between the two
-runs. They record the tested installation; they are not portable lockfiles or
-a claim that the historical machine's full system image was identical.
+These inventories include the Python patch version and record the tested
+installation; they are not portable lockfiles or a claim that the historical
+machine's full system image was identical.
 
 ## Align a fresh installation
 
@@ -151,42 +149,10 @@ MetaWorld uses seed 10, 50 tasks × 10 episodes, 200 steps, camera `corner2` at
 7 and 10 tasks × 50 episodes per suite; Spatial/Object effective horizon 14,
 Goal/Long 18, and replan 5/10/7/12 respectively.
 
-## Completed runs
+## Reproducibility notes
 
-The first run executed MetaWorld followed by Spatial, Object, Goal, Long.
-The second executed Spatial, Object, Goal, Long followed by MetaWorld.
-Both were serial, used the same checkpoints and configured seeds, and passed
-the complete package-inventory checks above.
-
-| Run | MetaWorld successes | Difficulty macro (%) | Spatial / 500 | Object / 500 | Goal / 500 | Long / 500 | LIBERO mean (%) |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Environment-aligned run 1 | 430/500 | 83.240801 | 486 | 497 | 492 | 469 | 97.20 |
-| Same-environment run 2 | 442/500 | 86.179654 | 484 | 490 | 489 | 473 | 96.80 |
-| Mean | 87.20% episode-weighted | 84.710227 | 97.00% | 98.70% | 98.10% | 94.20% | 97.00 |
-
-The two runs total 5,000 episodes. MetaWorld pooled successes are 872/1000;
-LIBERO pooled successes are 3880/4000. The mean MetaWorld difficulty-macro rate
-is 0.29 percentage points below the paper's 85.0%. The LIBERO mean is 1.05
-points below the paper's exact 98.05% (displayed as 98.1%). These fresh-run
-results are separate from the paper scores and the earlier recorded release
-profile observation. They do not replace those historical results.
-
-| Run | Start (UTC+08:00) | End (UTC+08:00) | Wall time |
-| --- | --- | --- | --- |
-| Environment-aligned run 1 | 2026-10-04 21:01:15 | 2026-10-05 00:52:16 | 3 h 51 m 01 s |
-| Same-environment run 2 | 2026-10-05 01:15:04 | 2026-10-05 05:11:47 | 3 h 56 m 43 s |
-
-Wall time includes model loading, initial compilation, and suite transitions;
-it excludes environment installation and downloads. Each MetaWorld launcher
-and each four-suite LIBERO wrapper exited successfully. Original logs were
-checked with the repository's `summarize_metaworld.summarize` and
-`summarize_libero.parse_suite`: 50 × 10 or 10 × 50 outcomes, task/episode order,
-port/replan values, and final aggregates all matched. LIBERO records one
-overall wrapper exit code, not a separate exit code per suite.
-
-Matching Python/package versions and configured seeds did not yield identical
-episode outcomes. These are same-seed repeats, not an independent multi-seed
-study. MetaWorld constructs task variants before evaluator seeding; matching
-task names and episode positions does not ensure the same physical scene.
-The observed variation does not isolate its cause or prove exact recovery of
-historical scores. This validation covers evaluation, not a full training rerun.
+Matching Python/package versions and configured seeds does not guarantee
+identical episode outcomes. MetaWorld constructs task variants before
+evaluator seeding, so matching task names and episode positions does not
+ensure the same physical scene. Same-seed repeats are not an independent
+multi-seed study.
